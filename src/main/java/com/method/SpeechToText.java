@@ -23,7 +23,7 @@ public class SpeechToText {
         String openApiURL = "http://aiopen.etri.re.kr:8000/WiseASR/Recognition";
         String accessKey = "60c9c602-3d19-46b6-8590-090f8c87c4f8"; // 발급받은 API Key
         String languageCode = "korean"; // 언어 코드
-        String audioFilePath = "C:\\Users\\skgud\\Downloads\\hello.wav"; // 녹음된 음성 파일 경로
+        String audioFilePath = "C:\\Users\\skgud\\Downloads\\output.wav"; // 녹음된 음성 파일 경로
         String audioContents = null;
 
         Gson gson = new Gson();
