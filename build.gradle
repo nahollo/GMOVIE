@@ -1,0 +1,70 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.11'
+	id 'io.spring.dependency-management' version '1.1.3'
+}
+
+group = 'com.gmovie'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// 파파고 api 사용 의존성
+	implementation 'org.apache.httpcomponents:httpclient'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	implementation 'com.google.code.gson:gson:2.10.1'
+	implementation 'javazoom:jlayer:1.0.1'
+
+	// Spring Cloud GCP
+    implementation 'org.springframework.cloud:spring-cloud-gcp-starter:1.2.8.RELEASE'
+
+    // Google Cloud Speech-to-Text
+    implementation 'com.google.cloud:google-cloud-speech:2.4.0'
+
+	// 음성 파일 고급지게 바꿔주는 의존성
+	implementation 'net.bramp.ffmpeg:ffmpeg:0.6.2'
+
+	// Speech To Text 사용 의존성
+	implementation 'com.google.cloud:google-cloud-speech:2.4.0'
+
+	// Spring Data JPA와 Oracle JDBC 드라이버 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.oracle.database.jdbc:ojdbc8:19.8.0.0'
+
+	// Lombok 사용 의존성
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly('org.projectlombok:lombok') 
+	testAnnotationProcessor('org.projectlombok:lombok') 
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// testImplementation ('org.springframework.boot:spring-boot-starter-test') {
+    // exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	// }
+
+	// testImplementation('org.junit.jupiter:junit-jupiter-api:5.+')
+	// testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.+')
+
+	// AssertJ for fluent assertion API
+	// testImplementation("org.assertj:assertj-core")
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
