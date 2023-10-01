@@ -1,4 +1,4 @@
-package com.folder.app.dto;
+package com.gmovie.gmovie.dto;
 
 import java.time.LocalDateTime;
 

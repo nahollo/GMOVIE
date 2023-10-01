@@ -1,32 +1,34 @@
-package com.folder.app.service;
+package com.gmovie.gmovie.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.folder.app.dao.UserDao;
-import com.folder.app.dto.ResultDTO;
-import com.folder.app.dto.UserDTO;
+import com.gmovie.gmovie.dao.UserDao;
+import com.gmovie.gmovie.domain.User;
+import com.gmovie.gmovie.dto.ResultDTO;
+import com.gmovie.gmovie.dto.UserDTO;
 
 @Service
 public class UserServiceImp implements UserService {
 
       private ResultDTO rDto;
 
-      @Autowired UserDao uDao;
+      @Autowired
+      UserDao uDao;
 
       public ResultDTO findAll() {
             rDto = new ResultDTO();
             List<UserDTO> resultList = uDao.findAll();
-            if(resultList != null){
-              rDto.setState(true);
-              rDto.setResult(resultList);
+            if (resultList != null) {
+                  rDto.setState(true);
+                  rDto.setResult(resultList);
             } else {
-              rDto.setState(false);
+                  rDto.setState(false);
             }
             return rDto;
-          }
+      }
 
       public ResultDTO editById(UserDTO uDto) {
 
@@ -41,6 +43,11 @@ public class UserServiceImp implements UserService {
       public ResultDTO save(UserDTO uDto) {
 
             return rDto;
+      }
+
+      @Override
+      public Object saveUser(User user) {
+            throw new UnsupportedOperationException("Unimplemented method 'saveUser'");
       }
 
 }
