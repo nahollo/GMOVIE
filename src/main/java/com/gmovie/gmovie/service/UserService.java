@@ -1,23 +1,13 @@
-package com.gmovie.gmovie.service;
+package com.folder.app.service;
 
-import com.gmovie.gmovie.domain.User;
-import com.gmovie.gmovie.repository.UserRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import com.folder.app.dto.ResultDTO;
+import com.folder.app.dto.UserDTO;
 
-@Service
-public class UserService {
+public interface UserService {
 
-    private final UserRepository userRepository;
+  public ResultDTO findAll();
+  public ResultDTO editById(UserDTO uDto);
+  public ResultDTO delete(int no);
+  public ResultDTO save(UserDTO uDto);
 
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
-    @Transactional
-    public User saveUser(User user) {
-        return userRepository.save(user);
-    }
-
-    // ...other methods as needed...
 }

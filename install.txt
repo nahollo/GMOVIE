@@ -1,3 +1,6 @@
 23. 09. 25 :: 정경희
 $ npm install axios
  
+23. 10. 01 :: 정경희
+$ npm install bootstrap@5.2.3
+$ npm install vue-router
