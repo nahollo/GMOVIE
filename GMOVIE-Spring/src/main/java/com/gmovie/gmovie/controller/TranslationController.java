@@ -1,6 +1,8 @@
 package com.gmovie.gmovie.controller;
 
 import com.gmovie.gmovie.service.TranslationService;
+import com.method.Method;
+
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +40,10 @@ public class TranslationController {
 
     @GetMapping("/temp")
     public String temp(Model model) {
-        String originalText = "안녕 클레오파트라 세상에서 제일가는 포테이토칩";
+        Method method = new Method();
+        method.base64Encoded();
+
+        String originalText = method.stt();
         String toEngText = translationService.korToEng(originalText);
         String toKorText = translationService.engToKor(toEngText);
     

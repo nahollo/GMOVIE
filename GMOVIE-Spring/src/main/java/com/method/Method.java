@@ -8,18 +8,18 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.google.gson.Gson;
 
-public class SpeechToText {
+public class Method {
 
-    static public void main(String[] args) {
+    public String stt() {
         String openApiURL = "http://aiopen.etri.re.kr:8000/WiseASR/Recognition";
         String accessKey = "60c9c602-3d19-46b6-8590-090f8c87c4f8"; // 발급받은 API Key
         String languageCode = "korean"; // 언어 코드
@@ -83,12 +83,14 @@ public class SpeechToText {
 
             // 파싱된 결과 출력
             System.out.println("인식된 텍스트: " + result.getReturnObject().getRecognized());
+            return result.getReturnObject().getRecognized().toString();
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return responseBody;
     }
 
     // JSON 응답 구조를 매핑할 클래스 정의
@@ -107,4 +109,58 @@ public class SpeechToText {
             }
         }
     }
+
+
+    public void base64Encoded() {
+        String inputFilePath = "C:\\Users\\skgud\\OneDrive\\Desktop\\test2.m4a"; // 입력 오디오 파일 경로
+        String outputFilePath = "C:\\Users\\skgud\\Downloads\\output.wav"; // 변환 후 오디오 파일 경로
+
+        // 1. 음성 파일 변환
+        try {
+            convertTo16kHz(inputFilePath, outputFilePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        // 2. Base64로 인코딩
+        String base64EncodedAudio = encodeToBase64(outputFilePath);
+
+        // 이제 base64EncodedAudio를 사용하여 API 호출 등의 작업을 수행할 수 있습니다.
+        System.out.println("Base64 인코딩된 오디오: " + base64EncodedAudio);
+    }
+
+    // 음성 파일을 16kHz로 변환하는 메서드
+    private static void convertTo16kHz(String inputFilePath, String outputFilePath) throws IOException {
+        ProcessBuilder processBuilder = new ProcessBuilder(
+            "ffmpeg",
+            "-i", inputFilePath,
+            "-ar", "16000", // 16kHz 샘플링 주파수 설정
+            outputFilePath
+        );
+
+        processBuilder.redirectErrorStream(true);
+
+        Process process = processBuilder.start();
+        try {
+            process.waitFor();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // WAV 파일을 읽어서 Base64로 인코딩하는 메서드
+    private static String encodeToBase64(String filePath) {
+        byte[] audioBytes;
+        try {
+            audioBytes = Files.readAllBytes(Paths.get(filePath));
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return Base64.getEncoder().encodeToString(audioBytes);
+    }
+
+
 }
