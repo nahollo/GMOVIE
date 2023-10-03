@@ -1,9 +1,11 @@
 package com.method;
 
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,6 +18,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 public class Method {
 
@@ -112,7 +116,7 @@ public class Method {
 
 
     public void base64Encoded() {
-        String inputFilePath = "C:\\Users\\skgud\\OneDrive\\Desktop\\test2.m4a"; // 입력 오디오 파일 경로
+        String inputFilePath = "C:\\Users\\skgud\\OneDrive\\Desktop\\123123123.m4a"; // 입력 오디오 파일 경로
         String outputFilePath = "C:\\Users\\skgud\\Downloads\\output.wav"; // 변환 후 오디오 파일 경로
 
         // 1. 음성 파일 변환
@@ -160,6 +164,89 @@ public class Method {
         }
 
         return Base64.getEncoder().encodeToString(audioBytes);
+    }
+
+
+
+    public String summary(String text) throws IOException{
+        String client_id = "0lkdxykojm";
+        String client_secret = "9ZYNw5VGHn4pKbqjL5D2riH36HUfTx4fxJ3RjVxo";
+
+        String title = "요약된 텍스트";
+        String content = text;
+
+        String summarizedText = summarizeText(client_id, client_secret, title, content);
+        JsonObject jsonObject = JsonParser.parseString(summarizedText).getAsJsonObject();
+        String summary = jsonObject.get("summary").getAsString();
+
+        System.out.println("요약된 텍스트: \n" + summary);
+        return summary;
+    }
+
+    public String summarizeText(String client_id, String client_secret, String title, String content) throws IOException {
+        String apiEndpoint = "https://naveropenapi.apigw.ntruss.com/text-summary/v1/summarize";
+
+        URL url = new URL(apiEndpoint);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        
+        connection.setRequestMethod("POST");
+        connection.setRequestProperty("X-NCP-APIGW-API-KEY-ID", client_id);
+        connection.setRequestProperty("X-NCP-APIGW-API-KEY", client_secret);
+        connection.setRequestProperty("Content-Type", "application/json");
+        
+		connection.setDoOutput(true);
+
+		Map<String, Object> requestMap = new HashMap<>();
+		Map<String, Object> documentMap = new HashMap<>();
+		Map<String, Object> optionMap = new HashMap<>();
+
+		documentMap.put("title", title);
+		documentMap.put("content", content);
+
+		requestMap.put("document", documentMap);
+
+		optionMap.put("language", "ko");
+		optionMap.put("model", "general");
+
+		requestMap.put("option", optionMap);
+
+		String requestBody = toJsonString(requestMap);
+
+		try (OutputStream os = connection.getOutputStream()) {
+			byte[] input = requestBody.getBytes("utf-8");
+			os.write(input, 0, input.length);
+		}
+
+		int responseCode = connection.getResponseCode();
+		
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            try (BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream(), "UTF-8"))) {
+                StringBuilder response = new StringBuilder();
+                String line;
+                
+				while ((line = in.readLine()) != null) {
+                    response.append(line);
+                }
+				
+                return response.toString();
+            }
+        } else {
+            try (BufferedReader errorIn = new BufferedReader(new InputStreamReader(connection.getErrorStream()))) {
+                StringBuilder errorResponse = new StringBuilder();
+                String errorLine;
+				
+                while ((errorLine = errorIn.readLine()) != null) {
+                    errorResponse.append(errorLine);
+                }
+				
+				throw new IOException("HTTP 요청 실패. 응답 코드: " + responseCode + "\n오류 응답 본문: " + errorResponse.toString());
+            }
+        }
+    }
+
+    private static String toJsonString(Map<String, Object> map) {
+        Gson gson = new Gson();
+        return gson.toJson(map);
     }
 
 

@@ -6,9 +6,6 @@ import com.gmovie.gmovie.dto.ResultDTO;
 import com.gmovie.gmovie.dto.UserDTO;
 import com.gmovie.gmovie.service.UserService;
 
-
-import jakarta.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;

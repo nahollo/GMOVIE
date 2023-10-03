@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.io.IOException;
+
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
@@ -39,18 +42,16 @@ public class TranslationController {
     }
 
     @GetMapping("/temp")
-    public String temp(Model model) {
+    public String temp(Model model) throws IOException {
         Method method = new Method();
         method.base64Encoded();
 
         String originalText = method.stt();
-        String toEngText = translationService.korToEng(originalText);
-        String toKorText = translationService.engToKor(toEngText);
+        String summaryText = method.summary(originalText);
     
         // 모델에 데이터 추가
         model.addAttribute("originalText", originalText);
-        model.addAttribute("toEngText", toEngText);
-        model.addAttribute("toKorText", toKorText);
+        model.addAttribute("summaryText", summaryText);
     
         return "translationResult";
     }
