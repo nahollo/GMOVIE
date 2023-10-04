@@ -44,14 +44,14 @@ public class TranslationController {
     @GetMapping("/temp")
     public String temp(Model model) throws IOException {
         Method method = new Method();
-        method.base64Encoded();
+        String originalText = "";
+        String toEngText = translationService.korToEng(originalText);
+        String toKorText = translationService.engToKor(toEngText);
 
-        String originalText = method.stt();
-        String summaryText = method.summary(originalText);
-    
         // 모델에 데이터 추가
         model.addAttribute("originalText", originalText);
-        model.addAttribute("summaryText", summaryText);
+        model.addAttribute("toEngText", toEngText);
+        model.addAttribute("toKorText", toKorText);
     
         return "translationResult";
     }
