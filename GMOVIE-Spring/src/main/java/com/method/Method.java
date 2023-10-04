@@ -13,35 +13,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class Method {
-        String languageCode = "korean"; // 언어 코드
-        String audioContents = null;
-
-        Gson gson = new Gson();
-
-        Map<String, Object> request = new HashMap<>();
-        Map<String, String> argument = new HashMap<>();
-
-        try {
-            Path path = Paths.get(audioFilePath);
-            byte[] audioBytes = Files.readAllBytes(path);
-            audioContents = Base64.getEncoder().encodeToString(audioBytes);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        argument.put("language_code", languageCode);
-        argument.put("audio", audioContents);
-
-        request.put("argument", argument);
-
-        URL url;
-        String responseBody = null;
-
-        try {
-            url = new URL(openApiURL);
-            con.setRequestMethod("POST");
-            con.setDoOutput(true);
-            con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
     public static void main(String[] args) throws IOException {
         String originalFile = "C:\\Users\\skgud\\OneDrive\\Desktop\\MyVoice.m4a";
         String fullFile = "C:\\Users\\skgud\\Downloads\\output.wav";
