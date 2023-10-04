@@ -9,13 +9,11 @@ import org.apache.ibatis.annotations.Update;
 
 import com.gmovie.gmovie.dto.UserDTO;
 
-
 @Mapper
 public interface UserMapper {
-      
+
   @Select("SELECT * FROM user3")
   public List<UserDTO> findAll();
-
 
   @Update("update user3 set name = #{name}, pwd = #{pwd}, gender = #{gender} where no = #{no}")
   public int editById(UserDTO uDto);
@@ -23,7 +21,10 @@ public interface UserMapper {
   @Update("update user3 set del = 1 where no = #{no}")
   public int delete(int no);
 
-  
   @Insert("insert into user3 (name, email, pwd, gender) values (#{name},#{email},#{pwd},#{gender})")
   public int save(UserDTO uDto);
+
+  // 오디오 파일 경로(audioFilePath)를 받아 SUMMARY 테이블의 SUMMARY 컬럼에 경로 저장
+  @Insert("INSERT INTO SUMMARY (SUMMARY) VALUES (#{audioFilePath})")
+  public int saveAudioFilePath(String audioFilePath);
 }
