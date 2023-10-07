@@ -895,3 +895,220 @@ body {
     gap: 10px;
     position: relative;
   }
+
+  .why-choose-me {
+    display: flex;
+    width: 1920px;
+    align-items: center;
+    position: relative;
+    margin-top: 70px;
+  }
+  
+  .why-choose-me .content {
+    position: relative;
+    width: 1052px;
+    height: 741px;
+    background-size: 100% 100%;
+    background-color: #37393F;
+  }
+  
+  .why-choose-me .content-wrapper {
+    position: relative;
+    width: 960px;
+    height: 466px;
+    top: 138px;
+  }
+  
+  .why-choose-me .div {
+    display: flex;
+    flex-direction: column;
+    width: 610px;
+    align-items: flex-start;
+    gap: 36px;
+    position: relative;
+    left: 350px;
+  }
+  
+  .why-choose-me .content-2 {
+    display: flex;
+    flex-direction: column;
+    width: 572px;
+    align-items: flex-start;
+    gap: 13px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .why-choose-me .title {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    align-items: flex-start;
+    gap: 13px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .why-choose-me .sub-text {
+    position: relative;
+    width: 10px;
+    height: 22px;
+  }
+  
+  .why-choose-me .rectangle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 5px;
+    left: 0;
+    background-color: #40ddb6;
+  }
+  
+  .why-choose-me .text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 18px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: left;
+  }
+  
+  .why-choose-me .p {
+    position: relative;
+    width: fit-content;
+    margin-right: -73px;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 36.3px;
+    white-space: nowrap;
+  }
+  
+  .why-choose-me .web-RTC {
+    position: relative;
+    width: 572px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 26.3px;
+  }
+  
+  .why-choose-me .counter {
+    display: flex;
+    width: 609.64px;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .why-choose-me .element {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    padding: 27px 30px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #2e2f34;
+  }
+  
+  .why-choose-me .content-3 {
+    display: inline-flex;
+    height: 79.32px;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+  }
+  
+  .why-choose-me .chart {
+    position: relative;
+    width: 81.32px;
+    height: 79.32px;
+  }
+  
+  .why-choose-me .overlap-group {
+    position: relative;
+    width: 79px;
+    height: 79px;
+  }
+  
+  .why-choose-me .ellipse {
+    position: absolute;
+    width: 79px;
+    height: 79px;
+    top: 0;
+    left: 0;
+    background-color: #37393f;
+    border-radius: 39.66px;
+  }
+  
+  .why-choose-me .img {
+    position: absolute;
+    width: 79px;
+    height: 79px;
+    top: 0;
+    left: 0;
+  }
+  
+  .why-choose-me .text-wrapper-2 {
+    position: absolute;
+    width: 45px;
+    top: 24px;
+    left: 20px;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .why-choose-me .content-4 {
+    display: flex;
+    flex-direction: column;
+    width: 146px;
+    align-items: flex-start;
+    gap: 1px;
+    position: relative;
+  }
+  
+  .why-choose-me .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 21.6px;
+    white-space: nowrap;
+    top: 0px;
+  }
+  
+  .why-choose-me .text-wrapper-4 {
+    position: relative;
+    width: fit-content;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .why-choose-me .image {
+    position: relative;
+    width: 868px;
+    height: 741px;
+  }
