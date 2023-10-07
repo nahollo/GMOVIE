@@ -78,3 +78,125 @@ body {
 .login-button:hover {
     background-color: #555;
 }
+
+.main-image-container {
+    width: 1920px;
+    height: 815px;
+    overflow: hidden; /* 이미지가 지정한 크기보다 크면 숨깁니다. */
+}
+
+.main-image {
+    width: 1920px;
+    height: 815px;
+    display: block;
+}
+
+.main-content {
+    position: relative; /* flexbox를 사용하여 내부 요소를 가로로 배열합니다. */
+}
+
+.text-box {
+    position: absolute; /* 박스의 위치를 절대 위치로 지정합니다. */
+    top: 160px; /* 상위 요소인 .main-content의 상단에 위치시킵니다. */
+    left: 0; /* 상위 요소인 .main-content의 왼쪽에 위치시킵니다. */
+    width: 828px;
+    height: 775px;
+    background-color: #37393F;
+    color: #FFF;
+    display: flex;
+    background-color: rgba(55, 57, 63, 0.96);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1; /* 박스를 사진 위로 올립니다. */
+}
+.main-image-container {
+    width: 1920px;
+    height: 815px;
+    overflow: hidden;
+    z-index: 0; /* 이미지가 박스 아래에 위치하도록 지정합니다. */
+}
+
+.main-image {
+    width: 1920px;
+    height: 815px;
+    display: block;
+}
+
+.text-box p {
+    text-align: left; /* 텍스트를 왼쪽으로 정렬 */
+    margin-right: 150px;
+    margin-bottom: 350px;
+    display: inline-block;
+    vertical-align: top; /* 여기를 추가 */
+    color: #FFF; /* 텍스트 색상을 흰색으로 설정. 필요하면 다른 색상으로 변경 가능 */
+    font-size: 19px; /* 텍스트 크기 설정. 원하는 크기로 조절 가능 */
+}
+
+.main-heading {
+    color: #FFF; /* 텍스트 색상을 흰색으로 설정 */
+    font-size: 40px; /* 글씨 크기. 원하는 크기로 조절하세요. */
+    font-weight: bold; /* 글씨를 굵게 설정 */
+    text-align: left; /* 텍스트를 왼쪽으로 정렬 */
+    margin-top: 0px; /* "GMOVIE에 오신 것을 환영합니다."와의 간격 조절. 원하는 간격으로 조절 가능 */
+}
+
+.content .span {
+    color: #40ddb6;
+    margin-left: 130px;
+  }
+
+  .content .global-meeting {
+    position: relative;
+    top: 70px;
+    width: 591px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: transparent;
+    font-size: 67px;
+    letter-spacing: 0;
+    line-height: 62.7px;
+  }
+
+  .content .text-wrapper-2 {
+    color: #ffffff;
+  }
+
+  .content .text-wrapper {
+    width: 482px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #b8b8b8;
+    line-height: 26.3px;
+    position: relative;
+    top: 30px;
+    top: -250px;
+    margin-top: 30px;
+    font-size: 18px;
+    letter-spacing: 0;
+    left: 135px;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile .kelvin {
+    margin-top: 220px;
+    width: 350px;
+    margin-left: 400px;  
+    margin-right: 40px;  /* 이 값을 조절하여 원하는 간격으로 설정 */
+}
+
+.profile .simpson {
+    margin-top: 220px;
+    width: 350px;  
+    margin-right: 40px;  /* 이 값을 조절하여 원하는 간격으로 설정 */
+}
+
+.profile .grant {
+    margin-top: 220px;
+    width: 350px;
+}
+
