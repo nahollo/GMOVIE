@@ -625,3 +625,273 @@ body {
     line-height: 21.6px;
   }
   
+  .parent {
+    display: flex; /* 또는 "grid" */
+    justify-content: center; /* flexbox의 경우 수평 중앙 */
+    align-items: center; /* flexbox의 경우 수직 중앙 */
+    height: 100vh; /* 전체 뷰포트 높이. 필요한 경우 조정하세요 */
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    width: 1220px;
+    margin-top: 100px;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+}
+  
+  .services .title {
+    display: flex;
+    flex-direction: column;
+    width: 495px;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .services .sub-text {
+    position: relative;
+    width: 167px;
+    height: 22px;
+  }
+  
+  .services .box {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 5px;
+    left: 0;
+    background-color: #40ddb6;
+  }
+  
+  .services .text-wrapper {
+    position: absolute;
+    top: 0;
+    left: 18px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #37393f;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .services .div {
+    position: relative;
+    width: fit-content;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: #37393f;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 48.4px;
+    white-space: nowrap;
+  }
+  
+  .services .content {
+    flex-direction: column;
+    width: 1220px;
+    align-items: center;
+    gap: 27px;
+    display: flex;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .services .element {
+    width: 1219px;
+    justify-content: center;
+    gap: 32px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .services .content-wrapper {
+    flex-direction: column;
+    width: 386px;
+    height: 173px;
+    gap: 10px;
+    padding: 30px;
+    margin-left: -0.5px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .services .content-2 {
+    width: 325px;
+    align-items: flex-start;
+    gap: 90px;
+    display: flex;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .services .text {
+    display: flex;
+    flex-direction: column;
+    width: 163px;
+    align-items: flex-start;
+    gap: 27px;
+    position: relative;
+  }
+  
+  .services .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #37393f;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 31.7px;
+    white-space: nowrap;
+  }
+  
+  /* .services .icon {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    background-color: #40ddb6;
+    border-radius: 36px;
+  } */
+  
+  .services .img {
+    position: rel;
+    width: 70px;
+    height: 70px;
+    top: 12px;
+    left: 14px;
+    margin-top: 15px;
+  }
+  
+  .services .div-wrapper {
+    flex-direction: column;
+    width: 385px;
+    height: 173px;
+    gap: 10px;
+    padding: 30px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  /* .services .icon-wrapper {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    background-color: #6b77e5;
+    border-radius: 36px;
+  } */
+  
+  /* cam-icon */
+  .services .icon-2 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 12px;
+    left: 12px;
+    margin-left: 235px;
+    margin-bottom: 280px;
+  }
+  
+  .services .element-2 {
+    display: flex;
+    flex-direction: column;
+    width: 385px;
+    align-items: flex-start;
+    padding: 30px;
+    margin-right: -0.5px;
+    background-color: #f4f4f4;
+    height: 173px;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .services .icon-3 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 14px;
+    left: 14px;
+    margin-left: 235px;
+    margin-bottom: 280px;
+  }
+  
+  .services .element-3 {
+    width: 1220px;
+    justify-content: center;
+    gap: 32px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-left: 17px;
+  }
+  
+  .services .icon-4 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 18px;
+    left: 18px;
+    margin-left: 235px;
+    margin-bottom: 280px;
+  }
+  
+  .services .element-4 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 106px 72px;
+    flex: 0 0 auto;
+    background-color: #6b77e5;
+    height: 92px;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .services .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    margin-top: -0.5px;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    margin-top: 300px;
+  }
+
+  .services .icon-5 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 18px;
+    left: 18px;
+    margin-left: 235px;
+    margin-bottom: 280px;
+  }
+  
+  .services .element-5 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 106px 72px;
+    flex: 0 0 auto;
+    background-color: #6b77e5;
+    height: 173px;
+    gap: 10px;
+    position: relative;
+  }
