@@ -1,7 +1,7 @@
 package com.gmovie.gmovie.controller;
 
 import com.gmovie.gmovie.service.TranslationService;
-import com.method.Method;
+import com.method.SpeechToText1;
 
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,15 +44,15 @@ public class TranslationController {
 
     @GetMapping("/temp")
     public String temp(Model model) throws IOException {
-        Method method = new Method();
-        method.base64Encoded();
-
-        String originalText = method.stt();
-        String summaryText = method.summary(originalText);
+        SpeechToText1 method = new SpeechToText1();
+        String originalText = "";
+        String toEngText = translationService.korToEng(originalText);
+        String toKorText = translationService.engToKor(toEngText);
 
         // 모델에 데이터 추가
         model.addAttribute("originalText", originalText);
-        model.addAttribute("summaryText", summaryText);
+        model.addAttribute("toEngText", toEngText);
+        model.addAttribute("toKorText", toKorText);
 
         return "translationResult";
     }

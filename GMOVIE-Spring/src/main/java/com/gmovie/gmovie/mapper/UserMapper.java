@@ -23,8 +23,4 @@ public interface UserMapper {
 
   @Insert("insert into user3 (name, email, pwd, gender) values (#{name},#{email},#{pwd},#{gender})")
   public int save(UserDTO uDto);
-
-  // 오디오 파일 경로(audioFilePath)를 받아 SUMMARY 테이블의 SUMMARY 컬럼에 경로 저장
-  @Insert("INSERT INTO SUMMARY (SUMMARY) VALUES (#{audioFilePath})")
-  public int saveAudioFilePath(String audioFilePath);
 }

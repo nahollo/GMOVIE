@@ -6,25 +6,27 @@
   </head>
   <body>
     <h1>MP3 to Text Converter</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="file" name="file" accept=".mp3" />
+    <!-- 'submit' 버튼 클릭 시 'uploadAndSavePath' 함수 실행 -->
+    <form onsubmit="event.preventDefault(); uploadAndSavePath();">
+      <input type="file" id="file" name="file" accept=".mp3" />
       <button type="submit">업로드 및 변환</button>
     </form>
-    <button onclick="savePathToDB()">경로 db에 저장</button>
-    <!-- Axios 요청 스크립트 -->
+
     <script type="text/javascript">
-      function savePathToDB() {
-        // "/saveAudioFilePath" 경로로 POST 요청을 보냄.
-        // Spring Boot 컨트롤러에서 해당 경로를 처리 (AudioController.java)
+      function uploadAndSavePath() {
+        var formData = new FormData();
+        var audioFilePath = document.getElementById("file").value; // 사용자가 선택한 파일 경로
+
+        formData.append("file", document.getElementById("file").files[0]);
+        formData.append("audioFilePath", audioFilePath);
+
         axios
-          .post("/saveAudioFilePath", {
-            audioFilePath: "C:\\Users\\skgud\\Downloads\\output.wav",
-          })
+          .post("/saveAudioFilePath", formData)
           .then(function (response) {
-            alert("Audio file path saved successfully!");
+            alert("File uploaded and path saved successfully!");
           })
           .catch(function (error) {
-            alert("Failed to save audio file path!");
+            alert("Failed to upload file or save path!");
           });
       }
     </script>

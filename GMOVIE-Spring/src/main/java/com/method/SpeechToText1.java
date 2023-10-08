@@ -21,7 +21,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class Method {
+public class SpeechToText1 {
 
     public String stt() {
         String openApiURL = "http://aiopen.etri.re.kr:8000/WiseASR/Recognition";
