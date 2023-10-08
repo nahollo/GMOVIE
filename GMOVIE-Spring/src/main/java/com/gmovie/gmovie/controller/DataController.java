@@ -1,16 +1,11 @@
 package com.gmovie.gmovie.controller;
 
-import org.springframework.web.bind.annotation.RestController;
 import com.gmovie.gmovie.dto.ResultDTO;
 import com.gmovie.gmovie.dto.UserDTO;
-import com.gmovie.gmovie.mapper.UserMapper;
 import com.gmovie.gmovie.service.UserService;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

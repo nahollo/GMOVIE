@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8801") // Cross-Origin Resource Sharing(CORS) 허용
-public class AudioController {
+public class saveAudioFilePath {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

@@ -6,12 +6,10 @@
   </head>
   <body>
     <h1>MP3 to Text Converter</h1>
-    <!-- 'submit' 버튼 클릭 시 'uploadAndSavePath' 함수 실행 -->
     <form onsubmit="event.preventDefault(); uploadAndSavePath();">
       <input type="file" id="file" name="file" accept=".mp3" />
-      <button type="submit">업로드 및 변환</button>
+      <button type="submit">경로 저장</button>
     </form>
-
     <script type="text/javascript">
       function uploadAndSavePath() {
         var formData = new FormData();
