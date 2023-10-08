@@ -1,6 +1,6 @@
 body {
     width: 1920px;
-    height: 4248px;
+    height: 3248px;
     background-color: #FFFFFF; /* 하얀색 */
     margin: 0;
     padding: 0;
@@ -234,6 +234,68 @@ body {
     margin-top: -20px;
 }
 
+.profile2 {
+    display: flex;
+    align-items: center;
+    margin-top: -150px;
+}
+
+.profile2 .kelvin2 {
+    margin-top: 220px;
+    width: 350px;
+    height: 480px;
+    margin-left: 400px;  
+    margin-right: 40px;  /* 이 값을 조절하여 원하는 간격으로 설정 */
+}
+
+.profile2 .simpson2 {
+    margin-top: 220px;
+    width: 350px;
+    height: 480px; 
+    margin-right: 40px;  /* 이 값을 조절하여 원하는 간격으로 설정 */
+}
+
+.profile2 .grant2 {
+    margin-top: 220px;
+    width: 350px;
+    height: 480px;
+}
+
+.name-box2 {
+    position: absolute;
+    background-color: white;
+    width: 250px;
+    height: 80px;
+    margin-left: 50px;
+    margin-top: 550px;
+    text-align: center;
+    line-height: 50px; /* This will vertically center the text */
+    top: 1550px; /* Adjust according to where you want the box to appear */
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column; /* 이름과 직책을 수직으로 배열 */
+    justify-content: center; /* 내용을 중앙에 배치 */
+}
+
+.kelvin-box2 {
+    left: 400px;
+}
+
+.simpson-box2 {
+    left: 790px; /* 400 (previous image's margin-left) + 350 (width) + 40 (margin-right) */
+}
+
+.grant-box2 {
+    left: 1180px; /* 790 (previous image's left) + 350 (width) + 40 (margin-right) */
+}
+
+.position2 { /* 새로운 클래스: 각 직책을 나타냄 */
+    font-size: 14px; /* 작게 표시 */
+    font-weight: normal; /* 기본 폰트 무게 */
+    margin-top: -20px;
+}
+
 
 
 
@@ -242,8 +304,9 @@ body {
     width: 1220px;
     align-items: center;
     position: relative;
-    top: 300px;
+    top: 00px;
     margin-left: 350px;
+    margin-top: 250px;
   }
   
   .performance .content {
@@ -442,10 +505,12 @@ body {
     height: 544.5px;
   }
 
+
   .box2 {
     position: relative;
     width: 1920px;
     height: 703px;
+    margin-top: 100px;
   }
   
   .box2 .footer {
@@ -554,7 +619,7 @@ body {
     color: #ffffff;
     letter-spacing: 0;
     line-height: normal;
-    margin-left: 90px;
+    margin-left: -135px;
   }
   
   .box2 .text-wrapper-2 {
@@ -671,6 +736,7 @@ body {
     align-items: center;
     position: relative;
     flex: 0 0 auto;
+    margin-left: -250px;
   }
   
   .box2 .line-2 {
@@ -688,6 +754,7 @@ body {
     align-items: center;
     position: relative;
     flex: 0 0 auto;
+    margin-left: 260px;
   }
   
   .box2 .copyright-GMOVIE {
@@ -702,6 +769,10 @@ body {
     line-height: 26px;
     white-space: nowrap;
   }
+
+  .copyright-GMOVIE .span {
+    margin-left: 0px;  /* 좌측 마진을 0으로 설정 */
+}
   
   .box2 .span {
     color: #ffffff;
@@ -709,6 +780,7 @@ body {
   
   .box2 .text-wrapper-4 {
     color: #40ddb6;
+    margin-right: 0px;
   }
   
   .box2 .text-wrapper-5 {
