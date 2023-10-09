@@ -22,6 +22,8 @@ public class Method {
         // 1. base64로 인코딩하기
         method.base64Encoded(originalFile, fullFile);
 
+
+        
         // 2. 음성 파일을 20초 단위로 자르기
         List<String> audioSegments = method.splitAudioInto20SecondSegments(fullFile, cutFiles);
 
@@ -365,6 +367,30 @@ public class Method {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+}
+
+class TranslationResponse {
+    private Message message;
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public static class Message {
+        private Result result;
+
+        public Result getResult() {
+            return result;
+        }
+    }
+
+    public static class Result {
+        private String translatedText;
+
+        public String getTranslatedText() {
+            return translatedText;
         }
     }
 }
