@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class filePathSaveController {
-    @GetMapping("/index")
-    public String index() {
-        return "index";
+    @GetMapping("/filePathSave")
+    public String filePathSave() {
+        return "filePathSave";
     }
 }

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MP3 to Text Converter</title>
+    <title>mp3 file path save</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <h1>MP3 to Text Converter</h1>
+    <h1>mp3 file path save</h1>
     <form onsubmit="event.preventDefault(); uploadAndSavePath();">
       <input type="file" id="file" name="file" accept=".mp3" />
       <button type="submit">경로 저장</button>
@@ -13,10 +13,7 @@
     <script type="text/javascript">
       function uploadAndSavePath() {
         var formData = new FormData();
-        var audioFilePath = document.getElementById("file").value; // 사용자가 선택한 파일 경로
-
         formData.append("file", document.getElementById("file").files[0]);
-        formData.append("audioFilePath", audioFilePath);
 
         axios
           .post("/saveAudioFilePath", formData)
