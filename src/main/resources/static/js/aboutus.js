@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
     text.addEventListener("click", function() {
         window.location.href = "home.html";
     });
+});
 
-    // 로그인 버튼을 클릭하면 signup.html로 이동하게 합니다.
-    loginBtn.addEventListener("click", function() {
-        window.location.href = "signup.html";
-    });
+document.getElementById('login-btn').addEventListener('click', function() {
+    window.location.href = 'login.html';
 });
