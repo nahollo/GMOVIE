@@ -4,28 +4,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import jakarta.servlet.http.HttpSession;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.Files;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8801")
-public class saveAudioFilePath {
+public class SaveAudioFilePath {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     @PostMapping("/saveAudioFilePath")
-    public ResponseEntity<String> postAudioPath(@RequestParam("file") MultipartFile file) {
-        // 업로드된 파일을 처리하는 로직
+    public ResponseEntity<String> postAudioPath(@RequestParam("file") MultipartFile file, HttpSession session) {
+
+        // Get the UUID from the current session.
+        String mettingId = (String) session.getAttribute("mettingRoomId");
+
+        if (mettingId == null) {
+            return new ResponseEntity<>("로그인 후 이용해주세요.", HttpStatus.UNAUTHORIZED);
+        }
+
         if (!file.isEmpty()) {
             try {
-                // files 폴더는 프로젝트 루트 디렉토리 아래에 위치
                 Path filePath = Paths.get("files/" + file.getOriginalFilename());
 
                 if (!Files.exists(filePath.getParent())) {
@@ -34,10 +40,10 @@ public class saveAudioFilePath {
 
                 Files.write(filePath, file.getBytes());
 
-                // DB에 파일 경로 저장하는 로직 (상대 경로 저장)
+                // Update the RECORDING column for the row with the current mettingId.
                 jdbcTemplate.update(
-                        "INSERT INTO SUMMARY (RECORDING) VALUES (?)",
-                        filePath.toString());
+                        "UPDATE SUMMARY SET RECORDING = ? WHERE METTING_ID = ?",
+                        filePath.toString(), mettingId);
 
                 return new ResponseEntity<>("Path saved successfully.", HttpStatus.OK);
             } catch (Exception e) {

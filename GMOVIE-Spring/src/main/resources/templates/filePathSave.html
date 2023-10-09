@@ -10,6 +10,7 @@
       <input type="file" id="file" name="file" accept=".mp3" />
       <button type="submit">경로 저장</button>
     </form>
+    <button onclick="mettingRoom()">uuid</button>
     <script type="text/javascript">
       function uploadAndSavePath() {
         var formData = new FormData();
@@ -21,7 +22,25 @@
             alert("File uploaded and path saved successfully!");
           })
           .catch(function (error) {
-            alert("Failed to upload file or save path!");
+            if (error.response && error.response.status === 401) {
+              alert(error.response.data);
+              setTimeout(function () {
+                alert(null);
+              }, 3000);
+            } else {
+              alert("파일을 선택해주세요.");
+            }
+          });
+      }
+
+      function mettingRoom() {
+        axios
+          .get("/mettingRoom")
+          .then(function (response) {
+            alert(response.data);
+          })
+          .catch(function (error) {
+            console.log(error);
           });
       }
     </script>
