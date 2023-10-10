@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.servlet.http.HttpSession;
 
 @RestController
-public class MettingRoomTest {
+public class MettingRoom {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -21,7 +21,7 @@ public class MettingRoomTest {
         String noHyphenUUID = uuid4.toString().replace("-", "");
 
         session.setAttribute("mettingRoomId", noHyphenUUID);
-        session.setMaxInactiveInterval(15);
+        session.setMaxInactiveInterval(30 * 60);
 
         jdbcTemplate.update("INSERT INTO SUMMARY (METTING_ID, NO) VALUES (?, ?)", noHyphenUUID, 1);
 

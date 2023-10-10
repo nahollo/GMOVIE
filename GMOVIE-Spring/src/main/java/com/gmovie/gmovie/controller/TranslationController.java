@@ -1,16 +1,19 @@
 package com.gmovie.gmovie.controller;
 
-import java.io.IOException;
-
 import com.gmovie.gmovie.service.TranslationService;
-import com.method.SpeechToText1;
+import com.method.Method;
 
-import org.springframework.ui.Model;
-import org.springframework.stereotype.Controller;
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.io.IOException;
+
+import org.springframework.stereotype.Controller;
+
+import org.springframework.ui.Model;
 
 @Controller
 public class TranslationController {
@@ -41,7 +44,7 @@ public class TranslationController {
 
     @GetMapping("/temp")
     public String temp(Model model) throws IOException {
-        SpeechToText1 method = new SpeechToText1();
+        Method method = new Method();
         String originalText = "";
         String toEngText = translationService.korToEng(originalText);
         String toKorText = translationService.engToKor(toEngText);
