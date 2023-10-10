@@ -97,10 +97,10 @@ body {
 
 .text-box {
     position: absolute; /* 박스의 위치를 절대 위치로 지정합니다. */
-    top: 160px; /* 상위 요소인 .main-content의 상단에 위치시킵니다. */
+    top: 140px; /* 상위 요소인 .main-content의 상단에 위치시킵니다. */
     left: 0; /* 상위 요소인 .main-content의 왼쪽에 위치시킵니다. */
     width: 828px;
-    height: 775px;
+    height: 815px;
     background-color: #37393F;
     color: #FFF;
     display: flex;
