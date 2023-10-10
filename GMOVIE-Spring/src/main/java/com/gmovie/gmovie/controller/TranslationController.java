@@ -1,16 +1,11 @@
 package com.gmovie.gmovie.controller;
 
 import com.gmovie.gmovie.service.TranslationService;
-import com.method.Method;
-
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.io.IOException;
-
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
@@ -42,12 +37,11 @@ public class TranslationController {
     }
 
     @GetMapping("/temp")
-    public String temp(Model model) throws IOException {
-        Method method = new Method();
-        String originalText = "";
+    public String temp(Model model) {
+        String originalText = "안녕 클레오파트라 세상에서 제일가는 포테이토칩";
         String toEngText = translationService.korToEng(originalText);
         String toKorText = translationService.engToKor(toEngText);
-
+    
         // 모델에 데이터 추가
         model.addAttribute("originalText", originalText);
         model.addAttribute("toEngText", toEngText);

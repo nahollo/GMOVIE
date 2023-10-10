@@ -22,8 +22,6 @@ repositories {
 }
 
 dependencies {
-	
-	
 
 	implementation 'com.google.code.gson:gson:2.10.1'
 
@@ -46,11 +44,14 @@ dependencies {
 	implementation 'org.apache.httpcomponents:httpclient'
 
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-messaging'
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+      
+	// chat 
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	
 	
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'

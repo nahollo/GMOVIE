@@ -26,4 +26,9 @@ public interface UserMapper {
   
   @Insert("insert into user3 (name, email, pwd, gender) values (#{name},#{email},#{pwd},#{gender})")
   public int save(UserDTO uDto);
+
+  @Select("SELECT * FROM user3 WHERE email = #{email}")
+  public UserDTO findByEmail(String email);
+  
+
 }
