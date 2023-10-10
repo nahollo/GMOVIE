@@ -1,6 +1,6 @@
 body {
     width: 1920px;
-    height: 9248px;
+    height: 1248px;
     background-color: #FFFFFF; /* 하얀색 */
     margin: 0;
     padding: 0;
@@ -78,3 +78,392 @@ body {
 .login-button:hover {
     background-color: #555;
 }
+
+.main-image-container {
+    width: 1920px;
+    height: 815px;
+    overflow: hidden; /* 이미지가 지정한 크기보다 크면 숨깁니다. */
+}
+
+.main-image {
+    width: 1920px;
+    height: 815px;
+    display: block;
+}
+
+.main-content {
+    position: relative; /* flexbox를 사용하여 내부 요소를 가로로 배열합니다. */
+}
+
+.text-box {
+    position: absolute; /* 박스의 위치를 절대 위치로 지정합니다. */
+    top: 140px; /* 상위 요소인 .main-content의 상단에 위치시킵니다. */
+    left: 0; /* 상위 요소인 .main-content의 왼쪽에 위치시킵니다. */
+    width: 828px;
+    height: 815px;
+    background-color: #37393F;
+    color: #FFF;
+    display: flex;
+    background-color: rgba(55, 57, 63, 0.96);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1; /* 박스를 사진 위로 올립니다. */
+}
+.main-image-container {
+    width: 1920px;
+    height: 815px;
+    overflow: hidden;
+    z-index: 0; /* 이미지가 박스 아래에 위치하도록 지정합니다. */
+}
+
+.main-image {
+    width: 1920px;
+    height: 815px;
+    display: block;
+}
+
+.text-box p {
+    text-align: left; /* 텍스트를 왼쪽으로 정렬 */
+    margin-right: 150px;
+    margin-bottom: 350px;
+    display: inline-block;
+    vertical-align: top; /* 여기를 추가 */
+    color: #FFF; /* 텍스트 색상을 흰색으로 설정. 필요하면 다른 색상으로 변경 가능 */
+    font-size: 19px; /* 텍스트 크기 설정. 원하는 크기로 조절 가능 */
+}
+
+.main-heading {
+    color: #FFF; /* 텍스트 색상을 흰색으로 설정 */
+    font-size: 40px; /* 글씨 크기. 원하는 크기로 조절하세요. */
+    font-weight: bold; /* 글씨를 굵게 설정 */
+    text-align: left; /* 텍스트를 왼쪽으로 정렬 */
+    margin-top: 0px; /* "GMOVIE에 오신 것을 환영합니다."와의 간격 조절. 원하는 간격으로 조절 가능 */
+}
+
+.content .span {
+    color: #40ddb6;
+    margin-left: 130px;
+  }
+
+  .content .global-meeting {
+    position: relative;
+    top: 70px;
+    width: 591px;
+    font-family: "Poppins-Bold", Helvetica;
+    font-weight: 700;
+    color: transparent;
+    font-size: 67px;
+    letter-spacing: 0;
+    line-height: 62.7px;
+  }
+
+  .content .text-wrapper-2 {
+    color: #ffffff;
+  }
+
+  .content .text-wrapper {
+    width: 482px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #b8b8b8;
+    line-height: 26.3px;
+    position: relative;
+    top: 30px;
+    top: -250px;
+    margin-top: 30px;
+    font-size: 18px;
+    letter-spacing: 0;
+    left: 135px;
+  }
+
+  .box2 {
+    position: relative;
+    width: 1920px;
+    height: 703px;
+    margin-top: -100px;
+  }
+  
+  .box2 .footer {
+    position: relative;
+    width: 1920px;
+    height: 850px;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    background-color: #4c4d51;
+    background-size: 100% 100%;
+    margin-top: 300px;
+  }
+  
+  .box2 .content {
+    width: 1220px;
+    align-items: center;
+    gap: 50px;
+    position: absolute;
+    top: 95px;
+    left: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box2 .header {
+    position: relative;
+    width: 1220px;
+    height: 122px;
+    background-color: #4c4d51;
+  }
+  
+  .box2 .line {
+    position: absolute;
+    top: 121px;
+    left: 0;
+    width: 1217px;
+    height: 1px;
+    object-fit: cover;
+  }
+  
+  .box2 .div {
+    display: flex;
+    width: 0px;
+    align-items: center;
+    gap: 185px;
+    position: absolute;
+    top: 0;
+    left: 1px;
+  }
+  
+  .box2 .logo {
+    position: relative;
+    width: 1px;
+    height: 1px;
+  }
+  
+  .box2 .contact {
+    display: flex;
+    width: 834px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 60px;
+    position: relative;
+  }
+  
+  .box2 .call {
+    display: flex;
+    width: 226px;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .box2 .img-wrapper {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    background-color: #4c4d51;
+    border-radius: 34px;
+  }
+  
+  .box2 .vector {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 20px;
+    left: 22px;
+  }
+  
+  .box2 .content-2 {
+    width: 148px;
+    align-items: flex-start;
+    gap: 3px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box2 .text-wrapper {
+    top: -5px;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+    font-size: 20px;
+    width: fit-content;
+    color: #ffffff;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: -135px;
+  }
+  
+  .box2 .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .box2 .mail {
+    display: flex;
+    width: 242px;
+    align-items: center;
+    gap: 11px;
+    position: relative;
+  }
+  
+  .box2 .icon {
+    position: absolute;
+    width: 28px;
+    height: 22px;
+    top: 23px;
+    left: 20px;
+  }
+  
+  .box2 .content-3 {
+    width: 163px;
+    align-items: flex-start;
+    gap: 3px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box2 .text-wrapper-3 {
+    top: 5px;
+    position: relative;
+    width: fit-content;
+    margin-right: -16px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .box2 .location {
+    display: flex;
+    width: 246px;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .box2 .img {
+    position: absolute;
+    width: 22px;
+    height: 32px;
+    top: 19px;
+    left: 23px;
+  }
+  
+  .box2 .content-4 {
+    width: 168px;
+    align-items: flex-start;
+    gap: 3px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box2 .details {
+    display: flex;
+    width: 1220.01px;
+    align-items: flex-start;
+    gap: 82px;
+    position: relative;
+    flex: 0 0 auto;
+  }
+  
+  .box2 .subscribe {
+    display: flex;
+    flex-direction: column;
+    width: 1220px;
+    height: 243px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 42px 0px 42px 36px;
+    position: relative;
+    background-color: #47494f;
+  }
+  
+  .box2 .p {
+    position: relative;
+    width: fit-content;
+    font-family: "Poppins-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 10px;
+  }
+  
+  .box2 .copyrights {
+    flex-direction: column;
+    gap: 22px;
+    display: flex;
+    width: 1219.84px;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+    margin-left: -250px;
+  }
+  
+  .box2 .line-2 {
+    position: relative;
+    margin-top: -1px;
+    width: 1217px;
+    height: 1px;
+    object-fit: cover;
+  }
+  
+  .box2 .copyright-GMOVIE-wrapper {
+    gap: 308px;
+    display: flex;
+    width: 1219.84px;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+    margin-left: 260px;
+  }
+  
+  .box2 .copyright-GMOVIE {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 26px;
+    white-space: nowrap;
+  }
+
+  .copyright-GMOVIE .span {
+    margin-left: 0px;  /* 좌측 마진을 0으로 설정 */
+}
+  
+  .box2 .span {
+    color: #ffffff;
+  }
+  
+  .box2 .text-wrapper-4 {
+    color: #40ddb6;
+    margin-right: 0px;
+  }
+  
+  .box2 .text-wrapper-5 {
+    color: #6b77e5;
+  }
+  
+  .box2 .element {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 109px;
+    left: 310px;
+    object-fit: cover;
+  }
