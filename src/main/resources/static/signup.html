@@ -16,8 +16,8 @@
     <div class="top-bar"></div>
     <div class="header">
         <div class="logo-container">
-            <img src="./img/gmovie_logo.png" alt="로고" class="logo">
-            <span class="site-name">GMOVIE</span>
+            <img src="./img/gmovie_logo.png" alt="로고" class="logo" id="gmovie-logo">
+            <span class="site-name" id="gmovie-text">GMOVIE</span>
         </div>
         <nav class="navbar">
             <ul>
@@ -78,8 +78,8 @@
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">생일</label><br>
                     <input type="text" class="form-control d-inline-block" id="my_year" aria-describedby="emailHelp"
-                        style="width: 100px; max-width: 100px;" maxlength='4'>년
-                    <select id="month">
+                        style="width: 90px;" maxlength='4'>년
+                    <select id="month" class="form-select d-inline-block" aria-label="Default select example" style="width: 60px">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -94,7 +94,7 @@
                         <option value="12">12</option>
                     </select>
                     월
-                    <select id="day">
+                    <select id="day" class="form-select d-inline-block" aria-label="Default select example" style="width: 60px">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
