@@ -88,6 +88,7 @@ body {
     width: 1920px;
     height: 815px;
     display: block;
+    margin-top: 20px;
 }
 
 .main-content {
@@ -97,7 +98,7 @@ body {
 
 .text-box {
     position: absolute; /* 박스의 위치를 절대 위치로 지정합니다. */
-    top: 140px; /* 상위 요소인 .main-content의 상단에 위치시킵니다. */
+    top: 160px; /* 상위 요소인 .main-content의 상단에 위치시킵니다. */
     left: 0; /* 상위 요소인 .main-content의 왼쪽에 위치시킵니다. */
     width: 828px;
     height: 815px;
@@ -835,7 +836,7 @@ body {
     display: flex;
     align-items: flex-start;
     position: relative;
-    margin-left: 17px;
+    margin-left: 15px;
   }
   
   .services .icon-4 {
@@ -852,12 +853,14 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 70px 106px 72px;
+    padding: 70px 10px 72px;
     flex: 0 0 auto;
     background-color: #6b77e5;
-    height: 92px;
+    width: 385px;
+    height: 173px;
     gap: 10px;
     position: relative;
+    left: -8px;
   }
   
   .services .text-wrapper-3 {
