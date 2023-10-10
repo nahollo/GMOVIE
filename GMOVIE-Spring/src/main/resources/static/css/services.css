@@ -692,6 +692,7 @@ body {
     letter-spacing: 0;
     line-height: 36.3px;
     white-space: nowrap;
+    top: 27px;
   }
   
   .why-choose .text-wrapper-2 {
@@ -703,6 +704,7 @@ body {
     font-size: 18px;
     letter-spacing: 0;
     line-height: 26.3px;
+    top: 25px;
   }
   
   .why-choose .points {
@@ -811,6 +813,7 @@ body {
     padding: 32px 35px;
     position: relative;
     background-color: #f4f4f4;
+    top: 80px;
   }
   
   .why-choose .content-3 {
@@ -1131,7 +1134,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 411px;
-    height: 331px;
+    height: 349px;
     align-items: flex-start;
     gap: 10px;
     padding: 56px 37px;

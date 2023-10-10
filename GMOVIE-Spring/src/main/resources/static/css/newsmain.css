@@ -316,6 +316,7 @@ body {
     gap: 10px;
     padding: 0px 34px;
     position: relative;
+    width: 380px;
   }
   
   .blog .content-2 {
