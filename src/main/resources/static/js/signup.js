@@ -1,27 +1,23 @@
 var confirmRrn = false;
 
 function validate() {
-    var idRegex = /^[a-zA-Z0-9]{4,12}$/;
+    var idRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     var passwordRegex = /^[a-zA-Z0-9]{4,12}$/;
-    var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     var rrnRegex = /^\d{13}$/;
 
     var idInput = document.getElementById('my_id').value;
     var passwordInput = document.getElementById('my_password').value;
     var password2Input = document.getElementById('my_password2').value;
-    var emailInput = document.getElementById('my_email').value;
     var rrnInput = document.getElementById('my_rrn').value;
     var nameInput = document.getElementById('my_name').value;
 
-    var hobbyInputs = document.getElementsByName('my_hobby');
-    var infoInput = document.getElementById('my_info').value;
 
     if (idInput == "") {
-        alert('아이디를 입력해주세요.');
+        alert('이메일을 입력해주세요.');
         return false;
     }
     if (!idRegex.test(idInput)) {
-        alert('아이디는 4~12자의 영문 대소문자와 숫자로만 입력해야 합니다.');
+        alert('이메일 형식이 정확하지 않습니다.');
         document.getElementById('my_id').value = "";
         return false;
     }
@@ -40,38 +36,28 @@ function validate() {
         document.getElementById('my_password2').value = "";
         return false;
     }
-    if (!emailRegex.test(emailInput)) {
-        alert('올바른 이메일 주소를 입력해야 합니다.');
-        document.getElementById('my_email').value = "";
-        return false;
-    }
     if (nameInput == "") {
         alert('이름을 입력해주세요.');
         return false;
     }
-    if (document.getElementById('zip-code').value == "" && document.getElementById('address-1').value == "" && document.getElementById('address-1-1').value == "" && document.getElementById('address-2').value == "") {
+    if(document.getElementById('zip-code').value == "" && document.getElementById('address-1').value == "" &&  document.getElementById('address-2').value == ""){
         alert('주소를 입력해주세요.');
         return false;
-    }
+     }
     if (!confirmRrn) {
         alert('주민등록번호 인증을 해주세요.');
         return false;
     }
-    var isHobbySelected = false;
-    for (var i = 0; i < hobbyInputs.length; i++) {
-        if (hobbyInputs[i].checked) {
-            isHobbySelected = true;
-            break;
-        }
-    }
-    if (!isHobbySelected) {
-        alert('관심분야는 최소 1개 이상 선택해주세요.');
+
+    if (!confirmRrn) {
+        alert('주민등록번호 인증을 해주세요.');
         return false;
     }
-    if (infoInput.length < parseInt(20)) {
-        alert('자기소개는 20자 이상 작성해주세요');
-        return false;
-    }
+    
+    alert("회원가입이 완료되었습니다!");
+    // 회원가입 완료 후 원하는 동작(예: 이메일 전송)을 수행하려면 아래의 코드를 추가합니다.
+    // window.location.href = `mailto:${mailAddress.value}?subject=회원가입 완료&body=회원가입을 환영합니다.`;
+    return true;
 }
 
 function rrnConfirm() {
@@ -123,42 +109,25 @@ function rrnConfirm() {
         return false;
     }
 
-    alert("회원가입이 완료되었습니다!");
-    window.location.href = `mailto:${mailAddress.value}?subject=회원가입 완료&body=회원가입을 환영합니다.`;
-    return true;
+    // alert("회원가입이 완료되었습니다!");
+    // window.location.href = `mailto:${mailAddress.value}?subject=회원가입 완료&body=회원가입을 환영합니다.`;
+    // return true;
 }
 
 function execDaumPostcode() {
-    console.log('execDaumPostcode() 함수 실행');
     new daum.Postcode({
-        oncomplete: function (data) {
-            console.log('제발');
-            var addr = '';
-            var extraAddr = '';
-            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                addr = data.roadAddress;
-            } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                addr = data.jibunAddress;
-            }
-            if (data.userSelectedType === 'R') {
-                if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
-                    extraAddr += data.bname;
-                }
-                if (data.buildingName !== '' && data.apartment === 'Y') {
-                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                }
-                if (extraAddr !== '') {
-                    extraAddr = ' (' + extraAddr + ')';
-                }
-                document.getElementById("address-1-1").value = extraAddr;
-
-            } else {
-                document.getElementById("address-1-1").value = '';
-            }
-
-            document.getElementById('zip-code').value = data.zonecode;
-            document.getElementById("address-1").value = addr;
-            document.getElementById("address-2").focus();
-        }
+       oncomplete: function(data) {
+          var addr = '';
+          
+          if (data.userSelectedType === 'R') {
+             addr = data.roadAddress;
+          } else if (data.userSelectedType === 'J') {
+             addr = data.jibunAddress;
+          }
+          
+          document.getElementById('zip-code').value = data.zonecode;
+          document.getElementById("address-1").value = addr;
+          document.getElementById("address-2").focus();
+       }
     }).open();
-}
+ }
