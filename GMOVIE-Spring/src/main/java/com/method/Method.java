@@ -40,7 +40,7 @@ public class Method {
 
         // 6. 텍스트 요약
         String summarizedText = method.summarizeText(combinedResult);
-        System.out.println("요약된 텍스트: \n" + tempText2);
+        System.out.println("요약된 텍스트: \n" + summarizedText);
     }
 
     public void base64Encoded(String originalFile, String fullFile) {
@@ -365,6 +365,30 @@ public class Method {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+}
+
+class TranslationResponse {
+    private Message message;
+
+    public Message getMessage() {
+        return message;
+    }
+
+    public static class Message {
+        private Result result;
+
+        public Result getResult() {
+            return result;
+        }
+    }
+
+    public static class Result {
+        private String translatedText;
+
+        public String getTranslatedText() {
+            return translatedText;
         }
     }
 }
