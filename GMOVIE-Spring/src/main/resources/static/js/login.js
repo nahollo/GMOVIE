@@ -4,19 +4,22 @@ document.addEventListener("DOMContentLoaded", function() {
     var loginBtn = document.getElementById("login-btn");
 
     logo.addEventListener("click", function() {
-        window.location.href = "home.html";
+        window.location.href = "http://gmovie.co.kr/home";
     });
 
     text.addEventListener("click", function() {
-        window.location.href = "home.html";
+        window.location.href = "http://gmovie.co.kr/home";
     });
 
     loginBtn.addEventListener('click', function() {
-        window.location.href = 'login.html';
+        // window.location.href = 'login.html';
+        login();
     });
 
     const form = document.querySelector('.custom-form');
     form.addEventListener('submit', function(event) {
+
+    
         // 아이디 (이메일 형식) 유효성 검사
         const email = document.getElementById('exampleInputEmail1').value;
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -49,10 +52,37 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             return;
         }
+
+
     });
 });
 
 document.getElementById("signup").addEventListener("click", function(event) {
     event.preventDefault();
-    window.location.href = "signup.html";
+    window.location.href = "http://gmovie.co.kr/signup";
 });
+
+
+function login() {
+    
+    const email = document.getElementById('exampleInputEmail1').value;
+    const password = document.getElementById('exampleInputPassword1').value;
+
+    // 创建一个包含用户数据的对象
+    const user = { email:email, pwd: password };
+
+    // 发送POST请求
+    axios.post("http://gmovie.co.kr/login", user)
+        .then((response) => {
+            if (response.status === 200) {
+                // sessionStorage保存
+                const userNo = response.data.no;
+                sessionStorage.setItem("userNo", JSON.stringify(userNo));
+                // 重定向到其他页面
+                window.location.href = "http://gmovie.co.kr/home";
+            } else {
+                alert(response.data);
+            }
+        })
+        .catch((error) => console.log(error));
+}

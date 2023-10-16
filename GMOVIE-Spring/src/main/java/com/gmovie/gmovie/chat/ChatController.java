@@ -36,11 +36,4 @@ public class ChatController {
         return chatMessage;
     }
 
-    @GetMapping("/calendar")
-    public String showCalendarPage() {
-    return "calendar"; // 返回日历页面的视图名称
-}
-
-
-
 }

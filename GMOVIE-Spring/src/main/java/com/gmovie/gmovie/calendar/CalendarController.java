@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/api/calendar") // 定义API端点的根路径
 public class CalendarController {
@@ -17,6 +16,12 @@ public class CalendarController {
     @GetMapping("/events")
     public ResponseEntity<?> getAllEvents() {
         List<CalendarEventDTO> events = calendarEventService.getAllEvents();
+        return ResponseEntity.ok(events);
+    }
+
+    @GetMapping("/events/{userno}")
+    public ResponseEntity<List<CalendarEventDTO>> getEventsByUser(@PathVariable int userno) {
+        List<CalendarEventDTO> events = calendarEventService.getEventsByUser(userno);
         return ResponseEntity.ok(events);
     }
 
@@ -40,5 +45,5 @@ public class CalendarController {
         calendarEventService.deleteEvent(eventId);
         return ResponseEntity.ok("Event deleted successfully");
     }
-    
+
 }

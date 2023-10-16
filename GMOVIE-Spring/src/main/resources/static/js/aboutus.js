@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
     var loginBtn = document.getElementById("login-btn"); // 로그인 버튼을 찾습니다.
 
     logo.addEventListener("click", function() {
-        window.location.href = "home.html";
+        window.location.href = "home";
     });
 
     text.addEventListener("click", function() {
-        window.location.href = "home.html";
+        window.location.href = "home";
     });
 });
 
 document.getElementById('login-btn').addEventListener('click', function() {
-    window.location.href = 'login.html';
+    window.location.href = 'login';
 });

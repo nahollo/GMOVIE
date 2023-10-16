@@ -1,4 +1,4 @@
-package com.method;
+package com.gmovie.gmovie.method;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -13,34 +13,69 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class Method {
-    public static void main(String[] args) throws IOException {
-        String originalFile = "C:\\Users\\skgud\\OneDrive\\Desktop\\MyVoice.m4a";
-        String fullFile = "C:\\Users\\skgud\\Downloads\\output.wav";
-        String cutFiles = "C:\\Users\\skgud\\Downloads\\audio_segments";
-        Method method = new Method();
+
+    public Map<String, String> summary(String meetingRoomId) throws IOException {
+
+        String userHome = System.getProperty("user.home");
+        String osName = System.getProperty("os.name").toLowerCase();
+        String desktopPath;
+
+        if (osName.contains("win")) {
+            // Windows
+            desktopPath = userHome + File.separator + "Desktop" + File.separator;
+        } else if (osName.contains("mac")) {
+            // Mac
+            desktopPath = userHome + File.separator + "Desktop" + File.separator;
+        } else if (osName.contains("nix") || osName.contains("nux") || osName.indexOf("aix") > 0) {
+            // Unix or Linux
+            desktopPath = userHome + File.separator + "Desktop" + File.separator;
+        } else {
+            // Fallback to user home directory
+            desktopPath = userHome + File.separator;
+        }
+
+        String originalFile = desktopPath + meetingRoomId + File.separator + "MyVoice.m4a";
+        String originalFile2 = meetingRoomId + File.separator + "MyVoice.m4a";
+        String fullFile = desktopPath + meetingRoomId + File.separator + "output.wav";
+        String cutFiles = desktopPath + "audio_segments";
+
+        // Create directories as needed
+        try {
+            Files.createDirectories(Paths.get(desktopPath, meetingRoomId));
+        } catch (IOException e) {
+            System.err.println("An error occurred while creating directories: " + e.getMessage());
+        }
 
         // 1. base64로 인코딩하기
-        method.base64Encoded(originalFile, fullFile);
+        base64Encoded(originalFile, fullFile);
 
         // 2. 음성 파일을 20초 단위로 자르기
-        List<String> audioSegments = method.splitAudioInto20SecondSegments(fullFile, cutFiles);
+        List<String> audioSegments = splitAudioInto20SecondSegments(fullFile, cutFiles);
 
         // 3. 각 자른 음성 파일에 STT 적용하기
-        List<String> sttResults = method.applySTTToAudioSegments(audioSegments);
+        List<String> sttResults = applySTTToAudioSegments(audioSegments);
 
         // 4. 각 STT 결과를 통합하기
-        String combinedResult = method.combineSTTResults(sttResults);
+        String combinedResult = combineSTTResults(sttResults);
         System.out.println("STT 텍스트: \n" + combinedResult);
 
         // 5. STT 결과 번역
-        String tempText = method.translateText(combinedResult, "ko", "en");
-        String tempText2 = method.translateText(tempText, "en", "ko");
+        String tempText = translateText(combinedResult, "ko", "en");
+        String tempText2 = translateText(tempText, "en", "ko");
+
         System.out.println("한국어에서 영어로 번역된 텍스트: \n" + tempText);
         System.out.println("영어에서 한국어로 번역된 텍스트: \n" + tempText2);
 
         // 6. 텍스트 요약
-        String summarizedText = method.summarizeText(combinedResult);
+        String summarizedText = summarizeText(combinedResult);
         System.out.println("요약된 텍스트: \n" + summarizedText);
+
+        Map<String, String> resultMap = new HashMap<>();
+        resultMap.put("originalFile", originalFile2);
+        resultMap.put("summarizedText", summarizedText);
+        resultMap.put("combinedResult", combinedResult);
+
+        return resultMap;
     }
 
     public void base64Encoded(String originalFile, String fullFile) {
@@ -136,19 +171,19 @@ public class Method {
         String languageCode = "korean"; // 언어 코드
 
         /*
-        korean: 한국어 음성인식 코드
-        english: 영어 음성인식 코드
-        japanese: 일본어 음성인식 코드
-        chinese: 중국어 음성인식 코드
-        spanish: 스페인어 음성인식 코드
-        french: 프랑스어 음성인식 코드
-        german: 독일어 음성인식 코드
-        russian: 러시아어 음성인식 코드
-        vietnam: 베트남어 음성인식 코드
-        arabic: 아랍어 음성인식 코드
-        thailand: 태국어 음성인식 코드
-        portuguese: 포르투칼어 음성인식 코드
-        */
+         * korean: 한국어 음성인식 코드
+         * english: 영어 음성인식 코드
+         * japanese: 일본어 음성인식 코드
+         * chinese: 중국어 음성인식 코드
+         * spanish: 스페인어 음성인식 코드
+         * french: 프랑스어 음성인식 코드
+         * german: 독일어 음성인식 코드
+         * russian: 러시아어 음성인식 코드
+         * vietnam: 베트남어 음성인식 코드
+         * arabic: 아랍어 음성인식 코드
+         * thailand: 태국어 음성인식 코드
+         * portuguese: 포르투칼어 음성인식 코드
+         */
 
         Gson gson = new Gson();
         for (String audioSegment : audioSegments) {
@@ -294,7 +329,8 @@ public class Method {
                     errorResponse.append(errorLine);
                 }
 
-                throw new IOException("HTTP 요청 실패. 응답 코드: " + responseCode + "\n오류 응답 본문: " + errorResponse.toString());
+                throw new IOException(
+                        "HTTP 요청 실패. 응답 코드: " + responseCode + "\n오류 응답 본문: " + errorResponse.toString());
             }
         }
     }
@@ -347,7 +383,8 @@ public class Method {
             // API 응답 읽기
             int responseCode = connection.getResponseCode();
             if (responseCode == 200) {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
+                BufferedReader reader = new BufferedReader(
+                        new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
                 StringBuilder response = new StringBuilder();
                 String line;
                 while ((line = reader.readLine()) != null) {

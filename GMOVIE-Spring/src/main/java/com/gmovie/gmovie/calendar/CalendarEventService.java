@@ -38,5 +38,11 @@ public class CalendarEventService {
         // 执行删除事件的业务逻辑，例如从数据库中删除事件
         calendarEventMapper.delete(eventId);
     }
-}
 
+    public List<CalendarEventDTO> getEventsByUser(int userno) {
+        // 使用Mapper查询数据库或执行相应的操作，以根据用户 ID 获取事件
+        List<CalendarEventDTO> events = calendarEventMapper.findByUser(userno);
+        return events;
+    }
+
+}
