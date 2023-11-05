@@ -83,6 +83,7 @@ body {
     width: 1920px;
     height: 815px;
     overflow: hidden; /* 이미지가 지정한 크기보다 크면 숨깁니다. */
+    margin-top: 20px;
 }
 
 .main-image {
@@ -97,7 +98,7 @@ body {
 
 .text-box {
     position: absolute; /* 박스의 위치를 절대 위치로 지정합니다. */
-    top: 140px; /* 상위 요소인 .main-content의 상단에 위치시킵니다. */
+    top: 160px; /* 상위 요소인 .main-content의 상단에 위치시킵니다. */
     left: 0; /* 상위 요소인 .main-content의 왼쪽에 위치시킵니다. */
     width: 828px;
     height: 815px;
@@ -409,12 +410,14 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 70px 106px 72px;
+    padding: 70px 10px 72px;
     flex: 0 0 auto;
     background-color: #6b77e5;
-    height: 92px;
+    width: 395px;
+    height: 173px;
     gap: 10px;
     position: relative;
+    left: -8px;
   }
   
   .services .text-wrapper-3 {
@@ -671,7 +674,7 @@ body {
   
   .why-choose .text-wrapper {
     position: absolute;
-    top: 0;
+    top: -30px;
     left: 0;
     font-family: "Inter-Medium", Helvetica;
     font-weight: 500;
@@ -740,6 +743,7 @@ body {
     font-size: 20px;
     letter-spacing: 0;
     line-height: normal;
+    margin-top: 15px;
   }
   
   .why-choose .span {
@@ -784,6 +788,7 @@ body {
     position: relative;
     width: 520px;
     height: 555px;
+    margin-top: 220px;
   }
   
   .why-choose .frame {
@@ -1131,7 +1136,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 411px;
-    height: 331px;
+    height: 349px;
     align-items: flex-start;
     gap: 10px;
     padding: 56px 37px;

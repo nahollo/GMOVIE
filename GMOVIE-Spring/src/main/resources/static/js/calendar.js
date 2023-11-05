@@ -21,6 +21,7 @@ let today = new Date();
 let activeDay;
 let month = today.getMonth();
 let year = today.getFullYear();
+const storedUser = parseInt(sessionStorage.getItem("userNo"), 10); // 將其解析為數字
 
 const months = [
   "January",
@@ -56,7 +57,7 @@ const months = [
 // ];
 
 const eventsArr = [];
-getEvents();
+getEvents(storedUser);
 console.log(eventsArr);
 
 //function to add days in days with class day and prev-date next-date on previous month and next month days and active on today
@@ -288,25 +289,6 @@ addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
 });
 
-function defineProperty() {
-  var osccred = document.createElement("div");
-  osccred.innerHTML =
-    "A Project By <a href='https://www.youtube.com/channel/UCiUtBDVaSmMGKxg1HYeK-BQ' target=_blank>Open Source Coding</a>";
-  osccred.style.position = "absolute";
-  osccred.style.bottom = "0";
-  osccred.style.right = "0";
-  osccred.style.fontSize = "10px";
-  osccred.style.color = "#ccc";
-  osccred.style.fontFamily = "sans-serif";
-  osccred.style.padding = "5px";
-  osccred.style.background = "#fff";
-  osccred.style.borderTopLeftRadius = "5px";
-  osccred.style.borderBottomRightRadius = "5px";
-  osccred.style.boxShadow = "0 0 5px #ccc";
-  document.body.appendChild(osccred);
-}
-
-defineProperty();
 
 //allow only time in eventtime from and to
 addEventFrom.addEventListener("input", (e) => {
@@ -334,6 +316,7 @@ addEventSubmit.addEventListener("click", () => {
   const eventTitle = addEventTitle.value;
   const eventTimeFrom = addEventFrom.value;
   const eventTimeTo = addEventTo.value;
+  const eventId= generateUniqueId();
   if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
     alert("Please fill all the fields");
     return;
@@ -377,6 +360,7 @@ addEventSubmit.addEventListener("click", () => {
     return;
   }
   const newEvent = {
+    id: eventId,
     title: eventTitle,
     time: timeFrom + " - " + timeTo,
   };
@@ -398,6 +382,7 @@ addEventSubmit.addEventListener("click", () => {
 
   if (!eventAdded) {
     eventsArr.push({
+      userno:storedUser,
       day: activeDay,
       month: month + 1,
       year: year,
@@ -419,7 +404,8 @@ addEventSubmit.addEventListener("click", () => {
 
   // 创建事件对象
   const event = {
-    id: generateUniqueId(), // 事件的唯一标识，通常为空（由数据库生成）
+    userno:storedUser,
+    id: eventId, // 事件的唯一标识，通常为空（由数据库生成）
     title: eventTitle,
     day: activeDay,
     month: month + 1,
@@ -435,6 +421,7 @@ addEventSubmit.addEventListener("click", () => {
 function saveEventsToServer(event) {
   // 修改事件格式以匹配后端的期望
   const formattedEvent = {
+    userno: event.userno,
     id: event.id,
     title: event.title,
     day: event.day,
@@ -515,7 +502,28 @@ function deleteEventById(eventId) {
     })
     .then(data => {
       // 删除成功后执行更新界面的操作
-      eventsArr = eventsArr.filter(event => event.id !== eventId);
+      eventsArr.forEach((event) => {
+        if (
+          event.day === activeDay &&
+          event.month === month + 1 &&
+          event.year === year
+        ) {
+          event.events.forEach((item, index) => {
+           if (item.id === eventId) {
+             event.events.splice(index, 1);
+           }
+         });
+          //if no events left in a day then remove that day from eventsArr
+         if (event.events.length === 0) {
+           eventsArr.splice(eventsArr.indexOf(event), 1);
+           //remove event class from day
+           const activeDayEl = document.querySelector(".day.active");
+           if (activeDayEl.classList.contains("event")) {
+             activeDayEl.classList.remove("event");
+           }
+         }
+       }
+     });
       updateEvents(activeDay);
     })
     .catch(error => {
@@ -560,8 +568,8 @@ function saveEvents() {
 //}
 
 // Function to get events from Oracle
-function getEvents() {
-  fetch('/api/calendar/events')
+function getEvents(storedUser) {
+  fetch(`/api/calendar/events/${storedUser}`)
     .then(response => {
       if (response.ok) {
         return response.json();

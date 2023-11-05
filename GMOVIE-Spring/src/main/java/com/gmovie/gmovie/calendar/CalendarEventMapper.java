@@ -7,14 +7,14 @@ import java.util.List;
 @Mapper
 public interface CalendarEventMapper {
 
-    @Select("SELECT * FROM calendar_event WHERE id = #{id}")
-    CalendarEventDTO findById(String id);
+    @Select("SELECT * FROM calendar_event WHERE userno = #{userno}")
+    List<CalendarEventDTO> findByUser(int userno);
 
     @Select("SELECT * FROM calendar_event")
     List<CalendarEventDTO> findAll();
 
-    @Insert("INSERT INTO calendar_event (id, title, day, month, year, time) " +
-            "VALUES (#{id}, #{title}, #{day}, #{month}, #{year}, #{time})")
+    @Insert("INSERT INTO calendar_event (id, title, day, month, year, time, userno) " +
+            "VALUES (#{id}, #{title}, #{day}, #{month}, #{year}, #{time}, #{userno})")
     void insert(CalendarEventDTO event);
 
     @Update("UPDATE calendar_event " +

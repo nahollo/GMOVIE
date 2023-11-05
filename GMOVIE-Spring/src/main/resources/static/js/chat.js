@@ -10,7 +10,8 @@ var connectingElement = document.querySelector('.connecting');
 
 var stompClient = null;
 var username = null;
-const storedUser = JSON.parse(sessionStorage.getItem("userNo"));
+const storedUser = parseInt(sessionStorage.getItem("userNo"), 10); // 將其解析為數字
+
 
 
 var colors = [
@@ -56,7 +57,7 @@ function onError(error) {
 
 function sendMessage(event) {
     var messageContent = messageInput.value.trim();
-    if(messageContent && stompClient && storedUser === null) {
+    if(messageContent && stompClient && typeof storedUser !== 'undefined') {
         var chatMessage = {
             id: 1,
             sender_on:storedUser,

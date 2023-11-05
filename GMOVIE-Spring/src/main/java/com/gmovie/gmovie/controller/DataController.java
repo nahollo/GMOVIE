@@ -28,7 +28,7 @@ import org.springframework.http.HttpStatus;
 @RestController
 public class DataController {
       
-      @GetMapping("/1")
+      @GetMapping("/")
       public String home() {
           return "data 준비 중 ....";
       }
