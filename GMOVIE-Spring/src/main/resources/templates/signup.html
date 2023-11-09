@@ -1,159 +1,365 @@
-<!-- <!DOCTYPE html> -->
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<script src="./js/jsCode.js"></script>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
-    <link rel="stylesheet" href="./css/signup.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="./js/signup.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<title>Verti by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/main.css" />
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
-<body>
-    <div class="top-bar"></div>
-    <div class="header">
-        <div class="logo-container">
-            <img src="./img/gmovie_logo.png" alt="로고" class="logo" id="gmovie-logo">
-            <span class="site-name" id="gmovie-text">GMOVIE</span>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="home">Home</a></li>
-                <li><a href="aboutus">About Us</a></li>
-                <li><a href="experts">Experts</a></li>
-                <li><a href="services">Services</a></li>
-                <li><a href="newsmain">News</a></li>
-                <li><a href="contactus">Contact Us</a></li>
-            </ul>
-        </nav>
-        <button class="login-button" id="login-btn">로그인</button>
-    </div>
-    <br><br><br><br><br>
-    <div class="center-text">
-        <h1><strong>회원가입</strong></h1>
-    </div><br><br>
-    <div class="center-form-container">
-    <form class="center-form">
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">이메일</label>
-                <input type="email" class="form-control" id="my_id" aria-describedby="emailHelp" style="max-width: 300px;">
-                <div id="emailHelp" class="form-text">이메일을 입력해 주세요</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">비밀번호</label>
-                <input type="password" class="form-control" id="my_password" style="max-width: 300px;">
-                <div id="emailHelp" class="form-text">비밀번호를 입력해 주세요</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword2" class="form-label">비밀번호 확인</label>
-                <input type="password" class="form-control" id="my_password2" style="max-width: 300px;">
-                <div id="emailHelp" class="form-text">비밀번호를 다시 입력해 주세요</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">이름</label>
-                <input type="text" class="form-control" id="my_name" aria-describedby="emailHelp"
-                    style="max-width: 300px;">
-                <div id="emailHelp" class="form-text">이름을 입력해 주세요</div>
-            </div>
-            <!-- <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">주소</label><br>
-                <input type="text" id="zip-code" placeholder="우편번호" style="width: 110px" readonly>
-                     <input type="button" onClick="execDaumPostcode()" class="btn btn-primary" value="우편번호 찾기">
-                     <input type="text" id="address-1" placeholder="주소" style="width: 243px" readonly>
-                     <input type="text" id="address-2" placeholder="상세주소" style="width: 243px">
-            </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">주민등록번호</label>
-                    <div>
-                        <input type="text" class="form-control d-inline-block" id="my_rrn" aria-describedby="emailHelp"
-                            style="max-width: 245px; vertical-align: middle;">
-                        <input type="button" class="d-inline-block btn btn-primary"
-                            style="width:60px; height:35px; vertical-align: middle;" value="인증" onclick="rrnConfirm()">
-                    </div>
-                    <div id="emailHelp" class="form-text">주민등록번호를 입력해 주세요</div>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">생일</label><br>
-                    <input type="text" class="form-control d-inline-block" id="my_year" aria-describedby="emailHelp"
-                        style="width: 90px;" maxlength='4'>년
-                    <select id="month" class="form-select d-inline-block" aria-label="Default select example" style="width: 60px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                    </select>
-                    월
-                    <select id="day" class="form-select d-inline-block" aria-label="Default select example" style="width: 60px">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
-                        <option value="22">22</option>
-                        <option value="23">23</option>
-                        <option value="24">24</option>
-                        <option value="25">25</option>
-                        <option value="26">26</option>
-                        <option value="27">27</option>
-                        <option value="28">28</option>
-                        <option value="29">29</option>
-                        <option value="30">30</option>
-                        <option value="31">31</option>
-                    </select>
-                    일
-                    <div id="emailHelp" class="form-text">생년월일을 입력해 주세요</div>
-                </div> -->
-        <br>
-        <div class="d-flex">
-            <div class="p-2 flex-fill">
-              <div class="form-check">
-                <input type="radio" class="form-check-input" id="radio1" name="gender" value= "1" checked/>
-                <label class="form-check-label" for="radio1">남성</label>
-              </div>
-            </div>
-            <div class="p-2 flex-fill">
-              <div class="form-check">
-                <input type="radio" class="form-check-input" id="radio2" name="gender" value= "0"/>
-                <label class="form-check-label" for="radio2">여성</label>
-              </div>
-            </div>
-          </div>
-          <br>
-        <p>
-            <input type="submit" class="btn btn-success" value="회원가입" onclick=validate()>
-            <input type="reset" class="btn btn-danger" value="다시입력">
-        </p>
-    </form>
-    </div>
-</div>
-    <script src="./js/signup.js"></script>
+<body class="is-preload homepage">
+	<div id="page-wrapper">
+
+		<!-- 헤더 -->
+		<div id="header-wrapper">
+			<header id="header" class="container">
+
+				<!-- 로고 -->
+				<div id="logo">
+					<h1><a href="home"><img src="./img/GMOVIE LOGO.png" alt="GMOVIE" width="250"
+								height="80"></a></h1>
+				</div>
+
+				<!-- 네비 -->
+				<nav id="nav">
+					<ul>
+						<li><a href="home">home</a></li>
+						<li><a href="service">service</a></li>
+						<li><a href="aboutus">About us</a></li>
+						<li><a href="developer">Developer</a></li>
+						<li><a href="login">Login</a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+
+
+		<div id="banner" class="box container">
+			<div class="row">
+				<div class="col-7 col-12-medium">
+					<h2>Sign up</h2>
+					<form>
+						<table width="80%" height="300">
+							<tr>
+								<div class="user-box">
+									<td style="text-align:center" width='120' id="retext">아이디</td>
+									<td> <input type="text" id="my_id" size="20">
+										<label id="label">예) id@gmovie.com 요약된 회의록 발송</label>
+									</td>
+								</div>
+							</tr>
+
+							<tr>
+								<div class="user-box">
+									<td style="text-align:center" width='120' id="retext">비밀번호</td>
+									<td> <input type="password" id="my_password" size="16">
+										<label id="label">4~12자의 영문/대소문자/숫자 입력</label>
+									</td>
+								</div>
+							</tr>
+
+							<tr>
+								<div class="user-box">
+									<td style="text-align:center" id="retext">비밀번호 확인</td>
+									<td> <input type="password" id="my_password2" size="16">
+										<label id="label">비밀번호와 동일하게 입력</label>
+									</td>
+								</div>
+							</tr>
+
+							<tr>
+								<div class="user-box">
+									<td style="text-align:center" id="retext">이름</td>
+									<td> <input type="text" id="my_name" size="20">
+										<label id="label">한글 입력</label>
+									</td>
+								</div>
+							</tr>
+
+
+
+
+							<tr>
+								<td colspan="2" class="text-center">
+								    <div class="d-flex justify-content-center">
+									  <div class="p-2">
+										<div class="form-check">
+										    <input type="radio" class="form-check-input" id="radio1" name="gender" value="1" checked />
+										    <label class="form-check-label" for="radio1">남성</label>
+										</div>
+									  </div>
+									  <div class="p-2">
+										<div class="form-check">
+										    <input type="radio" class="form-check-input" id="radio2" name="gender" value="0" />
+										    <label class="form-check-label" for="radio2">여성</label>
+										</div>
+									  </div>
+								    </div>
+								</td>
+							  </tr>
+							  
+
+
+
+				</table>
+				<br>
+				<p align="center">
+					<input type="submit" value="회원가입" onclick="return validate();">
+					<input type="reset" value="다시입력">
+				</p>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<!-- Footer -->
+	<div id="footer-wrapper">
+		<footer id="footer" class="container">
+			<div class="row">
+				<div class="col-3 col-6-medium col-12-small">
+					<section class="widget links">
+						<h3>Thanks for</h3>
+						<ul class="style2">
+							<li>
+								<p>Parent</p>
+							</li>
+							<li>
+								<p>Mol 13Class Professor</p>
+							</li>
+							<li>
+								<p>Bit Education Center</p>
+							</li>
+							<li>
+								<p>SM SW Office</p>
+							</li>
+						</ul>
+					</section>
+
+				</div>
+				<div class="col-3 col-6-medium col-12-small">
+
+					<section class="widget links">
+						<h3>Developer</h3>
+						<ul class="style2">
+
+
+							<li>
+								<p>Na HyeongJin</p>
+							</li>
+							<li><p>Lee GwangHui</p></li>
+							<li>
+								<p>WANG CHIANG LING</p>
+							</li>
+							<li>
+								<p>Jung KyeongHee</p>
+							</li>
+						</ul>
+					</section>
+
+				</div>
+				<div class="col-3 col-6-medium col-12-small">
+
+					<section class="widget links">
+						<h3>INFO</h3>
+						<ul class="style2">
+							<li>
+								<h1>Address</h1>
+							</li>
+							<li>
+								<p>70 Sunmoon-ro 221, Tangjeong-myeon<br />
+									Asan-si, Chungcheongnam-do
+								</p>
+							</li>
+							<li>
+								<h1>tel</h1>
+							</li>
+							<li>
+								<p>(041) 530-2114</p>
+							</li>
+							<li>
+								<h1>Email</h1>
+							</li>
+							<li>
+								<p>gmovieoffice@gmail.com</p>
+							</li>
+						</ul>
+					</section>
+
+				</div>
+				<div class="col-3 col-6-medium col-12-small">
+
+					<!-- Contact -->
+					<section class="widget contact last">
+						<h3>Contact Us</h3>
+						<ul>
+							<li><a href="https://www.instagram.com/skgudwlsdlrj/?hl=ko"
+									class="icon brands fa-instagram"><span
+										class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/nahollo"
+									class="icon brands fa-brands fa-github"><span
+										class="label">Dribbble</span></a></li>
+							<li><a href="https://na-hollo.tistory.com/"
+									class="icon brands fa-brands fa-blogger"><span
+										class="label">Pinterest</span></a></li>
+						</ul>
+					</section>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div id="copyright">
+						<ul class="menu">
+							<li>&copy; GMOVIE</li>
+							<li>Design: nahollo </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.dropotron.min.js"></script>
+	<script src="./js/browser.min.js"></script>
+	<script src="./js/breakpoints.min.js"></script>
+	<script src="./js/util.js"></script>
+	<script src="./js/main.js"></script>
+	<style>
+		#banner {
+			background-color: #ffffff;
+			position: absolute;
+			top: 650px;
+			left: 50%;
+			width: 600px;
+			padding: 40px;
+			transform: translate(-50%, -50%);
+			box-sizing: border-box;
+			border-radius: 15px;
+		}
+
+		#banner .user-box {
+			position: relative;
+		}
+
+		#footer {
+			margin-top: 950px;
+		}
+
+		#banner h2 {
+			margin: 0 0 30px;
+			padding: 0;
+			color: #444444;
+			text-align: center;
+			font-size: 2em;
+		}
+
+		#retext {
+			font-family: NanumSquareR;
+			font-weight: bold;
+			font-size: 14px;
+			color: #444444;
+		}
+
+
+		#label {
+			color: #444444;
+			font-family: NanumSquareR;
+			font-weight: normal;
+			font-size: 12px;
+			pointer-events: none;
+			transition: .5s;
+		}
+
+		input[type="email"],
+		input[type="password"],
+		input[type="text"] {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100px;
+			height: 40px;
+		}
+
+		body {
+			width: 1920px;
+			height: 1408px;
+			background-color: #FFFFFF;
+			/* 하얀색 */
+			margin: 0;
+			padding: 0;
+			font-family: '나눔고딕', sans-serif;
+			/* 폰트는 필요에 따라 변경 */
+		}
+
+		.top-bar {
+			width: 1920px;
+			height: 60px;
+			background-color: #37393F;
+			/* 주어진 검은색 */
+		}
+
+		.login-button {
+			background-color: #37393F;
+			/* 검은색 버튼 배경 */
+			color: #FFF;
+			border: none;
+			padding: 20px 30px;
+			border-radius: 4px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+			margin-right: 250px;
+		}
+
+		.login-button:hover {
+			background-color: #555;
+		}
+
+		.centered-buttons {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 10vh;
+		}
+
+		.center-text {
+			text-align: center;
+		}
+
+		.center-form-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-left: 300px;
+			height: 100vh;
+			/* 뷰포트 높이에 따라 전체 화면 높이 */
+		}
+
+		form.center-form {
+			width: 30%;
+			/* 원하는 폭에 따라 변경 */
+		}
+	</style>
 </body>
+
 </html>

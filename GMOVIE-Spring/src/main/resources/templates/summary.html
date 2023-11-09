@@ -2,45 +2,219 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Summary</title>
-  <link rel="stylesheet" href="./css/summary.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+
 </head>
 
-<body>
-  <div class="top-bar"></div>
-  <div class="header">
-    <div class="logo-container">
-      <img src="./img/gmovie_logo.png" alt="로고" class="logo" id="gmovie-logo">
-      <span class="site-name" id="gmovie-text">GMOVIE</span>
-    </div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="home">Home</a></li>
-        <li><a href="aboutus">About Us</a></li>
-        <li><a href="experts">Experts</a></li>
-        <li><a href="services">Services</a></li>
-        <li><a href="newsmain">News</a></li>
-        <li><a href="contactus">Contact Us</a></li>
-      </ul>
-    </nav>
-    <button class="login-button" id="login-btn">로그인</button>
-  </div>
+<body class="is-preload homepage">
+    <!-- <div class="container"> -->
+    <div class="top-bar"></div>
+    <div class="header-wrapper" id="welcome">
+        <!-- 헤더 -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
 
-  <div class="summary-section">
-    <h2>요약본 보기</h2>
-    <div class="input-container">
-        <input type="text" id="summaryCode" placeholder="요약본 코드 입력">
-        <button class="confirm-button" onclick="showSummary()">확인</button>
+                <!-- 로고 -->
+                <div id="logo">
+                    <h1><a href="home"><img src="./img/GMOVIE LOGO.png" alt="GMOVIE" width="250" height="80"></a></h1>
+                </div>
+
+                <!-- 네비 -->
+                <!-- 네비 -->
+                <nav id="nav">
+                    <ul>
+                        <li class="current"><a href="home">home</a></li>
+                        <li><a href="service">service</a></li>
+                        <li><a href="aboutus">About us</a></li>
+                        <li><a href="developer">Developer</a></li>
+                        <li><a href="login">Login</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+
+
+        <div id="banner" class="box container">
+            <div class="row">
+                <div class="col-7 col-12-medium">
+                    <div class="text-box">
+                        <form id="welcomeForm">
+                            <div id="box">
+                                <input type="text" placeholder="회의 코드 입력" required id="inputRoomName"
+                                    style="width: 200px; height: 45px; font-size: 13px;">
+                                <button type="button" id="getSummary" onclick="redirectToSummaryPage()">이메일로 받기</button>
+                                <div id="spacebox"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
-    <div class="summary-content" id="summaryContent" style="display: none;">
-        <!-- 여기에 요약본 내용이 들어갑니다 -->
-        <p>요약본 내용을 넣기</p>
+
+    <!-- Footer -->
+    <div id="footer-wrapper">
+        <footer id="footer" class="container">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Thanks for</h3>
+                        <ul class="style2">
+                            <li>
+                                <p>Parent</p>
+                            </li>
+                            <li>
+                                <p>Mol 13Class Professor</p>
+                            </li>
+                            <li>
+                                <p>Bit Education Center</p>
+                            </li>
+                            <li>
+                                <p>SM SW Office</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+
+                    <section class="widget links">
+                        <h3>Developer</h3>
+                        <ul class="style2">
+
+
+                            <li>
+                                <p>Na HyeongJin</p>
+                            </li>
+                            <li><p>Lee GwangHui</p></li>
+                            <li>
+                                <p>WANG CHIANG LING</p>
+                            </li>
+                            <li>
+                                <p>Jung KyeongHee</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+
+                    <section class="widget links">
+                        <h3>INFO</h3>
+                        <ul class="style2">
+                            <li>
+                                <h1>Address</h1>
+                            </li>
+                            <li>
+                                <p>70 Sunmoon-ro 221, Tangjeong-myeon<br />
+                                    Asan-si, Chungcheongnam-do
+                                </p>
+                            </li>
+                            <li>
+                                <h1>tel</h1>
+                            </li>
+                            <li>
+                                <p>(041) 530-2114</p>
+                            </li>
+                            <li>
+                                <h1>Email</h1>
+                            </li>
+                            <li>
+                                <p>gmovieoffice@gmail.com</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+
+                    <!-- Contact -->
+                    <section class="widget contact last">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><a href="https://www.instagram.com/skgudwlsdlrj/?hl=ko"
+                                    class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="https://github.com/nahollo" class="icon brands fa-brands fa-github"><span
+                                        class="label">Dribbble</span></a></li>
+                            <li><a href="https://na-hollo.tistory.com/" class="icon brands fa-brands fa-blogger"><span
+                                        class="label">Pinterest</span></a></li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>&copy; GMOVIE</li>
+                            <li>Design: nahollo </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-</div>
-<script src="./js/summary.js"></script>
+    </div>
+
+
+    <style>
+        #banner {
+            background-color: #f7f7f7;
+        }
+
+        /* #box {
+            width: 400px;
+            margin-left: 400px;
+            margin-top: 150px;
+        } */
+
+        #box {
+            display: flex;
+            align-items: center;
+            margin-left: 430px;
+            margin-top: 0px;
+        }
+
+        #inputRoomName {
+            width: 300px;
+            height: 45px;
+            font-size: 20px;
+        }
+
+        #getSummary {
+            /* display: inline-block; */
+            margin-left: 15px;
+            margin-bottom: 12px;
+            width: 150px;
+        }
+
+        #spacebox {
+            margin-bottom: 25px;
+        }
+
+        .custom-control-container {
+            background-color: yellow;
+        }
+    </style>
+
+<script>
+    function redirectToSummaryPage() {
+        var roomId = document.getElementById("inputRoomName").value;
+    
+        window.location.href = "/createWordDocumentAndSendEmail?roomId=" + roomId;
+    }
+    </script>
+
+
+
 </body>
+
 </html>

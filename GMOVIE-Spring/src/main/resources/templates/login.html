@@ -1,50 +1,294 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <script src="./js/login.js"></script>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="./css/login.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Verti by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="./css/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
-<body>
-    <div class="top-bar"></div>
-    <div class="header">
-        <div class="logo-container">
-            <img src="./img/gmovie_logo.png" alt="로고" class="logo" id="gmovie-logo">
-            <span class="site-name" id="gmovie-text">GMOVIE</span>
+
+<body class="is-preload homepage">
+    <div id="page-wrapper">
+
+        <!-- 헤더 -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
+
+                <!-- 로고 -->
+                <div id="logo">
+                    <h1><a href="home"><img src="./img/GMOVIE LOGO.png" alt="GMOVIE" width="250" height="80"></a></h1>
+                </div>
+
+                <!-- 네비 -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="home">home</a></li>
+                        <li><a href="service">service</a></li>
+                        <li><a href="aboutus">About us</a></li>
+                        <li><a href="developer">Developer</a></li>
+                        <li class="current"><a href="#">Login</a></li>
+                    </ul>
+                </nav>
+            </header>
         </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="home">Home</a></li>
-                <li><a href="aboutus">About Us</a></li>
-                <li><a href="experts">Experts</a></li>
-                <li><a href="services">Services</a></li>
-                <li><a href="newsmain">News</a></li>
-                <li><a href="contactus">Contact Us</a></li>
-            </ul>
-        </nav>
-        <button class="login-button">로그인</button>
+
+
+        <div id="banner" class="box container">
+            <div class="row">
+                <div class="col-7 col-12-medium">
+                    <h2>Login</h2>
+                    <div class="user-box">
+                        <input type="email" name="id" id="id"><br>
+                        <label id="label">ID</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="password" id="password"><br>
+                        <label id="label">PASSWORD</label>
+                    </div>
+                    <div class="button-group">
+                        <button id="login" onclick="login()">Login</button><br>
+                        <!-- <button id="login">회원가입</button><br> -->
+                        <a href="signup" class="button-register">Sign up</a>
+                    </div>
+                    <!-- 아직도 아이디가 없으신가요? &nbsp;<a href="register.html" style="color: #000000;"><strong>회원가입</strong></a> 하러가기 -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <div id="footer-wrapper">
+            <footer id="footer" class="container">
+                <div class="row">
+                    <div class="col-3 col-6-medium col-12-small">
+                        <section class="widget links">
+                            <h3>Thanks for</h3>
+                            <ul class="style2">
+                                <li>
+                                    <p>Parent</p>
+                                </li>
+                                <li>
+                                    <p>Mol 13Class Professor</p>
+                                </li>
+                                <li>
+                                    <p>Bit Education Center</p>
+                                </li>
+                                <li>
+                                    <p>SM SW Office</p>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+
+                        <section class="widget links">
+                            <h3>Developer</h3>
+                            <ul class="style2">
+
+
+                                <li>
+                                    <p>Na HyeongJin</p>
+                                </li>
+                                <li><p>Lee GwangHui</p></li>
+                                <li>
+                                    <p>WANG CHIANG LING</p>
+                                </li>
+                                <li>
+                                    <p>Jung KyeongHee</p>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+
+                        <section class="widget links">
+                            <h3>INFO</h3>
+                            <ul class="style2">
+                                <li>
+                                    <h1>Address</h1>
+                                </li>
+                                <li>
+                                    <p>70 Sunmoon-ro 221, Tangjeong-myeon<br />
+                                        Asan-si, Chungcheongnam-do
+                                    </p>
+                                </li>
+                                <li>
+                                    <h1>tel</h1>
+                                </li>
+                                <li>
+                                    <p>(041) 530-2114</p>
+                                </li>
+                                <li>
+                                    <h1>Email</h1>
+                                </li>
+                                <li>
+                                    <p>gmovieoffice@gmail.com</p>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+
+                        <!-- Contact -->
+                        <section class="widget contact last">
+                            <h3>Contact Us</h3>
+                            <ul>
+                                <li><a href="https://www.instagram.com/skgudwlsdlrj/?hl=ko"
+                                        class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                <li><a href="https://github.com/nahollo" class="icon brands fa-brands fa-github"><span
+                                            class="label">Dribbble</span></a></li>
+                                <li><a href="https://na-hollo.tistory.com/"
+                                        class="icon brands fa-brands fa-blogger"><span
+                                            class="label">Pinterest</span></a></li>
+                            </ul>
+                        </section>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="copyright">
+                            <ul class="menu">
+                                <li>&copy; GMOVIE</li>
+                                <li>Design: nahollo </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
     </div>
 
-    <div class="center-text"><br><br><br><br>
-        <h1><strong>로그인</strong></h1>
-    </div>
-    <form class="custom-form">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">아이디</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="max-width: 300px;">
-          <div id="emailHelp" class="form-text">아이디를 입력해 주세요</div>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">비밀번호</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" style="max-width: 300px;">
-          <div id="emailHelp" class="form-text">비밀번호를 입력해 주세요</div>
-        </div>
-        <button type="button" class="btn btn-primary" id="login-btn">로그인</button>&nbsp;
-        <button type="submit" class="btn btn-success" id="signup">회원 가입</button>
-      </form>
-    <script src="./js/login.js"></script>
+    <!-- Scripts -->
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.dropotron.min.js"></script>
+    <script src="./js/browser.min.js"></script>
+    <script src="./js/breakpoints.min.js"></script>
+    <script src="./js/util.js"></script>
+    <script src="./js/main.js"></script>
+
+    <style>
+        #banner {
+            background-color: #ffffff;
+            position: absolute;
+            top: 400px;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+            border-radius: 15px;
+        }
+
+        #footer {
+            margin-top: 400px;
+        }
+
+        #banner h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #444444;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        #banner .user-box {
+            position: relative;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 5px 0;
+            font-size: 15px;
+            color: #444444;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #444444;
+            outline: none;
+            background: transparent;
+        }
+
+        #label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            color: #444444;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        #banner .user-box input:focus~label,
+        #banner .user-box input:valid~label {
+            top: -22px;
+            left: 0;
+            color: #444444;
+            font-size: 13px;
+        }
+
+        button#login {
+            background-color: #444444;
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-family: NanumSquareE;
+            font-size: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            letter-spacing: 1.5px
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-register {
+            background-color: #444444;
+            position: relative;
+            display: inline-block;
+            padding: 0.1px 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-family: NanumSquareE;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #ffffff;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            letter-spacing: 1.5px;
+
+            /* 버튼처럼 보이도록 스타일링 */
+            background-color: #444444;
+            border-radius: 5px;
+        }
+    </style>
+
 </body>
+
 </html>

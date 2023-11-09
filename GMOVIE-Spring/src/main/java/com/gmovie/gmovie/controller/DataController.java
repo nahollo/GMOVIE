@@ -24,7 +24,7 @@ import org.springframework.http.HttpStatus;
 
 
 
-@CrossOrigin(origins = "http://localhost:8800")
+// @CrossOrigin(origins = "http://localhost:8800")
 @RestController
 public class DataController {
       

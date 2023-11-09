@@ -11,10 +11,6 @@ public class PagesController {
     return "calendar"; 
     }
 
-    @GetMapping("/chat")
-    public String showChatPage() {
-    return "chat"; 
-    }
 
     @GetMapping("/home")
     public String showHomePage() {
@@ -36,30 +32,29 @@ public class PagesController {
     return "aboutus"; 
     }
 
-    @GetMapping("/experts")
-    public String showExpertsPage() {
-    return "experts"; 
-    }
+ 
 
-    @GetMapping("/services")
+    @GetMapping("/service")
     public String showServicesPage() {
-    return "services"; 
+    return "service"; 
     }
 
-    @GetMapping("/newsmain")
-    public String showNewsMainPage() {
-    return "newsmain"; 
-    }
-
-    @GetMapping("/contactus")
-    public String showContactUsPage() {
-    return "contactus"; 
+    
+    
+    @GetMapping("/developer")
+    public String showDeveloperPage() {
+    return "developer"; 
     }
 
     @GetMapping("/summary")
     public String showSummaryPage() {
     return "summary"; 
     }
+
+
+
+
+
 
 
     
