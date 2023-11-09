@@ -12,13 +12,14 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class Method {
+    final String PATH = "C:\\thanks\\GMOVIE_web_RTC\\src\\audio\\";
     public String summary(String roomId) throws IOException {
         Method method = new Method();
         ChatGPT chatGPT = new ChatGPT();
 
-        String originalFile = "C:\\thanks\\GMOVIE_web_RTC\\src\\audio\\" + roomId + "\\merge.wav";
-        String fullFile = "C:\\thanks\\GMOVIE_web_RTC\\src\\audio\\" + roomId + "\\output.wav";
-        String cutFiles = "C:\\thanks\\GMOVIE_web_RTC\\src\\audio\\" + roomId + "\\audio_segments";
+        String originalFile = PATH + roomId + "\\merge.wav";
+        String fullFile = PATH + roomId + "\\output.wav";
+        String cutFiles = PATH + roomId + "\\audio_segments";
 
         // 1. base64로 인코딩하기
         method.base64Encoded(originalFile, fullFile);
