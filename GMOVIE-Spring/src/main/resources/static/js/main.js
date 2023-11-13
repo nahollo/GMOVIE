@@ -5,80 +5,103 @@
 */
 
 var isLoggedIn = sessionStorage.getItem('userNo');
-
 var loginLink = document.getElementById('loginLink');
 var logoutLink = document.getElementById('logoutLink');
 
 // Update the display based on the login status
 if (isLoggedIn !== null) {
-  loginLink.style.display = 'none';
-  logoutLink.style.display = 'block';
+	loginLink.style.display = 'none';
+	logoutLink.style.display = 'block';
 } else {
-  loginLink.style.display = 'block';
-  logoutLink.style.display = 'none';
+	loginLink.style.display = 'block';
+	logoutLink.style.display = 'none';
 }
+
 
 function logout() {
-  // Clear the session storage and redirect to home page
-  sessionStorage.removeItem('userNo');
-  window.location.href = 'home';
+	// Clear the session storage and redirect to home page
+	sessionStorage.removeItem('userNo');
+	window.location.href = 'home';
 }
 
-(function($) {
+function joinMeeting() {
+	
+	var isLoggedIn = sessionStorage.getItem('userNo');
+  
+	if (isLoggedIn !== null) {
+		window.location.href = 'http://localhost:3000';
+	} else {
+	    alert('로그인 먼저 해주세요');
+	    window.location.href = 'login'; 
+	}
+  }
 
-	var	$window = $(window),
+  function getSummary() {
+	var isLoggedIn = sessionStorage.getItem('userNo');
+  
+	if (isLoggedIn !== null) {
+	    window.location.href = 'summary';
+	} else {	    
+	    alert('로그인 먼저 해주세요');
+	    window.location.href = 'login'; 
+	}
+  }
+
+(function ($) {
+
+	var $window = $(window),
 		$body = $('body');
 
 	// Breakpoints.
-		breakpoints({
-			xlarge:  [ '1281px',  '1680px' ],
-			large:   [ '981px',   '1280px' ],
-			medium:  [ '737px',   '980px'  ],
-			small:   [ null,      '736px'  ]
-		});
+	breakpoints({
+		xlarge: ['1281px', '1680px'],
+		large: ['981px', '1280px'],
+		medium: ['737px', '980px'],
+		small: [null, '736px']
+	});
 
 	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+	$window.on('load', function () {
+		window.setTimeout(function () {
+			$body.removeClass('is-preload');
+		}, 100);
+	});
 
 	// Dropdowns.
-		$('#nav > ul').dropotron({
-			mode: 'fade',
-			noOpenerFade: true,
-			speed: 300
-		});
+	$('#nav > ul').dropotron({
+		mode: 'fade',
+		noOpenerFade: true,
+		speed: 300
+	});
 
 	// Nav.
 
-		// Toggle.
-			$(
-				'<div id="navToggle">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-				'</div>'
-			)
-				.appendTo($body);
+	// Toggle.
+	$(
+		'<div id="navToggle">' +
+		'<a href="#navPanel" class="toggle"></a>' +
+		'</div>'
+	)
+		.appendTo($body);
 
-		// Panel.
-			$(
-				'<div id="navPanel">' +
-					'<nav>' +
-						$('#nav').navList() +
-					'</nav>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'left',
-					target: $body,
-					visibleClass: 'navPanel-visible'
-				});
+	// Panel.
+	$(
+		'<div id="navPanel">' +
+		'<nav>' +
+		$('#nav').navList() +
+		'</nav>' +
+		'</div>'
+	)
+		.appendTo($body)
+		.panel({
+			delay: 500,
+			hideOnClick: true,
+			hideOnSwipe: true,
+			resetScroll: true,
+			resetForms: true,
+			side: 'left',
+			target: $body,
+			visibleClass: 'navPanel-visible'
+		});
 
 })(jQuery);

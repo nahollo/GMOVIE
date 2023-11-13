@@ -9,6 +9,7 @@ import com.gmovie.gmovie.service.UserService;
 
 
 import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -62,11 +63,13 @@ public class DataController {
       private UserMapper userMapper;
       
       @PostMapping("/login")
-      public ResponseEntity<?> login(@RequestBody UserDTO userDTO) {
+      public ResponseEntity<?> login(@RequestBody UserDTO userDTO, HttpSession session) {
           // 在这里进行用户登录验证，查询数据库等操作
           UserDTO foundUser = userMapper.findByEmail(userDTO.getEmail());
       
           if (foundUser != null && foundUser.getPwd().equals(userDTO.getPwd())) {
+              int userNo1 = 1; // 用户编号
+              session.setAttribute("userNo", userNo1);
               // 验证成功，返回用户信息
               return ResponseEntity.ok(foundUser);
           } else {
