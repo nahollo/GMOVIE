@@ -4,6 +4,26 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+var isLoggedIn = sessionStorage.getItem('userNo');
+
+var loginLink = document.getElementById('loginLink');
+var logoutLink = document.getElementById('logoutLink');
+
+// Update the display based on the login status
+if (isLoggedIn !== null) {
+  loginLink.style.display = 'none';
+  logoutLink.style.display = 'block';
+} else {
+  loginLink.style.display = 'block';
+  logoutLink.style.display = 'none';
+}
+
+function logout() {
+  // Clear the session storage and redirect to home page
+  sessionStorage.removeItem('userNo');
+  window.location.href = 'home';
+}
+
 (function($) {
 
 	var	$window = $(window),

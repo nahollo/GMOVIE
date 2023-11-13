@@ -5,7 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-    <script src="./js/login.js"></script>
+<script src="./js/login.js"></script>
 
 <head>
     <title>Verti by HTML5 UP</title>
@@ -29,14 +29,18 @@
 
                 <!-- 네비 -->
                 <nav id="nav">
-                    <ul>
-                        <li><a href="home">home</a></li>
-                        <li><a href="service">service</a></li>
-                        <li><a href="aboutus">About us</a></li>
-                        <li><a href="developer">Developer</a></li>
-                        <li class="current"><a href="#">Login</a></li>
-                    </ul>
-                </nav>
+					<ul>
+						<li><a href="home">home</a></li>
+						<li><a href="service">service</a></li>
+						<li><a href="aboutus">About us</a></li>
+						<li><a href="developer">Developer</a></li>
+						<li id="loginLogoutLink">
+							<a id="loginLink" style="display: block;" href="login">Login</a>
+							<a id="logoutLink" style="display: none;" href="javascript:void(0);"
+								onclick="logout()">Logout</a>
+						</li>
+					</ul>
+				</nav>
             </header>
         </div>
 
@@ -98,7 +102,9 @@
                                 <li>
                                     <p>Na HyeongJin</p>
                                 </li>
-                                <li><p>Lee GwangHui</p></li>
+                                <li>
+                                    <p>Lee GwangHui</p>
+                                </li>
                                 <li>
                                     <p>WANG CHIANG LING</p>
                                 </li>

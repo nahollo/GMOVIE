@@ -26,18 +26,21 @@
 
 				<!-- 로고 -->
 				<div id="logo">
-					<h1><a href="home"><img src="./img/GMOVIE LOGO.png" alt="GMOVIE" width="250"
-								height="80"></a></h1>
+					<h1><a href="home"><img src="./img/GMOVIE LOGO.png" alt="GMOVIE" width="250" height="80"></a></h1>
 				</div>
 
 				<!-- 네비 -->
 				<nav id="nav">
 					<ul>
-						<li><a href="home">home</a></li>
+						<li class="current"><a href="home">home</a></li>
 						<li><a href="service">service</a></li>
 						<li><a href="aboutus">About us</a></li>
 						<li><a href="developer">Developer</a></li>
-						<li><a href="login">Login</a></li>
+						<li id="loginLogoutLink">
+							<a id="loginLink" style="display: block;" href="login">Login</a>
+							<a id="logoutLink" style="display: none;" href="javascript:void(0);"
+								onclick="logout()">Logout</a>
+						</li>
 					</ul>
 				</nav>
 			</header>
@@ -91,36 +94,38 @@
 
 							<tr>
 								<td colspan="2" class="text-center">
-								    <div class="d-flex justify-content-center">
-									  <div class="p-2">
-										<div class="form-check">
-										    <input type="radio" class="form-check-input" id="radio1" name="gender" value="1" checked />
-										    <label class="form-check-label" for="radio1">남성</label>
+									<div class="d-flex justify-content-center">
+										<div class="p-2">
+											<div class="form-check">
+												<input type="radio" class="form-check-input" id="radio1" name="gender"
+													value="1" checked />
+												<label class="form-check-label" for="radio1">남성</label>
+											</div>
 										</div>
-									  </div>
-									  <div class="p-2">
-										<div class="form-check">
-										    <input type="radio" class="form-check-input" id="radio2" name="gender" value="0" />
-										    <label class="form-check-label" for="radio2">여성</label>
+										<div class="p-2">
+											<div class="form-check">
+												<input type="radio" class="form-check-input" id="radio2" name="gender"
+													value="0" />
+												<label class="form-check-label" for="radio2">여성</label>
+											</div>
 										</div>
-									  </div>
-								    </div>
+									</div>
 								</td>
-							  </tr>
-							  
+							</tr>
 
 
 
-				</table>
-				<br>
-				<p align="center">
-					<input type="submit" value="회원가입" onclick="return validate();">
-					<input type="reset" value="다시입력">
-				</p>
-				</form>
+
+						</table>
+						<br>
+						<p align="center">
+							<input type="submit" value="회원가입" onclick="return validate();">
+							<input type="reset" value="다시입력">
+						</p>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
 
 
 
@@ -128,112 +133,112 @@
 
 
 
-	<!-- Footer -->
-	<div id="footer-wrapper">
-		<footer id="footer" class="container">
-			<div class="row">
-				<div class="col-3 col-6-medium col-12-small">
-					<section class="widget links">
-						<h3>Thanks for</h3>
-						<ul class="style2">
-							<li>
-								<p>Parent</p>
-							</li>
-							<li>
-								<p>Mol 13Class Professor</p>
-							</li>
-							<li>
-								<p>Bit Education Center</p>
-							</li>
-							<li>
-								<p>SM SW Office</p>
-							</li>
-						</ul>
-					</section>
+		<!-- Footer -->
+		<div id="footer-wrapper">
+			<footer id="footer" class="container">
+				<div class="row">
+					<div class="col-3 col-6-medium col-12-small">
+						<section class="widget links">
+							<h3>Thanks for</h3>
+							<ul class="style2">
+								<li>
+									<p>Parent</p>
+								</li>
+								<li>
+									<p>Mol 13Class Professor</p>
+								</li>
+								<li>
+									<p>Bit Education Center</p>
+								</li>
+								<li>
+									<p>SM SW Office</p>
+								</li>
+							</ul>
+						</section>
 
-				</div>
-				<div class="col-3 col-6-medium col-12-small">
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
 
-					<section class="widget links">
-						<h3>Developer</h3>
-						<ul class="style2">
+						<section class="widget links">
+							<h3>Developer</h3>
+							<ul class="style2">
 
 
-							<li>
-								<p>Na HyeongJin</p>
-							</li>
-							<li><p>Lee GwangHui</p></li>
-							<li>
-								<p>WANG CHIANG LING</p>
-							</li>
-							<li>
-								<p>Jung KyeongHee</p>
-							</li>
-						</ul>
-					</section>
+								<li>
+									<p>Na HyeongJin</p>
+								</li>
+								<li>
+									<p>Lee GwangHui</p>
+								</li>
+								<li>
+									<p>WANG CHIANG LING</p>
+								</li>
+								<li>
+									<p>Jung KyeongHee</p>
+								</li>
+							</ul>
+						</section>
 
-				</div>
-				<div class="col-3 col-6-medium col-12-small">
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
 
-					<section class="widget links">
-						<h3>INFO</h3>
-						<ul class="style2">
-							<li>
-								<h1>Address</h1>
-							</li>
-							<li>
-								<p>70 Sunmoon-ro 221, Tangjeong-myeon<br />
-									Asan-si, Chungcheongnam-do
-								</p>
-							</li>
-							<li>
-								<h1>tel</h1>
-							</li>
-							<li>
-								<p>(041) 530-2114</p>
-							</li>
-							<li>
-								<h1>Email</h1>
-							</li>
-							<li>
-								<p>gmovieoffice@gmail.com</p>
-							</li>
-						</ul>
-					</section>
+						<section class="widget links">
+							<h3>INFO</h3>
+							<ul class="style2">
+								<li>
+									<h1>Address</h1>
+								</li>
+								<li>
+									<p>70 Sunmoon-ro 221, Tangjeong-myeon<br />
+										Asan-si, Chungcheongnam-do
+									</p>
+								</li>
+								<li>
+									<h1>tel</h1>
+								</li>
+								<li>
+									<p>(041) 530-2114</p>
+								</li>
+								<li>
+									<h1>Email</h1>
+								</li>
+								<li>
+									<p>gmovieoffice@gmail.com</p>
+								</li>
+							</ul>
+						</section>
 
-				</div>
-				<div class="col-3 col-6-medium col-12-small">
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
 
-					<!-- Contact -->
-					<section class="widget contact last">
-						<h3>Contact Us</h3>
-						<ul>
-							<li><a href="https://www.instagram.com/skgudwlsdlrj/?hl=ko"
-									class="icon brands fa-instagram"><span
-										class="label">Instagram</span></a></li>
-							<li><a href="https://github.com/nahollo"
-									class="icon brands fa-brands fa-github"><span
-										class="label">Dribbble</span></a></li>
-							<li><a href="https://na-hollo.tistory.com/"
-									class="icon brands fa-brands fa-blogger"><span
-										class="label">Pinterest</span></a></li>
-						</ul>
-					</section>
+						<!-- Contact -->
+						<section class="widget contact last">
+							<h3>Contact Us</h3>
+							<ul>
+								<li><a href="https://www.instagram.com/skgudwlsdlrj/?hl=ko"
+										class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/nahollo" class="icon brands fa-brands fa-github"><span
+											class="label">Dribbble</span></a></li>
+								<li><a href="https://na-hollo.tistory.com/"
+										class="icon brands fa-brands fa-blogger"><span
+											class="label">Pinterest</span></a></li>
+							</ul>
+						</section>
 
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-12">
-					<div id="copyright">
-						<ul class="menu">
-							<li>&copy; GMOVIE</li>
-							<li>Design: nahollo </a></li>
-						</ul>
 					</div>
 				</div>
-			</div>
-		</footer>
-	</div>
+				<div class="row">
+					<div class="col-12">
+						<div id="copyright">
+							<ul class="menu">
+								<li>&copy; GMOVIE</li>
+								<li>Design: nahollo </a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
 
 	</div>
 

@@ -30,7 +30,11 @@
                         <li><a href="service">service</a></li>
                         <li><a href="aboutus">About us</a></li>
                         <li><a href="developer">Developer</a></li>
-                        <li><a href="login">Login</a></li>
+                        <li id="loginLogoutLink">
+                            <a id="loginLink" style="display: block;" href="login">Login</a>
+                            <a id="logoutLink" style="display: none;" href="javascript:void(0);"
+                                onclick="logout()">Logout</a>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -93,7 +97,9 @@
                             <li>
                                 <p>Na HyeongJin</p>
                             </li>
-                            <li><p>Lee GwangHui</p></li>
+                            <li>
+                                <p>Lee GwangHui</p>
+                            </li>
                             <li>
                                 <p>WANG CHIANG LING</p>
                             </li>
@@ -205,12 +211,12 @@
         }
     </style>
 
-<script>
-    function redirectToSummaryPage() {
-        var roomId = document.getElementById("inputRoomName").value;
-    
-        window.location.href = "/createWordDocumentAndSendEmail?roomId=" + roomId;
-    }
+    <script>
+        function redirectToSummaryPage() {
+            var roomId = document.getElementById("inputRoomName").value;
+
+            window.location.href = "/createWordDocumentAndSendEmail?roomId=" + roomId;
+        }
     </script>
 
 

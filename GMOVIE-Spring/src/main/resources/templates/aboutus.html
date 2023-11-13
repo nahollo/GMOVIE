@@ -5,277 +5,343 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Verti by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="./css/main.css" />
-	</head>
-	<body class="is-preload right-sidebar">
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<header id="header" class="container">
+<head>
+	<title>Verti by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="./css/main.css" />
+</head>
 
-						<!-- Logo -->
-							<div id="logo">
-								<h1><a href="home"><img src="./img/GMOVIE LOGO.png" alt="GMOVIE" width="250" height="80"></a></h1>
-							</div>
+<body class="is-preload right-sidebar">
+	<div id="page-wrapper">
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a href="home">home</a></li>
-									<li><a href="service">service</a></li>
-									<li class="current"><a href="aboutus">About us</a></li>
-									<li><a href="developer">Developer</a></li>
-									<li><a href="login">Login</a></li>
-								</ul>
-							</nav>
+		<!-- Header -->
+		<div id="header-wrapper">
+			<header id="header" class="container">
 
-					</header>
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="home"><img src="./img/GMOVIE LOGO.png" alt="GMOVIE" width="250" height="80"></a></h1>
 				</div>
 
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li ><a href="home">home</a></li>
+						<li><a href="service">service</a></li>
+						<li class="current"><a href="aboutus">About us</a></li>
+						<li><a href="developer">Developer</a></li>
+						<li id="loginLogoutLink">
+							<a id="loginLink" style="display: block;" href="login">Login</a>
+							<a id="logoutLink" style="display: none;" href="javascript:void(0);"
+								onclick="logout()">Logout</a>
+						</li>
+					</ul>
+				</nav>
 
-
-			<!-- Main -->
-				<div id="main-wrapper">
-					<div class="container">
-						<div class="row gtr-200">
-							<div class="col-8 col-12-medium">
-								<div id="content">
-
-									<!-- Content -->
-									<h2 style="text-align: center;">GMOVIE의 비전</h2>
-									
-
-										<article>
-											<!-- 배너 -->
-											<div id="banner" class="box container">
-												<div class="row">
-													<div class="col-7 col-12-medium">
-														<img src="./img/오른쪽 큰 사진.png" alt="Your Image" class="image featured" style="border-radius: 10px;">
-														<p style="font-size: 40px;"><strong>GMOVIE의 구성원을 알아보세요.</strong></p>
-														<p style="font-size: 25px;">경력과 경험이 풍부한 전문가들로 구성됩니다.</p>
-														<p style="font-size: 25px;">회의에서 동료들과 협업을 해보세요.</p>
-														<br>
-													</div>
-												</div>
-											</div>
-
-											<br>
-											<div id="banner" class="box container">
-												<div class="row">
-													<div class="col-7 col-12-medium">
-														<img src="./img/보안.png" alt="Your Image" class="image featured" style="border-radius: 10px; width: 50px; height: 1%">
-														<p style="font-size: 30px;"><strong>보안</strong></p>
-														<p style="font-size: 20px;">보안에 대한 중요도가 큽니다.회의록에 대한 문서를 안전하게 보호합니다.</p>
-													</div>
-												</div>
-											</div>
-											  
-
-
-											<br>
-
-											<div id="banner" class="box container">
-												<div class="row">
-													<div class="col-7 col-12-medium">
-														<img src="./img/신뢰.png" alt="Your Image" class="image featured" style="border-radius: 10px; width: 50px; height: 1%">
-														<p style="font-size: 30px;"><strong>신뢰</strong></p>
-														<p style="font-size: 20px;">GMOVIE는 신뢰를 보장합니다. 서비스에 대한 불편 사항에 대한 기한을 보장합니다.</p>
-													</div>
-												</div>
-											</div>
-										</article>
-								</div>
-							</div>
-							<div class="col-4 col-12-medium">
-								<div id="sidebar">
-
-									<!-- Sidebar -->
-										<section>
-											<h3>GMOVIE에 오신 것을 환영합니다.</h3>
-											<p style="font-size: 15px;">세계 언제 어디서나, GMOVIE를 통해 모든 거리와 시간을 초월한 커뮤니케이션을 경험하세요. GMOVIE와 함께라면 최상의 화상 회의 환경을 어디서나 누릴 수 있습니다. </p>
-											<h1 style="font-size: 15px;">세상과의 연결이 당신의 화면 안에서 시작됩니다.</h1>
-											<br>
-											<div class="col-7 col-12-medium">
-												<div class="points">
-													<div class="element">
-														<div class="content-4">
-															<img class="vector" src="./img/체크표시.png" width="40px" height="40px">&nbsp;
-															<div class="content-5">
-																<div class="text-wrapper-6"><h3>핵심 가치</h3></div>
-																<p class="text-wrapper-7">
-																	GMOVIE의 핵심 가치는 혁신, 고객 중심, 품질, 열정, 그리고 연결입니다. 우리는 지속적인 혁신을 통해 사용자에게 최고의 화상 회의 경험을 제공하며, 항상 고객 중심의 서비스를 지향합니다. 품질과 안정성은 우리의 핵심 가치 중 하나로, 열정적으로 사용자의 요구를 충족시키고 사용자와의 연결을 강화합니다. GMOVIE는 세상과의 연결을 더 강화하며, 사용자들이 언제 어디서나 원활한 대화를 즐길 수 있도록 지속적으로 노력합니다.
-																</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<br>
-											<div class="col-7 col-12-medium">
-												<div class="points">
-													<div class="element">
-														<div class="content-4">
-															<img class="vector" src="img/체크표시.png" width="40px" height="40px">&nbsp;
-															<div class="content-5">
-																<div class="text-wrapper-6"><h3>목표</h3></div>
-																<p class="text-wrapper-7">
-																	GMOVIE의 궁극적인 목표는 모든 사람이 원활하게 대화하며, 어디에서나 최고의 화상 회의 경험을 즐길 수 있는 세상을 만드는 것입니다. <br>피드백에 따라 기능과 디자인을 지속적으로 개선하며, 사용자의 만족도를 항상 높이기 위해 노력합니다.
-																</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-													<br>
-													<div class="col-7 col-12-medium">
-														<div class="points">
-															<div class="element">
-																<div class="content-4">
-																	<img class="vector" src="img/체크표시.png" width="40px" height="40px">&nbsp;
-																	<div class="content-5">
-																		<div class="text-wrapper-6"><h3>개선</h3></div>
-																		<p class="text-wrapper-7">
-																			GMOVIE는 사용자의 피드백을 바탕으로 항상 더 나은 서비스를 제공하기 위해 노력하고 있습니다. 사용자의
-																			경험은 우리에게 가장 중요합니다. <br>GMOVIE는 지속적인 기능 개선을 통하여<br> 사용자의 만족도를 높이기 위해
-																			노력합니다.
-																		</p>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-										</section>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			<!-- Footer -->
-			<div id="footer-wrapper">
-				<footer id="footer" class="container">
-					<div class="row">
-						<div class="col-3 col-6-medium col-12-small">
-								<section class="widget links">
-									<h3>Thanks for</h3>
-									<ul class="style2">
-										<li><p>Parent</p></li>
-										<li><p>Mol 13Class Professor</p></li>
-										<li><p>Bit Education Center</p></li>
-										<li><p>SM SW Office</p></li>
-									</ul>
-								</section>
-
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-
-								<section class="widget links">
-									<h3>Developer</h3>
-									<ul class="style2">
-										
-
-										<li><p>Na HyeongJin</p></li>
-										<li><p>Lee GwangHui</p></li>
-										<li><p>WANG CHIANG LING</p></li>
-										<li><p>Jung KyeongHee</p></li>
-									</ul>
-								</section>
-
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-
-								<section class="widget links">
-									<h3>INFO</h3>
-									<ul class="style2">
-										<li><h1>Address</h1></li>
-										<li><p>70 Sunmoon-ro 221, Tangjeong-myeon<br/>
-											Asan-si, Chungcheongnam-do
-										</p></li>
-										<li><h1>tel</h1></li>
-										<li><p>(041) 530-2114</p></li>
-										<li><h1>Email</h1></li>
-										<li><p>gmovieoffice@gmail.com</p></li>
-									</ul>
-								</section>
-
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-
-							<!-- Contact -->
-								<section class="widget contact last">
-									<h3>Contact Us</h3>
-									<ul>
-										<li><a href="https://www.instagram.com/skgudwlsdlrj/?hl=ko" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://github.com/nahollo" class="icon brands fa-brands fa-github"><span class="label">Dribbble</span></a></li>
-										<li><a href="https://na-hollo.tistory.com/" class="icon brands fa-brands fa-blogger"><span class="label">Pinterest</span></a></li>
-									</ul>
-								</section>
-
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<div id="copyright">
-								<ul class="menu">
-									<li>&copy; GMOVIE</li><li>Design: nahollo </a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</footer>
-			</div>
-
+			</header>
 		</div>
 
-		<!-- Scripts -->
 
-			<script src="./js/jquery.min.js"></script>
-			<script src="./js/jquery.dropotron.min.js"></script>
-			<script src="./js/browser.min.js"></script>
-			<script src="./js/breakpoints.min.js"></script>
-			<script src="./js/util.js"></script>
-			<script src="./js/main.js"></script>
 
-			<style>
-				.points {
-					display: flex;
-					flex-direction: column;
-					width: 100%; /* 부모 요소 너비의 100%로 설정 (자동으로 조절됨) */
-					align-items: flex-start;
-					gap: 2%; /* 부모 요소 높이의 2%로 설정 (자동으로 조절됨) */
-					position: relative;
-					background-color: #F7F7F7; /* 원하는 배경색 코드로 변경하세요 (#FFA500은 주황색 예시) */
-				}
-			
-				.element {
-					display: inline-flex;
-					flex-direction: column;
-					align-items: flex-start;
-					gap: 1%; /* 부모 요소 높이의 1%로 설정 (자동으로 조절됨) */
-					padding: 2% 3% 2% 3%; /* 상단, 우측, 하단, 좌측 여백을 부모 요소의 너비와 높이에 상대적으로 설정 */
-					position: relative;
-					border: 1px solid;
-					border-color: #e3e3e3;
-				}
-			
-				.content-4 {
-					display: flex;
-					width: 90%; /* 부모 요소 너비의 90%로 설정 (자동으로 조절됨) */
-					align-items: flex-start;
-					gap: 1%; /* 부모 요소 높이의 1%로 설정 (자동으로 조절됨) */
-					position: relative;
-				}
-				.text-wrapper-7 {
-					color: #000000;
-					font-size: 12px;
-				}
-			</style>
-			
+		<!-- Main -->
+		<div id="main-wrapper">
+			<div class="container">
+				<div class="row gtr-200">
+					<div class="col-8 col-12-medium">
+						<div id="content">
 
-	</body>
+							<!-- Content -->
+							<h2 style="text-align: center;">GMOVIE의 비전</h2>
+
+
+							<article>
+								<!-- 배너 -->
+								<div id="banner" class="box container">
+									<div class="row">
+										<div class="col-7 col-12-medium">
+											<img src="./img/오른쪽 큰 사진.png" alt="Your Image" class="image featured"
+												style="border-radius: 10px;">
+											<p style="font-size: 40px;"><strong>GMOVIE의 구성원을 알아보세요.</strong></p>
+											<p style="font-size: 25px;">경력과 경험이 풍부한 전문가들로 구성됩니다.</p>
+											<p style="font-size: 25px;">회의에서 동료들과 협업을 해보세요.</p>
+											<br>
+										</div>
+									</div>
+								</div>
+
+								<br>
+								<div id="banner" class="box container">
+									<div class="row">
+										<div class="col-7 col-12-medium">
+											<img src="./img/보안.png" alt="Your Image" class="image featured"
+												style="border-radius: 10px; width: 50px; height: 1%">
+											<p style="font-size: 30px;"><strong>보안</strong></p>
+											<p style="font-size: 20px;">보안에 대한 중요도가 큽니다.회의록에 대한 문서를 안전하게 보호합니다.</p>
+										</div>
+									</div>
+								</div>
+
+
+
+								<br>
+
+								<div id="banner" class="box container">
+									<div class="row">
+										<div class="col-7 col-12-medium">
+											<img src="./img/신뢰.png" alt="Your Image" class="image featured"
+												style="border-radius: 10px; width: 50px; height: 1%">
+											<p style="font-size: 30px;"><strong>신뢰</strong></p>
+											<p style="font-size: 20px;">GMOVIE는 신뢰를 보장합니다. 서비스에 대한 불편 사항에 대한 기한을 보장합니다.
+											</p>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+					<div class="col-4 col-12-medium">
+						<div id="sidebar">
+
+							<!-- Sidebar -->
+							<section>
+								<h3>GMOVIE에 오신 것을 환영합니다.</h3>
+								<p style="font-size: 15px;">세계 언제 어디서나, GMOVIE를 통해 모든 거리와 시간을 초월한 커뮤니케이션을 경험하세요. GMOVIE와
+									함께라면 최상의 화상 회의 환경을 어디서나 누릴 수 있습니다. </p>
+								<h1 style="font-size: 15px;">세상과의 연결이 당신의 화면 안에서 시작됩니다.</h1>
+								<br>
+								<div class="col-7 col-12-medium">
+									<div class="points">
+										<div class="element">
+											<div class="content-4">
+												<img class="vector" src="./img/체크표시.png" width="40px"
+													height="40px">&nbsp;
+												<div class="content-5">
+													<div class="text-wrapper-6">
+														<h3>핵심 가치</h3>
+													</div>
+													<p class="text-wrapper-7">
+														GMOVIE의 핵심 가치는 혁신, 고객 중심, 품질, 열정, 그리고 연결입니다. 우리는 지속적인 혁신을 통해
+														사용자에게 최고의 화상 회의 경험을 제공하며, 항상 고객 중심의 서비스를 지향합니다. 품질과 안정성은 우리의 핵심
+														가치 중 하나로, 열정적으로 사용자의 요구를 충족시키고 사용자와의 연결을 강화합니다. GMOVIE는 세상과의 연결을
+														더 강화하며, 사용자들이 언제 어디서나 원활한 대화를 즐길 수 있도록 지속적으로 노력합니다.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<br>
+								<div class="col-7 col-12-medium">
+									<div class="points">
+										<div class="element">
+											<div class="content-4">
+												<img class="vector" src="img/체크표시.png" width="40px" height="40px">&nbsp;
+												<div class="content-5">
+													<div class="text-wrapper-6">
+														<h3>목표</h3>
+													</div>
+													<p class="text-wrapper-7">
+														GMOVIE의 궁극적인 목표는 모든 사람이 원활하게 대화하며, 어디에서나 최고의 화상 회의 경험을 즐길 수 있는
+														세상을 만드는 것입니다. <br>피드백에 따라 기능과 디자인을 지속적으로 개선하며, 사용자의 만족도를 항상 높이기
+														위해 노력합니다.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<br>
+								<div class="col-7 col-12-medium">
+									<div class="points">
+										<div class="element">
+											<div class="content-4">
+												<img class="vector" src="img/체크표시.png" width="40px" height="40px">&nbsp;
+												<div class="content-5">
+													<div class="text-wrapper-6">
+														<h3>개선</h3>
+													</div>
+													<p class="text-wrapper-7">
+														GMOVIE는 사용자의 피드백을 바탕으로 항상 더 나은 서비스를 제공하기 위해 노력하고 있습니다. 사용자의
+														경험은 우리에게 가장 중요합니다. <br>GMOVIE는 지속적인 기능 개선을 통하여<br> 사용자의 만족도를 높이기
+														위해
+														노력합니다.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div id="footer-wrapper">
+			<footer id="footer" class="container">
+				<div class="row">
+					<div class="col-3 col-6-medium col-12-small">
+						<section class="widget links">
+							<h3>Thanks for</h3>
+							<ul class="style2">
+								<li>
+									<p>Parent</p>
+								</li>
+								<li>
+									<p>Mol 13Class Professor</p>
+								</li>
+								<li>
+									<p>Bit Education Center</p>
+								</li>
+								<li>
+									<p>SM SW Office</p>
+								</li>
+							</ul>
+						</section>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<section class="widget links">
+							<h3>Developer</h3>
+							<ul class="style2">
+
+
+								<li>
+									<p>Na HyeongJin</p>
+								</li>
+								<li>
+									<p>Lee GwangHui</p>
+								</li>
+								<li>
+									<p>WANG CHIANG LING</p>
+								</li>
+								<li>
+									<p>Jung KyeongHee</p>
+								</li>
+							</ul>
+						</section>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<section class="widget links">
+							<h3>INFO</h3>
+							<ul class="style2">
+								<li>
+									<h1>Address</h1>
+								</li>
+								<li>
+									<p>70 Sunmoon-ro 221, Tangjeong-myeon<br />
+										Asan-si, Chungcheongnam-do
+									</p>
+								</li>
+								<li>
+									<h1>tel</h1>
+								</li>
+								<li>
+									<p>(041) 530-2114</p>
+								</li>
+								<li>
+									<h1>Email</h1>
+								</li>
+								<li>
+									<p>gmovieoffice@gmail.com</p>
+								</li>
+							</ul>
+						</section>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<!-- Contact -->
+						<section class="widget contact last">
+							<h3>Contact Us</h3>
+							<ul>
+								<li><a href="https://www.instagram.com/skgudwlsdlrj/?hl=ko"
+										class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/nahollo" class="icon brands fa-brands fa-github"><span
+											class="label">Dribbble</span></a></li>
+								<li><a href="https://na-hollo.tistory.com/"
+										class="icon brands fa-brands fa-blogger"><span
+											class="label">Pinterest</span></a></li>
+							</ul>
+						</section>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div id="copyright">
+							<ul class="menu">
+								<li>&copy; GMOVIE</li>
+								<li>Design: nahollo </a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.dropotron.min.js"></script>
+	<script src="./js/browser.min.js"></script>
+	<script src="./js/breakpoints.min.js"></script>
+	<script src="./js/util.js"></script>
+	<script src="./js/main.js"></script>
+
+	<style>
+		.points {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			/* 부모 요소 너비의 100%로 설정 (자동으로 조절됨) */
+			align-items: flex-start;
+			gap: 2%;
+			/* 부모 요소 높이의 2%로 설정 (자동으로 조절됨) */
+			position: relative;
+			background-color: #F7F7F7;
+			/* 원하는 배경색 코드로 변경하세요 (#FFA500은 주황색 예시) */
+		}
+
+		.element {
+			display: inline-flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1%;
+			/* 부모 요소 높이의 1%로 설정 (자동으로 조절됨) */
+			padding: 2% 3% 2% 3%;
+			/* 상단, 우측, 하단, 좌측 여백을 부모 요소의 너비와 높이에 상대적으로 설정 */
+			position: relative;
+			border: 1px solid;
+			border-color: #e3e3e3;
+		}
+
+		.content-4 {
+			display: flex;
+			width: 90%;
+			/* 부모 요소 너비의 90%로 설정 (자동으로 조절됨) */
+			align-items: flex-start;
+			gap: 1%;
+			/* 부모 요소 높이의 1%로 설정 (자동으로 조절됨) */
+			position: relative;
+		}
+
+		.text-wrapper-7 {
+			color: #000000;
+			font-size: 12px;
+		}
+	</style>
+
+
+</body>
+
 </html>

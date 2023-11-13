@@ -3,60 +3,57 @@ package com.gmovie.gmovie.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import ch.qos.logback.core.model.Model;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class PagesController {
 
     @GetMapping("/calendar")
     public String showCalendarPage() {
-    return "calendar"; 
+        return "calendar";
     }
-
 
     @GetMapping("/home")
     public String showHomePage() {
-    return "home"; 
+        return "home";
     }
 
     @GetMapping("/login")
     public String showLoginPage() {
-    return "login"; 
+        return "login";
     }
 
     @GetMapping("/signup")
     public String showSignUpPage() {
-    return "signup"; 
+        return "signup";
     }
 
     @GetMapping("/aboutus")
     public String showAboutUsPage() {
-    return "aboutus"; 
+        return "aboutus";
     }
-
- 
 
     @GetMapping("/service")
     public String showServicesPage() {
-    return "service"; 
+        return "service";
     }
 
-    
-    
     @GetMapping("/developer")
     public String showDeveloperPage() {
-    return "developer"; 
+        return "developer";
     }
 
     @GetMapping("/summary")
     public String showSummaryPage() {
-    return "summary"; 
+        System.out.println("hello");
+        return "summary";
     }
 
+    @GetMapping("/logout")
+    public String showLoginPage(HttpServletRequest request, HttpSession session, Model model) {
+        return "logout";
+    }
 
-
-
-
-
-
-    
-      
 }

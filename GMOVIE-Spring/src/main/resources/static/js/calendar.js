@@ -900,7 +900,7 @@ function getEvents(storedUser) {
 
       // Convert the dictionary into an array of events
       eventsArr.length = 0; // Clear existing data
-      eventsArr.push(Object.values(eventsByDate));
+      eventsArr.push(...Object.values(eventsByDate));
       initCalendar(); // Update the calendar
     })
     .catch(error => {

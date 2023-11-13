@@ -315,7 +315,7 @@ body {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  padding-left: 4px;
+  padding-left: 40px;
 }
 
 .events .event {
@@ -327,7 +327,7 @@ body {
   flex-direction: column;
   gap: 5px;
   padding: 0 20px;
-  padding-left: 50px;
+  padding-left: 30px;
   color: #fff;
   background: linear-gradient(90deg, #3f4458, transparent);
   cursor: pointer;
@@ -646,6 +646,7 @@ body {
   /* 调整按钮距离顶部的位置 */
   right: -50px;
   /* 调整按钮距离右侧的位置 */
+  z-index: 999;
 }
 
 .share-container {
@@ -656,6 +657,7 @@ body {
   /* 调整按钮距离顶部的位置 */
   right: 10px;
   /* 调整按钮距离右侧的位置 */
+  z-index: 999;
 }
 
 .delete-container {
@@ -666,6 +668,7 @@ body {
   /* 调整按钮距离顶部的位置 */
   right: 100px;
   /* 调整按钮距离右侧的位置 */
+  z-index: 999;
 }
 
 /* 更改按钮的颜色 */
@@ -699,23 +702,51 @@ body {
   white-space: nowrap; /* 防止文本换行 */
   text-overflow: ellipsis; /* 如果文本过长，使用省略号显示 */ 
 }
+.share-button {
+  background-color: #487896; /* 背景颜色 */
+  color: #fff; /* 文本颜色 */
+  border: none; /* 去除边框 */
+  padding: 5px 5px; /* 按钮内边距 */
+  font-size: 16px; /* 字体大小 */
+  cursor: pointer; /* 鼠标指针样式 */
+  border-radius: 5px; /* 圆角边框 */
+  width: 80px; 
+  height: 40px;
+  overflow: hidden; /* 设置文本溢出隐藏 */
+  white-space: nowrap; /* 防止文本换行 */
+  text-overflow: ellipsis; /* 如果文本过长，使用省略号显示 */ 
+}
+.delete-button {
+  background-color: #964848; /* 背景颜色 */
+  color: #fff; /* 文本颜色 */
+  border: none; /* 去除边框 */
+  padding: 5px 5px; /* 按钮内边距 */
+  font-size: 16px; /* 字体大小 */
+  cursor: pointer; /* 鼠标指针样式 */
+  border-radius: 5px; /* 圆角边框 */
+  width: 80px; 
+  height: 40px;
+  overflow: hidden; /* 设置文本溢出隐藏 */
+  white-space: nowrap; /* 防止文本换行 */
+  text-overflow: ellipsis; /* 如果文本过长，使用省略号显示 */ 
+}
 
 /* 按钮悬停状态样式 */
 .button:hover {
-  background-color: #2077b3; /* 悬停时的背景颜色 */
+  background-color: #759087; /* 悬停时的背景颜色 */
 }
 
 /* 按钮点击状态样式 */
 .button:active {
-  background-color: #175e9c; /* 按下时的背景颜色 */
+  background-color: #4f605a; /* 按下时的背景颜色 */
 }
 
 /* 按钮悬停状态样式 */
 .custom-button:hover {
-  background-color: #2077b3; /* 悬停时的背景颜色 */
+  background-color: #759087; /* 悬停时的背景颜色 */
 }
 
 /* 按钮点击状态样式 */
 .custom-button:active {
-  background-color: #175e9c; /* 按下时的背景颜色 */
+  background-color: #4f605a; /* 按下时的背景颜色 */
 }

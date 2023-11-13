@@ -5,235 +5,277 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Verti by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="./css/main.css" />
-	</head>
-	<body class="is-preload left-sidebar">
-		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<header id="header" class="container">
+<head>
+	<title>Verti by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="./css/main.css" />
+</head>
 
-						<!-- Logo -->
-							<div id="logo">
-								<h1><a href="home"><img src="./img/GMOVIE LOGO.png" alt="GMOVIE" width="250" height="80"></a></h1>
-							</div>
+<body class="is-preload left-sidebar">
+	<div id="page-wrapper">
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li><a href="home">home</a></li>
-									<li class="current"><a href="service">service</a></li>
-									<li><a href="aboutus">About us</a></li>
-									<li><a href="developer">Developer</a></li>
-									<li><a href="login">Login</a></li>
-								</ul>
-							</nav>
+		<!-- Header -->
+		<div id="header-wrapper">
+			<header id="header" class="container">
 
-					</header>
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="home"><img src="./img/GMOVIE LOGO.png" alt="GMOVIE" width="250" height="80"></a></h1>
 				</div>
 
-				<h2 style="text-align: center; line-height: 100px;">GMOVIE는 다양한 기능을 제공합니다.</h2>
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="home">home</a></li>
+						<li class="current"><a href="service">service</a></li>
+						<li><a href="aboutus">About us</a></li>
+						<li><a href="developer">Developer</a></li>
+						<li id="loginLogoutLink">
+							<a id="loginLink" style="display: block;" href="login">Login</a>
+							<a id="logoutLink" style="display: none;" href="javascript:void(0);"
+								onclick="logout()">Logout</a>
+						</li>
+					</ul>
+				</nav>
 
-			<!-- Main 1 -->
-			<div id="features-wrapper">
-
-				<!-- 첫 번째 줄 -->
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-12-medium">
-
-							<!-- Box -->
-							<section class="box feature">
-								<img src="./img/서비스1.png" alt="" class="image featured"/>
-							</section>
-
-						</div>
-						<div class="col-4 col-12-medium">
-
-							<!-- Box -->
-							<section class="box feature">
-								<img src="./img/서비스2.png" alt="" class="image featured"/>
-							</section>
-
-						</div>
-						<div class="col-4 col-12-medium">
-
-							<!-- Box -->
-							<section class="box feature">
-								<img src="./img/서비스3.png" alt="" class="image featured"/>
-							</section>
-
-						</div>
-					</div>
-				</div>
-				<br>
-
-				<!-- 두 번째 줄 -->
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-12-medium">
-
-							<!-- Box -->
-							<section class="box feature">
-								<img src="./img/서비스4.png" alt="" class="image featured"/>
-							</section>
-						</div>
-						<div class="col-4 col-12-medium">
-
-							<!-- Box -->
-							<section class="box feature">
-								<img src="./img/서비스5.png" alt="" class="image featured"/>
-							</section>
-
-						</div>
-						<div class="col-4 col-12-medium">
-
-							<!-- Box -->
-								<section class="box feature">
-									<img src="./img/서비스6.png" alt="" class="image featured"/>
-								</section>
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-			<!-- Main 2 -->
-			<div id="banner" class="box container">
-				<div id="features-wrapper">
-					<div class="container">
-						<h1 style="color: white;">GMOVIE가 제공하는 것들</h1>
-						<h2 style="color: white;">사용자에게 제공하는 것</h2>
-						<p style="font-size: 0.8em; color: white; text-align: center;">GMOVIE는 최고의 특화된 시장을 통해 자원을 효과적으로 연계하며, 전문적으로 고객 서비스를 개선하고 있습니다. 사용자에게 최신 기술의 고객 서비스를 제공하며, 사용자들의 만족을 우선시합니다.</p>
-						<br>
-						<div class="row">
-							<div class="col-4 col-12-medium">
-								<!-- Box -->
-								<section class="box feature">
-										<img src="./img/제공 서비스1.png" alt="" class="image featured2">
-								</section>
-								
-							</div>
-							<div class="col-4 col-12-medium">
-	
-								<!-- Box -->
-								<section class="box feature">
-									<img src="./img/제공 서비스2.png" alt="" class="image featured2">
-								</section>
-	
-							</div>
-							<div class="col-4 col-12-medium">
-	
-								<!-- Box -->
-								<section class="box feature">
-									<img src="./img/제공 서비스3.png" alt="" class="image featured2">
-								</section>
-	
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-			<!-- Footer -->
-			<div id="footer-wrapper">
-				<footer id="footer" class="container">
-					<div class="row">
-						<div class="col-3 col-6-medium col-12-small">
-								<section class="widget links">
-									<h3>Thanks for</h3>
-									<ul class="style2">
-										<li><p>Parent</p></li>
-										<li><p>Mol 13Class Professor</p></li>
-										<li><p>Bit Education Center</p></li>
-										<li><p>SM SW Office</p></li>
-									</ul>
-								</section>
-
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-
-								<section class="widget links">
-									<h3>Developer</h3>
-									<ul class="style2">
-										
-
-										<li><p>Na HyeongJin</p></li>
-										<li><p>Lee GwangHui</p></li>
-										<li><p>WANG CHIANG LING</p></li>
-										<li><p>Jung KyeongHee</p></li>
-									</ul>
-								</section>
-
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-
-								<section class="widget links">
-									<h3>INFO</h3>
-									<ul class="style2">
-										<li><h1>Address</h1></li>
-										<li><p>70 Sunmoon-ro 221, Tangjeong-myeon<br/>
-											Asan-si, Chungcheongnam-do
-										</p></li>
-										<li><h1>tel</h1></li>
-										<li><p>(041) 530-2114</p></li>
-										<li><h1>Email</h1></li>
-										<li><p>gmovieoffice@gmail.com</p></li>
-									</ul>
-								</section>
-
-						</div>
-						<div class="col-3 col-6-medium col-12-small">
-
-							<!-- Contact -->
-								<section class="widget contact last">
-									<h3>Contact Us</h3>
-									<ul>
-										<li><a href="https://www.instagram.com/skgudwlsdlrj/?hl=ko" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://github.com/nahollo" class="icon brands fa-brands fa-github"><span class="label">Dribbble</span></a></li>
-										<li><a href="https://na-hollo.tistory.com/" class="icon brands fa-brands fa-blogger"><span class="label">Pinterest</span></a></li>
-									</ul>
-								</section>
-
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<div id="copyright">
-								<ul class="menu">
-									<li>&copy; GMOVIE</li><li>Design: nahollo </a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</footer>
-			</div>
-
+			</header>
 		</div>
 
-		<!-- Scripts -->
+		<h2 style="text-align: center; line-height: 100px;">GMOVIE는 다양한 기능을 제공합니다.</h2>
 
-			<script src="./js/jquery.min.js"></script>
-			<script src="./js/jquery.dropotron.min.js"></script>
-			<script src="./js/browser.min.js"></script>
-			<script src="./js/breakpoints.min.js"></script>
-			<script src="./js/util.js"></script>
-			<script src="./js/main.js"></script>
-			<style>
-				#banner {
-					background-color: #37393E; /* 원하는 배경 색상 코드로 변경하세요. */
-				}
-			</style>
-				
+		<!-- Main 1 -->
+		<div id="features-wrapper">
 
-	</body>
+			<!-- 첫 번째 줄 -->
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-12-medium">
+
+						<!-- Box -->
+						<section class="box feature">
+							<img src="./img/서비스1.png" alt="" class="image featured" />
+						</section>
+
+					</div>
+					<div class="col-4 col-12-medium">
+
+						<!-- Box -->
+						<section class="box feature">
+							<img src="./img/서비스2.png" alt="" class="image featured" />
+						</section>
+
+					</div>
+					<div class="col-4 col-12-medium">
+
+						<!-- Box -->
+						<section class="box feature">
+							<img src="./img/서비스3.png" alt="" class="image featured" />
+						</section>
+
+					</div>
+				</div>
+			</div>
+			<br>
+
+			<!-- 두 번째 줄 -->
+			<div class="container">
+				<div class="row">
+					<div class="col-4 col-12-medium">
+
+						<!-- Box -->
+						<section class="box feature">
+							<img src="./img/서비스4.png" alt="" class="image featured" />
+						</section>
+					</div>
+					<div class="col-4 col-12-medium">
+
+						<!-- Box -->
+						<section class="box feature">
+							<img src="./img/서비스5.png" alt="" class="image featured" />
+						</section>
+
+					</div>
+					<div class="col-4 col-12-medium">
+
+						<!-- Box -->
+						<section class="box feature">
+							<img src="./img/서비스6.png" alt="" class="image featured" />
+						</section>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Main 2 -->
+		<div id="banner" class="box container">
+			<div id="features-wrapper">
+				<div class="container">
+					<h1 style="color: white;">GMOVIE가 제공하는 것들</h1>
+					<h2 style="color: white;">사용자에게 제공하는 것</h2>
+					<p style="font-size: 0.8em; color: white; text-align: center;">GMOVIE는 최고의 특화된 시장을 통해 자원을 효과적으로
+						연계하며, 전문적으로 고객 서비스를 개선하고 있습니다. 사용자에게 최신 기술의 고객 서비스를 제공하며, 사용자들의 만족을 우선시합니다.</p>
+					<br>
+					<div class="row">
+						<div class="col-4 col-12-medium">
+							<!-- Box -->
+							<section class="box feature">
+								<img src="./img/제공 서비스1.png" alt="" class="image featured2">
+							</section>
+
+						</div>
+						<div class="col-4 col-12-medium">
+
+							<!-- Box -->
+							<section class="box feature">
+								<img src="./img/제공 서비스2.png" alt="" class="image featured2">
+							</section>
+
+						</div>
+						<div class="col-4 col-12-medium">
+
+							<!-- Box -->
+							<section class="box feature">
+								<img src="./img/제공 서비스3.png" alt="" class="image featured2">
+							</section>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Footer -->
+		<div id="footer-wrapper">
+			<footer id="footer" class="container">
+				<div class="row">
+					<div class="col-3 col-6-medium col-12-small">
+						<section class="widget links">
+							<h3>Thanks for</h3>
+							<ul class="style2">
+								<li>
+									<p>Parent</p>
+								</li>
+								<li>
+									<p>Mol 13Class Professor</p>
+								</li>
+								<li>
+									<p>Bit Education Center</p>
+								</li>
+								<li>
+									<p>SM SW Office</p>
+								</li>
+							</ul>
+						</section>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<section class="widget links">
+							<h3>Developer</h3>
+							<ul class="style2">
+
+
+								<li>
+									<p>Na HyeongJin</p>
+								</li>
+								<li>
+									<p>Lee GwangHui</p>
+								</li>
+								<li>
+									<p>WANG CHIANG LING</p>
+								</li>
+								<li>
+									<p>Jung KyeongHee</p>
+								</li>
+							</ul>
+						</section>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<section class="widget links">
+							<h3>INFO</h3>
+							<ul class="style2">
+								<li>
+									<h1>Address</h1>
+								</li>
+								<li>
+									<p>70 Sunmoon-ro 221, Tangjeong-myeon<br />
+										Asan-si, Chungcheongnam-do
+									</p>
+								</li>
+								<li>
+									<h1>tel</h1>
+								</li>
+								<li>
+									<p>(041) 530-2114</p>
+								</li>
+								<li>
+									<h1>Email</h1>
+								</li>
+								<li>
+									<p>gmovieoffice@gmail.com</p>
+								</li>
+							</ul>
+						</section>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<!-- Contact -->
+						<section class="widget contact last">
+							<h3>Contact Us</h3>
+							<ul>
+								<li><a href="https://www.instagram.com/skgudwlsdlrj/?hl=ko"
+										class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/nahollo" class="icon brands fa-brands fa-github"><span
+											class="label">Dribbble</span></a></li>
+								<li><a href="https://na-hollo.tistory.com/"
+										class="icon brands fa-brands fa-blogger"><span
+											class="label">Pinterest</span></a></li>
+							</ul>
+						</section>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div id="copyright">
+							<ul class="menu">
+								<li>&copy; GMOVIE</li>
+								<li>Design: nahollo </a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.dropotron.min.js"></script>
+	<script src="./js/browser.min.js"></script>
+	<script src="./js/breakpoints.min.js"></script>
+	<script src="./js/util.js"></script>
+	<script src="./js/main.js"></script>
+	<style>
+		#banner {
+			background-color: #37393E;
+			/* 원하는 배경 색상 코드로 변경하세요. */
+		}
+	</style>
+
+
+</body>
+
 </html>

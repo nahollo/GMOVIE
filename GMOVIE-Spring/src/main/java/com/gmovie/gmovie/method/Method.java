@@ -44,9 +44,9 @@ public class Method {
         ChatGPT chatGPT = new ChatGPT();
         Method method = new Method();
 
-        String originalFile = "C:\\thanks\\GMOVIE_web_RTC\\src\\audio\\1234\\merge.wav";
-        String fullFile = "C:\\thanks\\GMOVIE_web_RTC\\src\\audio\\1234\\output.wav";
-        String cutFiles = "C:\\thanks\\GMOVIE_web_RTC\\src\\audio\\1234\\audio_segments";
+        String originalFile = "C:\\Users\\skgud\\Downloads\\1.wav";
+        String fullFile = "C:\\Users\\skgud\\Downloads\\output.wav";
+        String cutFiles = "C:\\Users\\skgud\\Downloads\\audio_segments";
 
         // 1. base64로 인코딩하기
         method.base64Encoded(originalFile, fullFile);
@@ -57,14 +57,9 @@ public class Method {
         // 3. 각 자른 음성 파일에 STT 적용하기
         List<String> sttResults = method.applySTTToAudioSegments(audioSegments);
 
-        
         // 4. 각 STT 결과를 통합하기
         String combinedResult = method.combineSTTResults(sttResults);
         System.out.println("STT 텍스트: \n" + combinedResult);
-
-        String output = chatGPT.gptSummary(combinedResult);
-
-        System.out.println(output);
 
     }
 

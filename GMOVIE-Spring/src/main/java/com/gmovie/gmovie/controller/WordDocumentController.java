@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.core.io.InputStreamSource;
 import org.springframework.core.io.Resource;
@@ -25,6 +27,7 @@ import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse.File;
 
 import jakarta.mail.internet.MimeMessage;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @RestController
@@ -34,10 +37,10 @@ public class WordDocumentController {
     private JavaMailSender javaMailSender;
 
     @Autowired
-    private UserMapper userMapper;
+    private UserMapper userMapper;  
 
     @GetMapping("/createWordDocumentAndSendEmail")
-    public String createWordDocumentAndSendEmail(@RequestParam String roomId, HttpServletRequest request)
+    public void createWordDocumentAndSendEmail(@RequestParam String roomId, HttpServletRequest request, HttpServletResponse response)
             throws IOException {
         UserDTO userDTO = userMapper.findByUserNo(1);
 
@@ -53,7 +56,13 @@ public class WordDocumentController {
 
             String text = method.summary(roomId);
 
-            paragraph.createRun().setText(text);
+            // Split the text into lines and add them to the paragraph
+            String[] lines = text.split("\n");
+            for (String line : lines) {
+                XWPFRun run = paragraph.createRun();
+                run.setText(line);
+                run.addBreak(); // Add line break after each line
+            }
 
             // Save the document to a file
             String filePath = roomId + ".docx";
@@ -70,12 +79,12 @@ public class WordDocumentController {
                 MimeMessage message = javaMailSender.createMimeMessage();
                 MimeMessageHelper helper = new MimeMessageHelper(message, true);
                 helper.setTo(recipientEmail);
-                helper.setSubject("Word Document Attached");
-                helper.setText("Please find the attached Word document.");
+                helper.setSubject(roomId + "회의록");
+                helper.setText(roomId+" 회의실의 요약된 회의록입니다.");
 
                 // Add an attachment, converting the file path to a DataSource
                 Resource fileResource = new FileSystemResource(filePath);
-                helper.addAttachment("document.docx", new InputStreamSource() {
+                helper.addAttachment(roomId+".docx", new InputStreamSource() {
                     @Override
                     public InputStream getInputStream() throws IOException {
                         return fileResource.getInputStream();
@@ -83,12 +92,12 @@ public class WordDocumentController {
                 });
 
                 javaMailSender.send(message);
+                response.sendRedirect("/summary");
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return "redirect:/summary";
         } else {
-            return "redirect:/error"; 
+            response.sendRedirect("/error");
         }
     }
 
