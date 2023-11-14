@@ -19,33 +19,31 @@ if (isLoggedIn !== null) {
 
 
 function logout() {
-	// Clear the session storage and redirect to home page
-	sessionStorage.removeItem('userNo');
-	window.location.href = 'home';
+	window.location.href = 'logout';
 }
 
 function joinMeeting() {
-	
+
 	var isLoggedIn = sessionStorage.getItem('userNo');
-  
+
 	if (isLoggedIn !== null) {
 		window.location.href = 'http://localhost:3000';
 	} else {
-	    alert('로그인 먼저 해주세요');
-	    window.location.href = 'login'; 
+		alert('로그인 먼저 해주세요');
+		window.location.href = 'login';
 	}
-  }
+}
 
-  function getSummary() {
+function getSummary() {
 	var isLoggedIn = sessionStorage.getItem('userNo');
-  
+
 	if (isLoggedIn !== null) {
-	    window.location.href = 'summary';
-	} else {	    
-	    alert('로그인 먼저 해주세요');
-	    window.location.href = 'login'; 
+		window.location.href = 'summary';
+	} else {
+		alert('로그인 먼저 해주세요');
+		window.location.href = 'login';
 	}
-  }
+}
 
 (function ($) {
 

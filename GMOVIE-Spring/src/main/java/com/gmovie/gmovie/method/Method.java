@@ -11,6 +11,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import jakarta.servlet.http.HttpServletResponse;
+
 public class Method {
     final String PATH = "C:\\thanks\\GMOVIE_web_RTC\\src\\audio\\";
     public String summary(String roomId) throws IOException {
@@ -21,11 +23,13 @@ public class Method {
         String fullFile = PATH + roomId + "\\output.wav";
         String cutFiles = PATH + roomId + "\\audio_segments";
 
+        // 여기에 로딩화면1
         // 1. base64로 인코딩하기
         method.base64Encoded(originalFile, fullFile);
 
         // 2. 음성 파일을 20초 단위로 자르기
         List<String> audioSegments = method.splitAudioInto20SecondSegments(fullFile, cutFiles);
+
 
         // 3. 각 자른 음성 파일에 STT 적용하기
         List<String> sttResults = method.applySTTToAudioSegments(audioSegments);
@@ -34,34 +38,15 @@ public class Method {
         String combinedResult = method.combineSTTResults(sttResults);
         System.out.println("STT 텍스트: \n" + combinedResult);
 
+        // 여기에 로딩화면2
+
+        // 5. 요약하고 회의록 만들기
         String output = chatGPT.gptSummary(combinedResult);
 
         return output;
 
     }
 
-    public static void main(String[] args) throws IOException {
-        ChatGPT chatGPT = new ChatGPT();
-        Method method = new Method();
-
-        String originalFile = "C:\\Users\\skgud\\Downloads\\1.wav";
-        String fullFile = "C:\\Users\\skgud\\Downloads\\output.wav";
-        String cutFiles = "C:\\Users\\skgud\\Downloads\\audio_segments";
-
-        // 1. base64로 인코딩하기
-        method.base64Encoded(originalFile, fullFile);
-
-        // 2. 음성 파일을 20초 단위로 자르기
-        List<String> audioSegments = method.splitAudioInto20SecondSegments(fullFile, cutFiles);
-
-        // 3. 각 자른 음성 파일에 STT 적용하기
-        List<String> sttResults = method.applySTTToAudioSegments(audioSegments);
-
-        // 4. 각 STT 결과를 통합하기
-        String combinedResult = method.combineSTTResults(sttResults);
-        System.out.println("STT 텍스트: \n" + combinedResult);
-
-    }
 
     public void base64Encoded(String originalFile, String fullFile) {
         String inputFilePath = originalFile; // 입력 오디오 파일 경로

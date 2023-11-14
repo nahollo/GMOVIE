@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.core.io.InputStreamSource;
 import org.springframework.core.io.Resource;
 import java.io.InputStream;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 import com.gmovie.gmovie.dto.UserDTO;
 import com.gmovie.gmovie.mapper.UserMapper;
@@ -37,12 +40,15 @@ public class WordDocumentController {
     private JavaMailSender javaMailSender;
 
     @Autowired
-    private UserMapper userMapper;  
+    private UserMapper userMapper;
 
     @GetMapping("/createWordDocumentAndSendEmail")
-    public void createWordDocumentAndSendEmail(@RequestParam String roomId, HttpServletRequest request, HttpServletResponse response)
+    public void createWordDocumentAndSendEmail(@RequestParam String roomId, HttpSession session, HttpServletRequest request,
+            HttpServletResponse response, Model model)
             throws IOException {
-        UserDTO userDTO = userMapper.findByUserNo(1);
+                int userNo = (Integer)session.getAttribute("userNo");
+                System.out.println(userNo);
+        UserDTO userDTO = userMapper.findByUserNo(userNo);
 
         if (userDTO != null) {
             String recipientEmail = userDTO.getEmail();
@@ -80,11 +86,11 @@ public class WordDocumentController {
                 MimeMessageHelper helper = new MimeMessageHelper(message, true);
                 helper.setTo(recipientEmail);
                 helper.setSubject(roomId + "회의록");
-                helper.setText(roomId+" 회의실의 요약된 회의록입니다.");
+                helper.setText(roomId + " 회의실의 요약된 회의록입니다.");
 
                 // Add an attachment, converting the file path to a DataSource
                 Resource fileResource = new FileSystemResource(filePath);
-                helper.addAttachment(roomId+".docx", new InputStreamSource() {
+                helper.addAttachment(roomId + ".docx", new InputStreamSource() {
                     @Override
                     public InputStream getInputStream() throws IOException {
                         return fileResource.getInputStream();
@@ -92,7 +98,8 @@ public class WordDocumentController {
                 });
 
                 javaMailSender.send(message);
-                response.sendRedirect("/summary");
+                response.sendRedirect("redirect:/summary?text=" + URLEncoder.encode(text, StandardCharsets.UTF_8.toString()));
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

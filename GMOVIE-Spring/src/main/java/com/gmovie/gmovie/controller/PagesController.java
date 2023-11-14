@@ -47,13 +47,12 @@ public class PagesController {
 
     @GetMapping("/summary")
     public String showSummaryPage() {
-        System.out.println("hello");
         return "summary";
     }
 
     @GetMapping("/logout")
     public String showLoginPage(HttpServletRequest request, HttpSession session, Model model) {
+        session.invalidate();
         return "logout";
     }
-
 }

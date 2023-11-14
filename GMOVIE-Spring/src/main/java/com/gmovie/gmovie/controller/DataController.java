@@ -68,8 +68,9 @@ public class DataController {
           UserDTO foundUser = userMapper.findByEmail(userDTO.getEmail());
       
           if (foundUser != null && foundUser.getPwd().equals(userDTO.getPwd())) {
-              int userNo1 = 1; // 用户编号
+              int userNo1 = foundUser.getNo(); // 用户编号
               session.setAttribute("userNo", userNo1);
+              System.out.println(userNo1);
               // 验证成功，返回用户信息
               return ResponseEntity.ok(foundUser);
           } else {
