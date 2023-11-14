@@ -67,7 +67,7 @@ public class WordDocumentController {
             for (String line : lines) {
                 XWPFRun run = paragraph.createRun();
                 run.setText(line);
-                run.addBreak(); // Add line break after each line
+                run.addBreak();
             }
 
             // Save the document to a file
@@ -98,7 +98,7 @@ public class WordDocumentController {
                 });
 
                 javaMailSender.send(message);
-                response.sendRedirect("redirect:/summary?text=" + URLEncoder.encode(text, StandardCharsets.UTF_8.toString()));
+                response.sendRedirect("/summary?text=" + URLEncoder.encode(text, StandardCharsets.UTF_8.toString()));
 
             } catch (Exception e) {
                 e.printStackTrace();
