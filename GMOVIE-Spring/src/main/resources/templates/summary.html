@@ -71,12 +71,6 @@
             <div class="row">
                 <div class="col-7 col-12-medium">
                     <div class="text-box">
-                        <form id="welcomeForm">
-                            <div id="box">
-                                <p th:text="${param.text}" th:if="${param.text != null}" style="display: block;"></p>
-                                <p th:unless="${param.text != null}" style="display: none;"></p>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -247,9 +241,24 @@
             align-items: center;
             z-index: 1000;
         }
+
+        #summaryText {
+            white-space: pre-line;
+        }
     </style>
 
     <script>
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var text = urlParams.get('text');
+            if (text) {
+                var decodedText = decodeURIComponent(text);
+                decodedText = decodedText.replace(/\n/g, '<br>');
+                document.getElementById('banner123').innerHTML = decodedText;
+            }
+        }
+
+
         function redirectToSummaryPage() {
             document.getElementById("loading").style.display = "flex";
             var roomId = document.getElementById("inputRoomName").value;

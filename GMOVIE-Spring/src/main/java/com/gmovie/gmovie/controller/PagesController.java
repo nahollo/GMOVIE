@@ -3,6 +3,7 @@ package com.gmovie.gmovie.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.util.UriUtils;
 
 // import ch.qos.logback.core.model.Model;
 import jakarta.servlet.http.HttpServletRequest;
@@ -47,9 +48,12 @@ public class PagesController {
         return "developer";
     }
 
+    // Controller
     @GetMapping("/summary")
     public String showSummaryPage(@RequestParam(name = "text", required = false) String text, Model model) {
-        model.addAttribute("text", text);
+        if (text != null) {
+            model.addAttribute("text", text);
+        }
         return "summary";
     }
 

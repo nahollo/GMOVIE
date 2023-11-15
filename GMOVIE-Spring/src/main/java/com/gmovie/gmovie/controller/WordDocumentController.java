@@ -100,6 +100,7 @@ public class WordDocumentController {
                 javaMailSender.send(message);
                 response.sendRedirect("/summary?text=" + URLEncoder.encode(text, StandardCharsets.UTF_8.toString()));
 
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
