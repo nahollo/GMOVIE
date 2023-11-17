@@ -1749,38 +1749,24 @@ button,
 .button {
   background-color: #444444;
   color: #ffffff;
+  width: 113px;
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  /* margin-left: 10px; */
-  margin-right: 20px;
-  font-family: NanumSquareR;
+  font-family: Noto Sans KR;
+  font-weight: normal;
   font-size: 15px;
-  text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
   margin-top: 10px;
-  /* margin-bottom: 30px; */
-  letter-spacing: 1.5px;
   border-radius: 5px;
+  margin: 0 25px;
   /* -moz-transition: background-color 0.25s ease-in-out;
   -webkit-transition: background-color 0.25s ease-in-out;
   -ms-transition: background-color 0.25s ease-in-out;
   transition: background-color 0.25s ease-in-out;
   -webkit-appearance: none;
-  position: relative;
-  display: inline-block;
-  background: #0090c5;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 800;
-  outline: 0;
-  border: 0;
-  cursor: pointer;
-  font-size: 1.35em;
-  padding: 0.6em 1.5em; */
 }
 
 input[type="button"] {
@@ -1825,13 +1811,13 @@ button.alt,
   color: #444;
 }
 
-input[type="button"].alt:hover,
+/* input[type="button"].alt:hover,
 input[type="submit"].alt:hover,
 input[type="reset"].alt:hover,
 button.alt:hover,
 .button.alt:hover {
-  /* background: #e8e8e8;
-  background: rgba(0, 0, 0, 0.085); */
+  background: #e8e8e8;
+  background: rgba(0, 0, 0, 0.085);
 }
 
 input[type="button"].alt:active,
@@ -1839,8 +1825,8 @@ input[type="submit"].alt:active,
 input[type="reset"].alt:active,
 button.alt:active,
 .button.alt:active {
-  /* background: #e4e4e4;
-  background: rgba(0, 0, 0, 0.15); */
+  background: #e4e4e4;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 input[type="button"].large,
@@ -1848,9 +1834,9 @@ input[type="submit"].large,
 input[type="reset"].large,
 button.large,
 .button.large {
-  /* font-size: 2.25em;
-  padding: 0.8em 0.9em; */
-}
+  font-size: 2.25em;
+  padding: 0.8em 0.9em;
+} */
 
 /* List */
 
@@ -2821,7 +2807,6 @@ ul.menu li:first-child {
   .box.feature p {
     margin: 0;
   }
-  
 
   .box.feature .image {
     position: relative;

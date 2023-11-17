@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="./css/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="is-preload homepage">
@@ -48,7 +49,7 @@
         <div id="banner" class="box container">
             <div class="row">
                 <div class="col-7 col-12-medium">
-                    <h2>Login</h2>
+                    <h2 style="font-family: Noto Sans KR; font-weight: bold;">Login</h2>
                     <div class="user-box">
                         <input type="email" name="id" id="id"><br>
                         <label id="label">ID</label>
@@ -59,11 +60,8 @@
                     </div>
                     <div class="button-group">
                         <button id="login" onclick="login()">Login</button><br>
-                        <!-- <button id="login">회원가입</button><br> -->
                         <button id="signup" onclick="signup()">Sign up</button>
-                        <!-- <a href="signup" class="button-register">Sign up</a> -->
                     </div>
-                    <!-- 아직도 아이디가 없으신가요? &nbsp;<a href="register.html" style="color: #000000;"><strong>회원가입</strong></a> 하러가기 -->
                 </div>
             </div>
         </div>
@@ -174,8 +172,6 @@
 
     </div>
 
-    <!-- Scripts -->
-
     <script src="./js/jquery.min.js"></script>
     <script src="./js/jquery.dropotron.min.js"></script>
     <script src="./js/browser.min.js"></script>
@@ -243,55 +239,13 @@
             font-size: 13px;
         }
 
-        button#login {
-            background-color: #444444;
-            position: relative;
-            display: inline-block;
-            padding: 10px 20px;
-            margin-left: 20px;
-            margin-right: 20px;
-            font-family: NanumSquareE;
-            font-size: 15px;
-            text-decoration: none;
-            text-transform: uppercase;
-            overflow: hidden;
-            transition: .5s;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            letter-spacing: 1.5px
-        }
-
         .button-group {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-        }
-
-        .button-register {
-            background-color: #444444;
-            position: relative;
-            display: inline-block;
-            padding: 0.1px 20px;
-            margin-left: 20px;
-            margin-right: 20px;
-            font-family: NanumSquareE;
-            font-size: 15px;
-            font-weight: bold;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: #ffffff;
-            overflow: hidden;
-            transition: .5s;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            letter-spacing: 1.5px;
-
-            /* 버튼처럼 보이도록 스타일링 */
-            background-color: #444444;
-            border-radius: 5px;
+            margin-top: 10px;
         }
     </style>
-
 </body>
 
 </html>
