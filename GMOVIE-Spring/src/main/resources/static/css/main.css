@@ -262,7 +262,9 @@ h6 a {
 }
 
 h2 {
-  font-size: 2.25em;
+  font-size: 1.8em;
+  font-family: Noto Sans KR;
+  font-weight: bold;
   margin: 0 0 1.1em 0;
   line-height: 1em;
 }
@@ -1923,7 +1925,9 @@ ul.menu li:first-child {
 }
 
 .box.feature h2 {
-  font-size: 1.35em;
+  font-family: Noto Sans KR;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .box.feature p {
@@ -2091,7 +2095,6 @@ ul.menu li:first-child {
 #nav ul li {
   float: left;
   line-height: 4.5em;
-  /* padding-left: 1.5em; */
   margin: 0em 2em;
 }
 
@@ -2101,9 +2104,7 @@ ul.menu li:first-child {
   -webkit-transition: background-color 0.25s ease-in-out;
   -ms-transition: background-color 0.25s ease-in-out;
   transition: background-color 0.25s ease-in-out;
-  font-family: NanumSquareR;
-  /* font-weight: 500; */
-  /* letter-spacing: 0.025em; */
+  font-family: Noto Sans KR;
   color: #000000;
   text-decoration: none;
   border-radius: 5px;
@@ -2127,23 +2128,23 @@ ul.menu li:first-child {
 #nav ul li.current a {
   background: #b4c8ce;
   color: #fff;
+  font-family: Noto Sans KR;
+  font-weight: normal;
+  font-size: 15px;
 }
 
 #nav ul li:last-child a {
-  margin-top: 10px; /* 원하는 마진 값으로 설정 */
-  background: #0b1a1f; /* 배경 색상 */
-  color: #ffffff; /* 글자 색상 */
-  /* padding: 10px 20px; 패딩 설정 */
-  border-radius: 5px; /* 둥근 모서리 설정 */
+  margin-top: 10px;
+  background: #0b1a1f;
+  color: #ffffff;
+  border-radius: 5px;
   text-decoration: none;
   display: inline-block;
-  /* height: 40px; */
   line-height: 30px;
   vertical-align: middle;
 }
 
 #nav ul li:last-child a:hover {
-  /* background: #555; */
   background: #c0d1d2;
 }
 
@@ -2252,8 +2253,7 @@ ul.menu li:first-child {
 #banner .button.icon:before {
   position: absolute;
   right: 0.15em;
-  top: 50%;
-  margin-top: -0.5em;
+  margin-right: 35px;
 }
 
 #banner .button.alt {
