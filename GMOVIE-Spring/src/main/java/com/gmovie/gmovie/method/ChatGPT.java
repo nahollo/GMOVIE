@@ -13,7 +13,7 @@ public class ChatGPT {
 
     private static String callChatGPT(String prompt) {
         String apiKey = System.getenv("OPENAI_API_KEY");
-        String concept = "회의록을 주제, 회의 일시는 있으면 쓰고 없으면 안쓰고, 참석자, 각 참석자들의 보고, 회의 의결사항, 회의를 마치며 순서로 회의록을 작성하는 회의록 작성 전문가";
+        String concept = "회의록을 주제, 회의 일시는 있으면 쓰고 없으면 안쓰고, 참석자, 안건,회의 내용, 결정사항, 향후일정, 특이사항 순서로 회의록을 작성하는 회의록 작성 전문가";
 
         try {
             URL url = new URL("https://api.openai.com/v1/chat/completions");

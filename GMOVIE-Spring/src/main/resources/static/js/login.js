@@ -32,3 +32,9 @@ function login() {
         })
         .catch((error) => console.log(error));
 }
+
+function signup() {
+        window.location.href = "signup";
+}
+
+

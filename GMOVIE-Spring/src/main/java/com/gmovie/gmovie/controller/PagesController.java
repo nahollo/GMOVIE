@@ -3,9 +3,7 @@ package com.gmovie.gmovie.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.util.UriUtils;
 
-// import ch.qos.logback.core.model.Model;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.ui.Model;
@@ -18,7 +16,12 @@ public class PagesController {
         return "calendar";
     }
 
+    
     @GetMapping("/home")
+    public String showHomePage2() {
+        return "home";
+    }
+    @GetMapping("/")
     public String showHomePage() {
         return "home";
     }
