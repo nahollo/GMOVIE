@@ -47,7 +47,7 @@ public class WordDocumentController {
             HttpServletResponse response, Model model)
             throws IOException {
                 int userNo = (Integer)session.getAttribute("userNo");
-                System.out.println("userNo : " + userNo);
+                System.out.println(userNo);
         UserDTO userDTO = userMapper.findByUserNo(userNo);
 
         if (userDTO != null) {

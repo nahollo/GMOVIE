@@ -30,11 +30,22 @@ function login() {
                 alert(response.data);
             }
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+
+            console.log(error);
+            alert('아이디와 비밀번호가 일치하지 않습니다.');
+
+            document.getElementById('id').value = '';
+            document.getElementById('password').value = '';
+        });
+
+
+
 }
 
+
 function signup() {
-        window.location.href = "signup";
+    window.location.href = "signup";
 }
 
 

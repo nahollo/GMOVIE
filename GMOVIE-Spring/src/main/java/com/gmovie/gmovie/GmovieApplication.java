@@ -8,4 +8,4 @@ public class GmovieApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GmovieApplication.class, args);
 	}
-}	
+}

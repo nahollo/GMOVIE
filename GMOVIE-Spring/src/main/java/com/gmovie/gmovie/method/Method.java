@@ -1,4 +1,5 @@
 package com.gmovie.gmovie.method;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -8,45 +9,94 @@ import java.nio.file.*;
 import java.util.*;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import jakarta.servlet.http.HttpServletResponse;
 
 public class Method {
     final String PATH = "C:\\thanks\\GMOVIE_web_RTC\\src\\audio\\";
+
     public String summary(String roomId) throws IOException {
+        File roomDirectory = new File(PATH + roomId);
+
+        // roomId에 해당하는 디렉토리가 존재하지 않으면 리턴
+        if (!roomDirectory.exists()) {
+            return "존재하지 않는 회의입니다.";
+        }
+
         Method method = new Method();
         ChatGPT chatGPT = new ChatGPT();
 
         String originalFile = PATH + roomId + "\\merge.wav";
         String fullFile = PATH + roomId + "\\output.wav";
         String cutFiles = PATH + roomId + "\\audio_segments";
+        String outputFilepath = PATH + roomId + "\\output.txt";
 
-        // 여기에 로딩화면1
-        // 1. base64로 인코딩하기
-        method.base64Encoded(originalFile, fullFile);
+        File outputFile = new File(outputFilepath);
+        if (outputFile.exists()) { // 이미 output.txt 파일이 있을 때
+            return readOutputFromFile(outputFilepath);
+        } else { // 처음 실행될 때
+            // 1. base64로 인코딩하기
+            method.base64Encoded(originalFile, fullFile);
+            // 2. 음성 파일을 20초 단위로 자르기
+            List<String> audioSegments = method.splitAudioInto20SecondSegments(fullFile, cutFiles);
 
-        // 2. 음성 파일을 20초 단위로 자르기
-        List<String> audioSegments = method.splitAudioInto20SecondSegments(fullFile, cutFiles);
+            // 3. 각 자른 음성 파일에 STT 적용하기
+            List<String> sttResults = method.applySTTToAudioSegments(audioSegments);
 
+            // 4. 각 STT 결과를 통합하기
+            String combinedResult = method.combineSTTResults(sttResults);
+            System.out.println("STT 텍스트: \n" + combinedResult);
 
-        // 3. 각 자른 음성 파일에 STT 적용하기
-        List<String> sttResults = method.applySTTToAudioSegments(audioSegments);
+            // 5. 요약하고 회의록 만들기
+            String output = chatGPT.gptSummary(combinedResult);
+            saveOutputToFile(output, roomId);
 
-        // 4. 각 STT 결과를 통합하기
-        String combinedResult = method.combineSTTResults(sttResults);
-        System.out.println("STT 텍스트: \n" + combinedResult);
-
-        // 여기에 로딩화면2
-
-        // 5. 요약하고 회의록 만들기
-        String output = chatGPT.gptSummary(combinedResult);
-
-        return output;
+            return output;
+        }
 
     }
 
+    private String readOutputFromFile(String filePath) {
+    try {
+        BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        StringBuilder content = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            content.append(line).append("\n");
+        }
+        reader.close();
+        return content.toString();
+    } catch (IOException e) {
+        e.printStackTrace();
+        return null;
+    }
+}
+
+
+    private void saveOutputToFile(String output, String roomId) {
+        try {
+            String filePath = PATH + roomId + "\\output.txt";
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            writer.write(output);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private List<String> getFilesInDirectory(String directoryPath) {
+        List<String> fileList = new ArrayList<>();
+        File directory = new File(directoryPath);
+        File[] files = directory.listFiles();
+
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile()) {
+                    fileList.add(file.getAbsolutePath());
+                }
+            }
+        }
+
+        return fileList;
+    }
 
     public void base64Encoded(String originalFile, String fullFile) {
         String inputFilePath = originalFile; // 입력 오디오 파일 경로
@@ -79,7 +129,6 @@ public class Method {
             e.printStackTrace();
         }
     }
-
 
     // 1. 음성 파일을 18초 단위로 자르기
     public List<String> splitAudioInto20SecondSegments(String audioFilePath, String cutFiles) throws IOException {
@@ -127,19 +176,19 @@ public class Method {
         String languageCode = "korean"; // 언어 코드
 
         /*
-        korean: 한국어 음성인식 코드
-        english: 영어 음성인식 코드
-        japanese: 일본어 음성인식 코드
-        chinese: 중국어 음성인식 코드
-        spanish: 스페인어 음성인식 코드
-        french: 프랑스어 음성인식 코드
-        german: 독일어 음성인식 코드
-        russian: 러시아어 음성인식 코드
-        vietnam: 베트남어 음성인식 코드
-        arabic: 아랍어 음성인식 코드
-        thailand: 태국어 음성인식 코드
-        portuguese: 포르투칼어 음성인식 코드
-        */
+         * korean: 한국어 음성인식 코드
+         * english: 영어 음성인식 코드
+         * japanese: 일본어 음성인식 코드
+         * chinese: 중국어 음성인식 코드
+         * spanish: 스페인어 음성인식 코드
+         * french: 프랑스어 음성인식 코드
+         * german: 독일어 음성인식 코드
+         * russian: 러시아어 음성인식 코드
+         * vietnam: 베트남어 음성인식 코드
+         * arabic: 아랍어 음성인식 코드
+         * thailand: 태국어 음성인식 코드
+         * portuguese: 포르투칼어 음성인식 코드
+         */
 
         Gson gson = new Gson();
         for (String audioSegment : audioSegments) {
@@ -213,7 +262,6 @@ public class Method {
         }
         return combinedResult.toString();
     }
-
 
     // JSON 응답 구조를 매핑할 클래스 정의
     public static class Result {

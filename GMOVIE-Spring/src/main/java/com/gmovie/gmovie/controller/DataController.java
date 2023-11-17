@@ -52,7 +52,7 @@ public class DataController {
               return ResponseEntity.ok(foundUser);
           } else {
               // 验证失败，返回错误消息
-              return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("用户名或密码不正确");
+              return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("비밀번호 또는 아이디 틀렸습니다.");
           }
       }
       

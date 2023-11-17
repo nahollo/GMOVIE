@@ -262,7 +262,9 @@ h6 a {
 }
 
 h2 {
-  font-size: 2.25em;
+  font-size: 1.8em;
+  font-family: Noto Sans KR;
+  font-weight: bold;
   margin: 0 0 1.1em 0;
   line-height: 1em;
 }
@@ -1611,7 +1613,6 @@ form input[type="email"],
 form input[type="password"],
 form select,
 form textarea {
-  -webkit-appearance: none;
   display: block;
   width: 70%;
   border-radius: 8px;
@@ -1714,15 +1715,15 @@ table thead {
 .image.featured {
   display: block;
   width: 100%;
-  margin: 0 0 2.5em 0;
+  /* margin: 0 0 2.5em 0; */
 }
 
 .image.featured2 {
   display: block;
   width: 100%;
   margin: 0 0 2.5em 0;
-  border: 3px solid #5c5c5d; /* 테두리 스타일 및 색상 설정 */
-  background-color: #37393e; /* 원하는 배경색 설정 */
+  border: 3px solid #5c5c5d;
+  background-color: #37393e;
 }
 
 .image.left {
@@ -1749,38 +1750,24 @@ button,
 .button {
   background-color: #444444;
   color: #ffffff;
+  width: 113px;
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
-  /* margin-left: 10px; */
-  margin-right: 20px;
-  font-family: NanumSquareR;
+  padding: 6px 20px;
+  font-family: Noto Sans KR;
+  font-weight: normal;
   font-size: 15px;
-  text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
   margin-top: 10px;
-  /* margin-bottom: 30px; */
-  letter-spacing: 1.5px;
   border-radius: 5px;
+  margin: 0 25px;
   /* -moz-transition: background-color 0.25s ease-in-out;
   -webkit-transition: background-color 0.25s ease-in-out;
   -ms-transition: background-color 0.25s ease-in-out;
   transition: background-color 0.25s ease-in-out;
   -webkit-appearance: none;
-  position: relative;
-  display: inline-block;
-  background: #0090c5;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 800;
-  outline: 0;
-  border: 0;
-  cursor: pointer;
-  font-size: 1.35em;
-  padding: 0.6em 1.5em; */
 }
 
 input[type="button"] {
@@ -1825,13 +1812,13 @@ button.alt,
   color: #444;
 }
 
-input[type="button"].alt:hover,
+/* input[type="button"].alt:hover,
 input[type="submit"].alt:hover,
 input[type="reset"].alt:hover,
 button.alt:hover,
 .button.alt:hover {
-  /* background: #e8e8e8;
-  background: rgba(0, 0, 0, 0.085); */
+  background: #e8e8e8;
+  background: rgba(0, 0, 0, 0.085);
 }
 
 input[type="button"].alt:active,
@@ -1839,8 +1826,8 @@ input[type="submit"].alt:active,
 input[type="reset"].alt:active,
 button.alt:active,
 .button.alt:active {
-  /* background: #e4e4e4;
-  background: rgba(0, 0, 0, 0.15); */
+  background: #e4e4e4;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 input[type="button"].large,
@@ -1848,9 +1835,9 @@ input[type="submit"].large,
 input[type="reset"].large,
 button.large,
 .button.large {
-  /* font-size: 2.25em;
-  padding: 0.8em 0.9em; */
-}
+  font-size: 2.25em;
+  padding: 0.8em 0.9em;
+} */
 
 /* List */
 
@@ -1937,7 +1924,9 @@ ul.menu li:first-child {
 }
 
 .box.feature h2 {
-  font-size: 1.35em;
+  font-family: Noto Sans KR;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .box.feature p {
@@ -2105,7 +2094,6 @@ ul.menu li:first-child {
 #nav ul li {
   float: left;
   line-height: 4.5em;
-  /* padding-left: 1.5em; */
   margin: 0em 2em;
 }
 
@@ -2115,9 +2103,7 @@ ul.menu li:first-child {
   -webkit-transition: background-color 0.25s ease-in-out;
   -ms-transition: background-color 0.25s ease-in-out;
   transition: background-color 0.25s ease-in-out;
-  font-family: NanumSquareR;
-  /* font-weight: 500; */
-  /* letter-spacing: 0.025em; */
+  font-family: Noto Sans KR;
   color: #000000;
   text-decoration: none;
   border-radius: 5px;
@@ -2141,23 +2127,23 @@ ul.menu li:first-child {
 #nav ul li.current a {
   background: #b4c8ce;
   color: #fff;
+  font-family: Noto Sans KR;
+  font-weight: normal;
+  font-size: 15px;
 }
 
 #nav ul li:last-child a {
-  margin-top: 10px; /* 원하는 마진 값으로 설정 */
-  background: #0b1a1f; /* 배경 색상 */
-  color: #ffffff; /* 글자 색상 */
-  /* padding: 10px 20px; 패딩 설정 */
-  border-radius: 5px; /* 둥근 모서리 설정 */
+  margin-top: 10px;
+  background: #0b1a1f;
+  color: #ffffff;
+  border-radius: 5px;
   text-decoration: none;
   display: inline-block;
-  /* height: 40px; */
   line-height: 30px;
   vertical-align: middle;
 }
 
 #nav ul li:last-child a:hover {
-  /* background: #555; */
   background: #c0d1d2;
 }
 
@@ -2254,7 +2240,7 @@ ul.menu li:first-child {
 
 #banner p {
   font-size: 2.75em;
-  line-height: 1.35em;
+  /* line-height: 1.35em; */
   margin: 0;
 }
 
@@ -2266,8 +2252,7 @@ ul.menu li:first-child {
 #banner .button.icon:before {
   position: absolute;
   right: 0.15em;
-  top: 50%;
-  margin-top: -0.5em;
+  margin-right: 35px;
 }
 
 #banner .button.alt {
@@ -2821,7 +2806,6 @@ ul.menu li:first-child {
   .box.feature p {
     margin: 0;
   }
-  
 
   .box.feature .image {
     position: relative;
