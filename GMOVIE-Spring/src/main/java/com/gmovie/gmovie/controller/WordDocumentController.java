@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.core.io.InputStreamSource;
 import org.springframework.core.io.Resource;
@@ -26,7 +25,6 @@ import java.nio.charset.StandardCharsets;
 import com.gmovie.gmovie.dto.UserDTO;
 import com.gmovie.gmovie.mapper.UserMapper;
 import com.gmovie.gmovie.method.Method;
-import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse.File;
 
 import jakarta.mail.internet.MimeMessage;
 import jakarta.servlet.http.HttpServletRequest;
@@ -43,11 +41,12 @@ public class WordDocumentController {
     private UserMapper userMapper;
 
     @GetMapping("/createWordDocumentAndSendEmail")
-    public void createWordDocumentAndSendEmail(@RequestParam String roomId, HttpSession session, HttpServletRequest request,
+    public void createWordDocumentAndSendEmail(@RequestParam String roomId, HttpSession session,
+            HttpServletRequest request,
             HttpServletResponse response, Model model)
             throws IOException {
-                int userNo = (Integer)session.getAttribute("userNo");
-                System.out.println("userNo : " + userNo);
+        int userNo = (Integer) session.getAttribute("userNo");
+        System.out.println("userNo : " + userNo);
         UserDTO userDTO = userMapper.findByUserNo(userNo);
 
         if (userDTO != null) {
@@ -99,7 +98,6 @@ public class WordDocumentController {
 
                 javaMailSender.send(message);
                 response.sendRedirect("/summary?text=" + URLEncoder.encode(text, StandardCharsets.UTF_8.toString()));
-
 
             } catch (Exception e) {
                 e.printStackTrace();

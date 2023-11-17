@@ -1,4 +1,5 @@
 package com.gmovie.gmovie.method;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -8,13 +9,10 @@ import java.nio.file.*;
 import java.util.*;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import jakarta.servlet.http.HttpServletResponse;
 
 public class Method {
     final String PATH = "C:\\thanks\\GMOVIE_web_RTC\\src\\audio\\";
+
     public String summary(String roomId) throws IOException {
         Method method = new Method();
         ChatGPT chatGPT = new ChatGPT();
@@ -29,7 +27,6 @@ public class Method {
 
         // 2. 음성 파일을 20초 단위로 자르기
         List<String> audioSegments = method.splitAudioInto20SecondSegments(fullFile, cutFiles);
-
 
         // 3. 각 자른 음성 파일에 STT 적용하기
         List<String> sttResults = method.applySTTToAudioSegments(audioSegments);
@@ -46,7 +43,6 @@ public class Method {
         return output;
 
     }
-
 
     public void base64Encoded(String originalFile, String fullFile) {
         String inputFilePath = originalFile; // 입력 오디오 파일 경로
@@ -79,7 +75,6 @@ public class Method {
             e.printStackTrace();
         }
     }
-
 
     // 1. 음성 파일을 18초 단위로 자르기
     public List<String> splitAudioInto20SecondSegments(String audioFilePath, String cutFiles) throws IOException {
@@ -127,19 +122,19 @@ public class Method {
         String languageCode = "korean"; // 언어 코드
 
         /*
-        korean: 한국어 음성인식 코드
-        english: 영어 음성인식 코드
-        japanese: 일본어 음성인식 코드
-        chinese: 중국어 음성인식 코드
-        spanish: 스페인어 음성인식 코드
-        french: 프랑스어 음성인식 코드
-        german: 독일어 음성인식 코드
-        russian: 러시아어 음성인식 코드
-        vietnam: 베트남어 음성인식 코드
-        arabic: 아랍어 음성인식 코드
-        thailand: 태국어 음성인식 코드
-        portuguese: 포르투칼어 음성인식 코드
-        */
+         * korean: 한국어 음성인식 코드
+         * english: 영어 음성인식 코드
+         * japanese: 일본어 음성인식 코드
+         * chinese: 중국어 음성인식 코드
+         * spanish: 스페인어 음성인식 코드
+         * french: 프랑스어 음성인식 코드
+         * german: 독일어 음성인식 코드
+         * russian: 러시아어 음성인식 코드
+         * vietnam: 베트남어 음성인식 코드
+         * arabic: 아랍어 음성인식 코드
+         * thailand: 태국어 음성인식 코드
+         * portuguese: 포르투칼어 음성인식 코드
+         */
 
         Gson gson = new Gson();
         for (String audioSegment : audioSegments) {
@@ -213,7 +208,6 @@ public class Method {
         }
         return combinedResult.toString();
     }
-
 
     // JSON 응답 구조를 매핑할 클래스 정의
     public static class Result {

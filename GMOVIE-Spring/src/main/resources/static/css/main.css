@@ -1613,7 +1613,6 @@ form input[type="email"],
 form input[type="password"],
 form select,
 form textarea {
-  -webkit-appearance: none;
   display: block;
   width: 70%;
   border-radius: 8px;
@@ -1716,15 +1715,15 @@ table thead {
 .image.featured {
   display: block;
   width: 100%;
-  margin: 0 0 2.5em 0;
+  /* margin: 0 0 2.5em 0; */
 }
 
 .image.featured2 {
   display: block;
   width: 100%;
   margin: 0 0 2.5em 0;
-  border: 3px solid #5c5c5d; /* 테두리 스타일 및 색상 설정 */
-  background-color: #37393e; /* 원하는 배경색 설정 */
+  border: 3px solid #5c5c5d;
+  background-color: #37393e;
 }
 
 .image.left {
