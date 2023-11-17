@@ -16,13 +16,11 @@ const calendar = document.querySelector(".calendar"),
   addEventFrom = document.querySelector(".event-time-from "),
   addEventTo = document.querySelector(".event-time-to "),
   addEventSubmit = document.querySelector(".add-event-btn "),
-
   buttonContainer = document.querySelector(".vertical-container"),
   mypageButton = document.getElementById("mypageButton"),
   addGroupButton = document.getElementById("addNewFunctionButton"),
   shareContainer = document.querySelector(".share-container"),
   deleteContainer = document.querySelector(".delete-container");
-
 
 let today = new Date();
 let activeDay;
@@ -48,14 +46,15 @@ addGroupButton.addEventListener("click", function (event) {
   event.stopPropagation();
   // 使用prompt函数获取用户输入的按钮名称
   const groupName = prompt("이름을 입력하세요");
-  const groupId = generateUniqueId()
+  const groupId = generateUniqueId();
 
   const group = {
     id: groupId,
     name: groupName,
   };
 
-  if (groupName) { // 确保用户输入了名称
+  if (groupName) {
+    // 确保用户输入了名称
     // 创建一个新按钮元素
     const newButton = document.createElement("button");
     newButton.textContent = groupName;
@@ -63,9 +62,6 @@ addGroupButton.addEventListener("click", function (event) {
     buttonContainer.insertBefore(newButton, addGroupButton);
     saveGroup(group);
   }
-
-
-
 });
 
 let shareButton = null;
@@ -77,7 +73,7 @@ buttonContainer.addEventListener("click", function (event) {
   if (target.tagName === "BUTTON") {
     console.log("按钮被点击了");
     buttonName = target.textContent;
-    const buttonId = target.getAttribute('group-id');
+    const buttonId = target.getAttribute("group-id");
     eventsArr.length = 0;
     getGroupEvents(buttonId);
 
@@ -88,43 +84,44 @@ buttonContainer.addEventListener("click", function (event) {
       deleteButton.remove();
     }
     shareButton = document.createElement("button");
-    shareButton.textContent = "Share";
+    shareButton.textContent = "공유";
     shareButton.className = "share-button";
-    shareButton.setAttribute('group-id', buttonId);
+    shareButton.setAttribute("group-id", buttonId);
 
     deleteButton = document.createElement("button");
     deleteButton.className = "delete-button";
-    deleteButton.textContent = "Delete";
-    deleteButton.setAttribute('group-id', buttonId);
-
+    deleteButton.textContent = "삭제";
+    deleteButton.setAttribute("group-id", buttonId);
 
     shareContainer.appendChild(shareButton);
     deleteContainer.appendChild(deleteButton);
 
     shareButton.addEventListener("click", function () {
       // 在这里执行 "share" 按钮的操作
-      const groupId = shareButton.getAttribute('group-id');
-      console.log("Share 按钮被点击了",groupId);
+      const groupId = shareButton.getAttribute("group-id");
+      console.log("Share 按钮被点击了", groupId);
 
-      const userEmail = prompt(buttonName+"에 추가할 사용자의 이메일 입력하세요");
+      const userEmail = prompt(
+        buttonName + "에 추가할 사용자의 이메일 입력하세요"
+      );
 
       if (userEmail) {
         fetch(`/api/calendar/addUserToGroup/${userEmail}`, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({ id: groupId }),
         })
-          .then(response => {
+          .then((response) => {
             if (response.ok) {
-              console.log('사용자 추가하였습니다.');
+              console.log("사용자 추가하였습니다.");
             } else {
-              console.error('사용자 존제하지 않습니다.');
+              console.error("사용자 존제하지 않습니다.");
             }
           })
-          .catch(error => {
-            console.error('에러：', error);
+          .catch((error) => {
+            console.error("에러：", error);
           });
       }
     });
@@ -134,25 +131,23 @@ buttonContainer.addEventListener("click", function (event) {
 // 删除 group 的函数
 function deleteGroup(groupId) {
   fetch(`/api/calendar/deleteGroup/${groupId}`, {
-    method: 'DELETE',
+    method: "DELETE",
   })
-    .then(response => {
+    .then((response) => {
       if (response.ok) {
         return response.text();
       } else {
-        throw new Error('Failed to delete the group.');
+        throw new Error("Failed to delete the group.");
       }
     })
     .then(() => {
       // 删除成功后重新加载页面
       setTimeout(() => {
         window.location.reload();
-
       }, 3000);
-      
     })
-    .catch(error => {
-      console.error('삭제 에러：', error);
+    .catch((error) => {
+      console.error("삭제 에러：", error);
     });
 }
 
@@ -160,48 +155,45 @@ function deleteGroup(groupId) {
 deleteContainer.addEventListener("click", function (event) {
   const target = event.target;
 
-  if (target.textContent.startsWith("Delete")) {
+  if (target.textContent.startsWith("삭제")) {
     // 如果点击的是 "Delete" 按钮
-    if (confirm(buttonName+"삭제하겠습니까？")) {
+    if (confirm(buttonName + "삭제하겠습니까？")) {
       // 用户确认删除
-      const buttonId = target.getAttribute('group-id');
+      const buttonId = target.getAttribute("group-id");
       deleteGroup(buttonId);
     }
   }
 });
 
-
-
-
 function getGroupEvents(groupId) {
   fetch(`/api/calendar/groupevents/${groupId}`)
-    .then(response => {
+    .then((response) => {
       if (response.ok) {
         return response.json();
       } else {
-        console.log('No events found for this group.');
+        console.log("No events found for this group.");
         initCalendar();
         return;
       }
     })
-    .then(data => {
+    .then((data) => {
       // Create a dictionary to group events by date
 
       const eventsByDate = {};
-      data.forEach(event => {
+      data.forEach((event) => {
         const key = `${event.year}-${event.month}-${event.day}`;
         if (!eventsByDate[key]) {
           eventsByDate[key] = {
             day: event.day,
             month: event.month,
             year: event.year,
-            events: []
+            events: [],
           };
         }
         eventsByDate[key].events.push({
           title: event.title,
           time: event.time,
-          id: event.id
+          id: event.id,
         });
       });
 
@@ -210,44 +202,42 @@ function getGroupEvents(groupId) {
       eventsArr.push(...Object.values(eventsByDate));
       initCalendar(); // Update the calendar
     })
-    .catch(error => {
-      console.error('Error fetching events:', error);
+    .catch((error) => {
+      console.error("Error fetching events:", error);
     });
 }
-
-
 
 function saveGroup(group) {
   // 修改事件格式以匹配后端的期望
   const formattedEvent = {
     id: group.id,
-    name: group.name
+    name: group.name,
   };
   const membership = {
     id: group.id,
-    user: storedUser
+    user: storedUser,
   };
 
-  fetch('/api/calendar/groups', {
-    method: 'POST',
+  fetch("/api/calendar/groups", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(formattedEvent),
   })
-    .then(response => {
+    .then((response) => {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error('Failed to save group.');
+        throw new Error("Failed to save group.");
       }
     })
-    .then(data => {
-      console.log('Group saved successfully:', data);
+    .then((data) => {
+      console.log("Group saved successfully:", data);
       saveMembership(membership);
     })
-    .catch(error => {
-      console.error('Error saving event:', error);
+    .catch((error) => {
+      console.error("Error saving event:", error);
     });
 }
 
@@ -255,65 +245,56 @@ function saveMembership(membership) {
   // 修改事件格式以匹配后端的期望
   const formattedEvent = {
     id: membership.id,
-    user: membership.user
+    user: membership.user,
   };
 
-  fetch('/api/calendar/membership', {
-    method: 'POST',
+  fetch("/api/calendar/membership", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(formattedEvent),
   })
-    .then(response => {
+    .then((response) => {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error('Failed to save membership.');
+        throw new Error("Failed to save membership.");
       }
     })
-    .then(data => {
-      console.log('Membership saved successfully:', data);
+    .then((data) => {
+      console.log("Membership saved successfully:", data);
       setTimeout(() => {
         window.location.reload();
-
       }, 300);
     })
-    .catch(error => {
-      console.error('Error saving event:', error);
+    .catch((error) => {
+      console.error("Error saving event:", error);
     });
 }
 // Function to get groups from Oracle
 function getGroup(storedUser) {
   fetch(`/api/calendar/groups/${storedUser}`)
-    .then(response => {
+    .then((response) => {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error('Failed to fetch groups.');
+        throw new Error("Failed to fetch groups.");
       }
     })
-    .then(data => {
-      data.forEach(group => {
-        const newButton = document.createElement('button');
+    .then((data) => {
+      data.forEach((group) => {
+        const newButton = document.createElement("button");
         newButton.textContent = group.name;
-        newButton.setAttribute('group-id', group.id);
+        newButton.setAttribute("group-id", group.id);
         newButton.className = "custom-button";
         buttonContainer.insertBefore(newButton, addGroupButton);
       });
-
     })
-    .catch(error => {
-      console.error('Error fetching :', error);
+    .catch((error) => {
+      console.error("Error fetching :", error);
     });
 }
-
-
-
-
-
-
-
 
 const months = [
   "January",
@@ -520,7 +501,7 @@ function gotoDate() {
       return;
     }
   }
-  alert("Invalid Date");
+  alert("올바른 시간을 작성해주세요.");
 }
 
 //function get active day day name and date and update eventday eventdate
@@ -555,7 +536,7 @@ function updateEvents(date) {
   });
   if (events === "") {
     events = `<div class="no-event">
-            <h3>No Events</h3>
+            <h3>일정이 없습니다.</h3>
         </div>`;
   }
   eventsContainer.innerHTML = events;
@@ -581,7 +562,6 @@ document.addEventListener("click", (e) => {
 addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
 });
-
 
 //allow only time in eventtime from and to
 addEventFrom.addEventListener("input", (e) => {
@@ -611,7 +591,7 @@ addEventSubmit.addEventListener("click", () => {
   const eventTimeTo = addEventTo.value;
   const eventId = generateUniqueId();
   if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
-    alert("Please fill all the fields");
+    alert("일정을 모두 작성해주세요!");
     return;
   }
 
@@ -626,7 +606,7 @@ addEventSubmit.addEventListener("click", () => {
     timeToArr[0] > 23 ||
     timeToArr[1] > 59
   ) {
-    alert("Invalid Time Format");
+    alert("올바른 시간을 작성해주세요.");
     return;
   }
 
@@ -649,7 +629,7 @@ addEventSubmit.addEventListener("click", () => {
     }
   });
   if (eventExist) {
-    alert("Event already added");
+    alert("일정이 이미 추가되었습니다.");
     return;
   }
   const newEvent = {
@@ -697,7 +677,7 @@ addEventSubmit.addEventListener("click", () => {
 
   let shareButtonId = null;
   if (shareButton) {
-    shareButtonId = shareButton.getAttribute('group-id');
+    shareButtonId = shareButton.getAttribute("group-id");
     console.log(shareButtonId);
   }
 
@@ -709,14 +689,14 @@ addEventSubmit.addEventListener("click", () => {
     day: activeDay,
     month: month + 1,
     year: year,
-    time: timeFrom + " - " + timeTo,  // 日期时间格式
+    time: timeFrom + " - " + timeTo, // 日期时间格式
     groupId: shareButtonId,
   };
 
   saveEventsToServer(event);
 });
 
-// 저장 
+// 저장
 
 function saveEventsToServer(event) {
   // 修改事件格式以匹配后端的期望
@@ -728,28 +708,28 @@ function saveEventsToServer(event) {
     month: event.month,
     year: event.year,
     time: event.time,
-    groupId: event.groupId
+    groupId: event.groupId,
   };
 
-  fetch('/api/calendar/events', {
-    method: 'POST',
+  fetch("/api/calendar/events", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(formattedEvent),
   })
-    .then(response => {
+    .then((response) => {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error('Failed to save event.');
+        throw new Error("Failed to save event.");
       }
     })
-    .then(data => {
-      console.log('Event saved successfully:', data);
+    .then((data) => {
+      console.log("Event saved successfully:", data);
     })
-    .catch(error => {
-      console.error('Error saving event:', error);
+    .catch((error) => {
+      console.error("Error saving event:", error);
     });
 }
 
@@ -789,19 +769,19 @@ function saveEventsToServer(event) {
 function deleteEventById(eventId) {
   // Send a DELETE request with the event ID to delete
   fetch(`/api/calendar/events/${eventId}`, {
-    method: 'DELETE',
+    method: "DELETE",
     headers: {
-      'Content-Type': 'text/plain',
-    }
+      "Content-Type": "text/plain",
+    },
   })
-    .then(response => {
+    .then((response) => {
       if (response.ok) {
         return response.text(); // 获取文本响应
       } else {
-        throw new Error('Failed to delete the event.');
+        throw new Error("Failed to delete the event.");
       }
     })
-    .then(data => {
+    .then((data) => {
       // 删除成功后执行更新界面的操作
       eventsArr.forEach((event) => {
         if (
@@ -827,11 +807,10 @@ function deleteEventById(eventId) {
       });
       updateEvents(activeDay);
     })
-    .catch(error => {
-      console.error('Error deleting event:', error);
+    .catch((error) => {
+      console.error("Error deleting event:", error);
     });
 }
-
 
 // Event listener to delete event when clicked
 eventsContainer.addEventListener("click", (e) => {
@@ -850,10 +829,6 @@ eventsContainer.addEventListener("click", (e) => {
   }
 });
 
-
-
-
-
 //function to save events in local storage
 function saveEvents() {
   localStorage.setItem("events", JSON.stringify(eventsArr));
@@ -871,30 +846,30 @@ function saveEvents() {
 // Function to get events from Oracle
 function getEvents(storedUser) {
   fetch(`/api/calendar/events/${storedUser}`)
-    .then(response => {
+    .then((response) => {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error('Failed to fetch events.');
+        throw new Error("Failed to fetch events.");
       }
     })
-    .then(data => {
+    .then((data) => {
       // Create a dictionary to group events by date
       const eventsByDate = {};
-      data.forEach(event => {
+      data.forEach((event) => {
         const key = `${event.year}-${event.month}-${event.day}`;
         if (!eventsByDate[key]) {
           eventsByDate[key] = {
             day: event.day,
             month: event.month,
             year: event.year,
-            events: []
+            events: [],
           };
         }
         eventsByDate[key].events.push({
           title: event.title,
           time: event.time,
-          id: event.id
+          id: event.id,
         });
       });
 
@@ -903,12 +878,10 @@ function getEvents(storedUser) {
       eventsArr.push(...Object.values(eventsByDate));
       initCalendar(); // Update the calendar
     })
-    .catch(error => {
-      console.error('Error fetching events:', error);
+    .catch((error) => {
+      console.error("Error fetching events:", error);
     });
 }
-
-
 
 function convertTime(time) {
   //convert time to 24 hour format
@@ -921,9 +894,7 @@ function convertTime(time) {
   return time;
 }
 
-
 function generateUniqueId() {
-  const randomStr = Math.random().toString(36).split('.')[1];
+  const randomStr = Math.random().toString(36).split(".")[1];
   return randomStr.slice(0, 9);
 }
-
