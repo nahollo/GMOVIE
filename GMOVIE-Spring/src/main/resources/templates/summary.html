@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+</html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzip/2.7.2/pizzip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.27.1/docxtemplater.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+
+</head>
+
+<body class="is-preload homepage">
+    <!-- <div class="container"> -->
+    <div class="top-bar"></div>
+    <div class="header-wrapper" id="welcome">
+        <!-- 헤더 -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
+
+                <!-- 로고 -->
+                <div id="logo">
+                    <h1><a href="home"><img src="./img/GMOVIE LOGO.png" alt="GMOVIE" width="250" height="80"></a></h1>
+                </div>
+
+                <!-- 네비 -->
+                <!-- 네비 -->
+                <nav id="nav">
+                    <ul>
+                        <li class="current"><a href="home">home</a></li>
+                        <li><a href="service">service</a></li>
+                        <li><a href="aboutus">About us</a></li>
+                        <li><a href="developer">Developer</a></li>
+                        <li id="loginLogoutLink">
+                            <a id="loginLink" style="display: block;" href="login">Login</a>
+                            <a id="logoutLink" style="display: none;" href="javascript:void(0);"
+                                onclick="logout()">Logout</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+
+
+        <div id="banner" class="box container">
+            <div class="row">
+                <div class="col-7 col-12-medium">
+                    <div class="text-box">
+                        <form id="welcomeForm">
+                            <div id="box">
+                                <input type="text" placeholder="회의 코드 입력" required id="inputRoomName"
+                                    style="width: 200px; height: 45px; font-size: 13px;">
+                                <button type="button" id="getSummary" onclick="redirectToSummaryPage()">이메일로 받기</button>
+                                <div id="spacebox"></div>
+                                <div id="loading" class="loading-container">
+                                    <img src="img/gmovie_loading.gif" alt="Loading...">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="banner123" class="box container" th:text="${param.text}" th:if="${param.text != null}"
+            style="display: block;">
+            <div class="row">
+                <div class="col-7 col-12-medium">
+                    <div class="text-box">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-wrapper">
+        <footer id="footer" class="container">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Thanks for</h3>
+                        <ul class="style2">
+                            <li>
+                                <p>Parent</p>
+                            </li>
+                            <li>
+                                <p>Mol 13Class Professor</p>
+                            </li>
+                            <li>
+                                <p>Bit Education Center</p>
+                            </li>
+                            <li>
+                                <p>SM SW Office</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+
+                    <section class="widget links">
+                        <h3>Developer</h3>
+                        <ul class="style2">
+
+
+                            <li>
+                                <p>Na HyeongJin</p>
+                            </li>
+                            <li>
+                                <p>WANG CHIANG LING</p>
+                            </li>
+                            <li>
+                                <p>Jung KyeongHee</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+
+                    <section class="widget links">
+                        <h3>INFO</h3>
+                        <ul class="style2">
+                            <li>
+                                <h1>Address</h1>
+                            </li>
+                            <li>
+                                <p>70 Sunmoon-ro 221, Tangjeong-myeon<br />
+                                    Asan-si, Chungcheongnam-do
+                                </p>
+                            </li>
+                            <li>
+                                <h1>tel</h1>
+                            </li>
+                            <li>
+                                <p>(041) 530-2114</p>
+                            </li>
+                            <li>
+                                <h1>Email</h1>
+                            </li>
+                            <li>
+                                <p>gmovieoffice@gmail.com</p>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+
+                    <!-- Contact -->
+                    <section class="widget contact last">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><a href="https://www.instagram.com/skgudwlsdlrj/?hl=ko"
+                                    class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="https://github.com/nahollo" class="icon brands fa-brands fa-github"><span
+                                        class="label">Dribbble</span></a></li>
+                            <li><a href="https://na-hollo.tistory.com/" class="icon brands fa-brands fa-blogger"><span
+                                        class="label">Pinterest</span></a></li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>&copy; GMOVIE</li>
+                            <li>Design: nahollo </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div>
+
+
+    <style>
+        #banner {
+            background-color: #f7f7f7;
+        }
+
+        /* #box {
+            width: 400px;
+            margin-left: 400px;
+            margin-top: 150px;
+        } */
+
+        #box {
+            display: flex;
+            align-items: center;
+            margin-left: 430px;
+            margin-top: 0px;
+        }
+
+        #inputRoomName {
+            width: 300px;
+            height: 45px;
+            font-size: 20px;
+        }
+
+        #getSummary {
+            /* display: inline-block; */
+            margin-left: 15px;
+            margin-bottom: 12px;
+            width: 150px;
+        }
+
+        #spacebox {
+            margin-bottom: 25px;
+        }
+
+        .custom-control-container {
+            background-color: yellow;
+        }
+
+        .loading-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #summaryText {
+            white-space: pre-line;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var text = urlParams.get('text');
+            if (text) {
+                var decodedText = decodeURIComponent(text);
+                decodedText = decodedText.replace(/\n/g, '<br>');
+                document.getElementById('banner123').innerHTML = decodedText;
+            }
+        }
+
+
+
+        function redirectToSummaryPage() {
+            document.getElementById("loading").style.display = "flex";
+            var roomId = document.getElementById("inputRoomName").value;
+
+            window.location.href = "/createWordDocumentAndSendEmail?roomId=" + roomId;
+        }
+
+
+        var isLoggedIn = sessionStorage.getItem('userNo');
+        var loginLink = document.getElementById('loginLink');
+        var logoutLink = document.getElementById('logoutLink');
+
+        // Update the display based on the login status
+        if (isLoggedIn !== null) {
+            loginLink.style.display = 'none';
+            logoutLink.style.display = 'block';
+        } else {
+            loginLink.style.display = 'block';
+            logoutLink.style.display = 'none';
+        }
+
+        function logout() {
+            // Clear the session storage and redirect to home page
+            sessionStorage.removeItem('userNo');
+            window.location.href = 'home';
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
