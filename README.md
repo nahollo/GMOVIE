@@ -5,7 +5,7 @@ Global Meeting Online Video Interactive Experience<br> 필기 없이 완벽한 �
 
 ## 목차
   - [개요](#개요) 
-  - [게임 설명](#게임-설명)
+  - [프로젝트 설명](#프로젝트-설명)
   - [게임 플레이 방식](#게임-플레이-방식)
 
 ## 개요
@@ -14,7 +14,7 @@ Global Meeting Online Video Interactive Experience<br> 필기 없이 완벽한 �
 - 개발 엔진 및 언어: spring boot & node.js
 - 멤버: 나형진, 왕장령, 이광희, 정경희
 
-## 게임 설명
+## 프로젝트 설명
 
 <table>
   <tr>
