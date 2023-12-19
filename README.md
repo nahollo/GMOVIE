@@ -46,3 +46,36 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 <img src="https://img.shields.io/badge/ffmpeg-007808?style=for-the-badge&logo=ffmpeg&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/webrtc-333333?style=for-the-badge&logo=webrtc&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white">
 
 
+###### 👻GMOVIE 화면
+|GMOVIE 홈|
+|---|
+|![KakaoTalk_20231219_161052119_02](https://github.com/nahollo/GMOVIE/assets/137711359/a8eb1ccb-f2d6-4e48-acb7-79dc5ef56ee2)|
+|GMOVIE의 메인 화면|
+
+<br>
+
+|GMOVIE 화상회의 화면|
+|---|
+|![KakaoTalk_20231219_161052119_03](https://github.com/nahollo/GMOVIE/assets/137711359/dac6e42a-a93f-434c-bc5c-68b2ec072444)|
+|GMOVIE에서 화상회의를 할 때 화면|
+
+<br>
+
+|GMOVIE 공유 캘린더|
+|---|
+|![KakaoTalk_20231219_161052119_04](https://github.com/nahollo/GMOVIE/assets/137711359/dc8ab77b-2c72-4971-8da3-1ba847622765)|
+|GMOVIE에서 공유캘린더를 사용할 때 화면|
+
+<br>
+
+|GMOVIE 요약본 받기 페이지|
+|---|
+|![KakaoTalk_20231219_161052119](https://github.com/nahollo/GMOVIE/assets/137711359/123e658d-0294-4f56-bf4f-a5a9c75c7228)|
+|GMOVIE에서 요약본을 받기 위해 회의방 코드를 적는 화면|
+
+<br>
+
+|GMOVIE 요약된 회의록|
+|---|
+|![KakaoTalk_20231219_161052119_01](https://github.com/nahollo/GMOVIE/assets/137711359/99b3f2c4-de00-4970-886e-470e48d81430)|
+|GMOVIE를 사용했을 때 요약된 회의록이 이메일로 온 결과|
