@@ -22,7 +22,7 @@ Global Meeting Online Video Interactive Experience<br> 필기 없이 완벽한 �
     <td><img src="https://github.com/nahollo/GMOVIE/assets/145747048/065f6c28-e4e8-4613-a263-6a4e35ffd3f5" width="700" height="300" alt="화상회의 화면"></td>
   </tr>
   <tr>
-    <td align="center">시작 화면</td>
+    <td align="center">메인 화면</td>
     <td align="center">화상회의 화면</td>
   </tr>
 </table>
