@@ -36,6 +36,10 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 
 더욱이, 회의록 작성은 회의 시간을 넘어서까지 이어졌고, 이로 인해 프로젝트 진행이 일시적으로 정지되었습니다. 이 경험은 화상회의에서 효과적인 회의록을 작성하기 위한 더 나은 도구나 방법이 필요함을 강조해 줍니다, 프로젝트의 모멘텀이 방해받지 않도록 보장하기 위해서입니다
 
+
+#### 📜기능 요구 명세서
+![GMOVIE_기능 요구 명세서](https://github.com/nahollo/GMOVIE/assets/145747048/97a34221-afd2-4049-b40f-064ff64d9eed)
+
 ##### 🖼프론트엔드
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=HTML&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=CSS&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
 
