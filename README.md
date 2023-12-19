@@ -1,3 +1,4 @@
+
 # GMOVIE
 
 ## (Global Meeting Online Video Interactive Experience)
@@ -8,7 +9,7 @@
 
 GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동으로 회의록을 작성하는 기능을 제공합니다. 더불어, 필요한 경우 회의록을 간략하게 요약하는 기능을 통해 사용자들은 불편함 없이 회의를 관리할 수 있게 됩니다.
 
-![글로벌-removebg-preview.png](GMOVIE%201f0a5c74224c40a1bf2c01b351d95ddd/%25EA%25B8%2580%25EB%25A1%259C%25EB%25B2%258C-removebg-preview.png)
+![글로벌](https://github.com/nahollo/GMOVIE/assets/145747048/6ea01340-4d75-435a-80d9-7945e5422473)
 
 ## 🦏프로젝트 소개
 
@@ -22,6 +23,10 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 
 23.10 ~ 23.11 (총 2개월)
 
-### 👨‍👩‍👧‍👦팀
+### 🤝팀
 
-[팀원](GMOVIE%201f0a5c74224c40a1bf2c01b351d95ddd/%E1%84%90%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%AF%E1%86%AB%202a18ef5f51324b1181e9d8d33e0d7f6b.csv)
+| 🦏<br>나형진 | 👽<br>왕장령 | 🐶<br>이광희 | 🐱<br>정경희 |
+| --- | --- | --- | --- |
+| <img src="https://github.com/nahollo/GMOVIE/assets/137711359/993ad94b-c02a-4db3-83bf-a30d82eb8d02" width="100" height="100"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/3c20a37a-6595-465b-92e6-5cf5e743fa4f" width="100" height="100"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/15cbf46b-e1ed-44d3-889b-408634c301c5" width="100" height="100"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/7704e151-8246-45c3-9979-156596c8d5b1" width="100" height="100"> |
+| 팀장<br>풀스택<br>webRTC, <br>알고리즘 | 팀원<br>백엔드<br>Spring Boot, <br>DB 구성 | 팀원<br>프론트<br>디자인, 아이디어, <br>기획 | 팀원<br>백엔드<br>DB 설계, <br>음성 파일 변환 |
+
