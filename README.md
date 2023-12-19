@@ -36,10 +36,10 @@ cex
 
 ##### 🖼프론트엔드
 
-HTML, CSS, js
+HTML, CSS, <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
 
 ##### 📡백엔드
-Spring Boot, node.js
+<img src="https://img.shields.io/badge/spring boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"><img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
 <br>
 사용 라이브러리<br>
 ffmpeg<br>
