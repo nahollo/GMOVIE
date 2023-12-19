@@ -31,10 +31,10 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 | 팀장<br>풀스택<br>webRTC, 알고리즘 | 팀원<br>백엔드<br>Spring Boot, DB 구성 | 팀원<br>프론트<br>디자인, 아이디어, 기획 | 팀원<br>백엔드<br>DB 설계, 음성 파일 변환 |
 
 
-##### 🖼프론트엔드
+#### 🖼프론트엔드
 
-Atomic 디자인 패턴 적용, One To Many Call 구현을 위한 OpenVidu 커스텀
+HTML, CSS, js
 
-##### 📡백엔드
-
-NHN 휴대폰 인증/알림 API, KAMIS 농산물 시세 API, 카카오페이 결제 API 적용 
+#### 📡백엔드
+Spring Boot, node.js
+ETRI STT API, ffmpeg, openAi, APACHE POI, SMTP
