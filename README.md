@@ -30,11 +30,24 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/993ad94b-c02a-4db3-83bf-a30d82eb8d02" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/3c20a37a-6595-465b-92e6-5cf5e743fa4f" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/15cbf46b-e1ed-44d3-889b-408634c301c5" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/7704e151-8246-45c3-9979-156596c8d5b1" width="150" height="150"> |
 | 팀장<br>풀스택<br>webRTC, 알고리즘 | 팀원<br>백엔드<br>Spring Boot, DB 구성 | 팀원<br>프론트<br>디자인, 아이디어, 기획 | 팀원<br>백엔드<br>DB 설계, 음성 파일 변환 |
 
+#### 제작목적
 
-#### 🖼프론트엔드
+cex
+
+##### 🖼프론트엔드
 
 HTML, CSS, js
 
-#### 📡백엔드
+##### 📡백엔드
 Spring Boot, node.js
-ETRI STT API, ffmpeg, openAi, APACHE POI, SMTP
+
+사용 라이브러리
+ffmpeg
+APACHE POI
+SMTP
+
+사용 API
+webRTC
+ETRI Speech-To-Text
+openAi
+
