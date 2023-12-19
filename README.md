@@ -79,3 +79,6 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 |---|
 |![KakaoTalk_20231219_161052119_01](https://github.com/nahollo/GMOVIE/assets/137711359/99b3f2c4-de00-4970-886e-470e48d81430)|
 |GMOVIE를 사용했을 때 요약된 회의록이 이메일로 온 결과|
+
+###### 👻GMOVIE 시연 영상
+https://youtu.be/96V_vCy1H0w
