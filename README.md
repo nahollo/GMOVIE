@@ -16,9 +16,17 @@ Global Meeting Online Video Interactive Experience<br> 필기 없이 완벽한 �
 
 ## 게임 설명
 
-| ![시작 화면](https://github.com/nahollo/GMOVIE/assets/145747048/f6593289-fcc5-4a54-90a9-cfa9a94ba7b7 | height=300) | ![화상회의 화면](https://github.com/nahollo/GMOVIE/assets/145747048/065f6c28-e4e8-4613-a263-6a4e35ffd3f5 | height=300) |
-|:--------------------------------------------------:|:--------------------------------------------------:|
-|                시작 화면                           |            화상회의 화면                        |
+<table>
+  <tr>
+    <td><img src="https://github.com/nahollo/GMOVIE/assets/145747048/f6593289-fcc5-4a54-90a9-cfa9a94ba7b7" height="200" alt="시작 화면"></td>
+    <td><img src="https://github.com/nahollo/GMOVIE/assets/145747048/065f6c28-e4e8-4613-a263-6a4e35ffd3f5" height="200" alt="화상회의 화면"></td>
+  </tr>
+  <tr>
+    <td align="center">시작 화면</td>
+    <td align="center">화상회의 화면</td>
+  </tr>
+</table>
+
 
 
 
