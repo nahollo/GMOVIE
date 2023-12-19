@@ -42,7 +42,7 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 
 #### 💾ERD
 
-<img alt="ERD" src="https://github.com/nahollo/GMOVIE/assets/145747048/af2433c7-d627-4aa2-a739-de6777f22906"  width="800" height="420">
+<img alt="ERD" src="https://github.com/nahollo/GMOVIE/assets/145747048/af2433c7-d627-4aa2-a739-de6777f22906"  width="800" height="440">
 
 #### 🖼프론트엔드
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=HTML&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=CSS&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
