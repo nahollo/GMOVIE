@@ -30,3 +30,11 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/993ad94b-c02a-4db3-83bf-a30d82eb8d02" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/3c20a37a-6595-465b-92e6-5cf5e743fa4f" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/15cbf46b-e1ed-44d3-889b-408634c301c5" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/7704e151-8246-45c3-9979-156596c8d5b1" width="150" height="150"> |
 | 팀장<br>풀스택<br>webRTC, 알고리즘 | 팀원<br>백엔드<br>Spring Boot, DB 구성 | 팀원<br>프론트<br>디자인, 아이디어, 기획 | 팀원<br>백엔드<br>DB 설계, 음성 파일 변환 |
 
+
+##### 🖼프론트엔드
+
+Atomic 디자인 패턴 적용, One To Many Call 구현을 위한 OpenVidu 커스텀
+
+##### 📡백엔드
+
+NHN 휴대폰 인증/알림 API, KAMIS 농산물 시세 API, 카카오페이 결제 API 적용 
