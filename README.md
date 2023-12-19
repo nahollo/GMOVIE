@@ -15,10 +15,10 @@ Global Meeting Online Video Interactive Experience<br> 필기 없이 완벽한 �
 - 멤버: 나형진, 왕장령, 이광희, 정경희
 
 ## 게임 설명
-<img src="https://github.com/nahollo/GMOVIE/assets/145747048/f6593289-fcc5-4a54-90a9-cfa9a94ba7b7" width="500">
-<img src="https://github.com/nahollo/GMOVIE/assets/145747048/065f6c28-e4e8-4613-a263-6a4e35ffd3f5" width="500">
+|<img src="https://github.com/nahollo/GMOVIE/assets/145747048/f6593289-fcc5-4a54-90a9-cfa9a94ba7b7" width="500">
+|<img src="https://github.com/nahollo/GMOVIE/assets/145747048/065f6c28-e4e8-4613-a263-6a4e35ffd3f5" width="500">|
 
-|
+
 |:---:|:---:|
 |시작 화면|화상회의 화면|
 
