@@ -30,7 +30,7 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/993ad94b-c02a-4db3-83bf-a30d82eb8d02" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/3c20a37a-6595-465b-92e6-5cf5e743fa4f" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/15cbf46b-e1ed-44d3-889b-408634c301c5" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/7704e151-8246-45c3-9979-156596c8d5b1" width="150" height="150"> |
 | 팀장<br>풀스택<br>webRTC, 알고리즘 | 팀원<br>백엔드<br>Spring Boot, DB 구성 | 팀원<br>프론트<br>디자인, 아이디어, 기획 | 팀원<br>백엔드<br>DB 설계, 음성 파일 변환 |
 
-#### 제작목적
+#### 🥑제작목적
 
 최근 진행된 화상회의에서, 특수한 원격 환경으로 인한 도전을 경험했습니다. 회의록을 기록하는 업무를 맡았을 때, 대면 회의 때와 같은 집중력을 유지하기가 어려웠고, 이는 집중력 저하로 이어졌습니다. 가상 환경과 대면 환경의 차이는 참여와 주의 집중도 측면에서 뚜렷이 드러났습니다.
 
@@ -42,7 +42,7 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 ##### 📡백엔드
 <img src="https://img.shields.io/badge/spring boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
 <br>
-사용 API<br>
+##### 🥦사용 API
 <img src="https://img.shields.io/badge/ffmpeg-007808?style=for-the-badge&logo=ffmpeg&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/webrtc-333333?style=for-the-badge&logo=webrtc&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white">
 
 
