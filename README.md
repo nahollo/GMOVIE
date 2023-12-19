@@ -27,6 +27,6 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 
 | 🦏<br>나형진 | 👽<br>왕장령 | 🐶<br>이광희 | 🐱<br>정경희 |
 | --- | --- | --- | --- |
-| <img src="https://github.com/nahollo/GMOVIE/assets/137711359/993ad94b-c02a-4db3-83bf-a30d82eb8d02" width="200" height="200"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/3c20a37a-6595-465b-92e6-5cf5e743fa4f" width="200" height="200"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/15cbf46b-e1ed-44d3-889b-408634c301c5" width="200" height="200"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/7704e151-8246-45c3-9979-156596c8d5b1" width="200" height="200"> |
-| 팀장<br>풀스택<br>webRTC, <br>알고리즘 | 팀원<br>백엔드<br>Spring Boot, <br>DB 구성 | 팀원<br>프론트<br>디자인, 아이디어, <br>기획 | 팀원<br>백엔드<br>DB 설계, <br>음성 파일 변환 |
+| <img src="https://github.com/nahollo/GMOVIE/assets/137711359/993ad94b-c02a-4db3-83bf-a30d82eb8d02" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/3c20a37a-6595-465b-92e6-5cf5e743fa4f" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/15cbf46b-e1ed-44d3-889b-408634c301c5" width="150" height="150"> | <img src="https://github.com/nahollo/GMOVIE/assets/137711359/7704e151-8246-45c3-9979-156596c8d5b1" width="150" height="150"> |
+| 팀장<br>풀스택<br>webRTC, 알고리즘 | 팀원<br>백엔드<br>Spring Boot, DB 구성 | 팀원<br>프론트<br>디자인, 아이디어, 기획 | 팀원<br>백엔드<br>DB 설계, 음성 파일 변환 |
 
