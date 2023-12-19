@@ -40,14 +40,14 @@ HTML, CSS, js
 
 ##### 📡백엔드
 Spring Boot, node.js
-
+<br>
 사용 라이브러리<br>
-ffmpeg
-APACHE POI
-SMTP
-
+ffmpeg<br>
+APACHE POI<br>
+SMTP<br>
+<br>
 사용 API<br>
-webRTC
-ETRI Speech-To-Text
-openAi
+webRTC<br>
+ETRI Speech-To-Text<br>
+openAi<br>
 
