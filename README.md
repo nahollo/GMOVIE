@@ -41,12 +41,12 @@ HTML, CSS, js
 ##### 📡백엔드
 Spring Boot, node.js
 
-사용 라이브러리
+사용 라이브러리<br>
 ffmpeg
 APACHE POI
 SMTP
 
-사용 API
+사용 API<br>
 webRTC
 ETRI Speech-To-Text
 openAi
