@@ -81,7 +81,10 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 |GMOVIE를 사용했을 때 요약된 회의록이 이메일로 온 결과|
 
 ###### 👻GMOVIE 시연 영상
-
-
+<html>
 <iframe width="956" height="538" src="https://youtu.be/96V_vCy1H0w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+</html>
+
+
 
