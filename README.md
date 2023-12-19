@@ -40,17 +40,17 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 #### 📜기능 요구 명세서
 ![GMOVIE_기능 요구 명세서](https://github.com/nahollo/GMOVIE/assets/145747048/97a34221-afd2-4049-b40f-064ff64d9eed)
 
-##### 🖼프론트엔드
+#### 🖼프론트엔드
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=HTML&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=CSS&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
 
-##### 📡백엔드
+#### 📡백엔드
 <img src="https://img.shields.io/badge/spring boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
 <br>
-##### 🥦사용 API
+#### 🥦사용 API
 <img src="https://img.shields.io/badge/ffmpeg-007808?style=for-the-badge&logo=ffmpeg&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/webrtc-333333?style=for-the-badge&logo=webrtc&logoColor=white">&nbsp;<img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white">
 
 
-###### 👻GMOVIE 화면
+#### 👻GMOVIE 화면
 |GMOVIE 홈|
 |---|
 |![KakaoTalk_20231219_161052119_02](https://github.com/nahollo/GMOVIE/assets/137711359/a8eb1ccb-f2d6-4e48-acb7-79dc5ef56ee2)|
@@ -84,7 +84,7 @@ GMOVIE는 실시간으로 회의를 진행하고 동시에 녹음하며, 자동�
 |![KakaoTalk_20231219_161052119_01](https://github.com/nahollo/GMOVIE/assets/137711359/99b3f2c4-de00-4970-886e-470e48d81430)|
 |GMOVIE를 사용했을 때 요약된 회의록이 이메일로 온 결과|
 
-###### 👻GMOVIE 시연 영상
+#### 👻GMOVIE 시연 영상
 
 <a href="https://youtu.be/96V_vCy1H0w">
     <img src="https://github.com/nahollo/GMOVIE/assets/137711359/a8eb1ccb-f2d6-4e48-acb7-79dc5ef56ee2" alt="KakaoTalk_20231219_161052119_02"  width="500" height="300">
